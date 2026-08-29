@@ -1,0 +1,1373 @@
+{
+  "_note": "Analytics stub — populated by future tracking integrations.",
+  "videos": [
+    {
+      "id": "simulated_1784961419963",
+      "title": "Roanoke: Why No Maltese Cross?",
+      "topicSlug": "roanoke lost colony 1590",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-07-25T12:30:00.000Z",
+      "wordCount": 38,
+      "durationSec": 24,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-25T06:36:59.964Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "simulated_1784961568761",
+      "title": "The Silent Ship: What Happened to the Mary Celeste?",
+      "topicSlug": "mary celeste phantom ship",
+      "format": "long",
+      "category": "historical anomaly",
+      "publishAt": "2026-07-25T12:30:00.000Z",
+      "wordCount": 613,
+      "durationSec": 155.7,
+      "sceneCount": 8,
+      "loggedAt": "2026-07-25T06:39:28.762Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "simulated_1784961688308",
+      "title": "Believed She Was Dead. What if?",
+      "topicSlug": "cotard delusion reality",
+      "format": "short",
+      "category": "psychological phenomenon",
+      "publishAt": "2026-07-25T12:30:00.000Z",
+      "wordCount": 41,
+      "durationSec": 24,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-25T06:41:28.308Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "simulated_1784961834032",
+      "title": "Los Angeles 1942: The Night They Fought Nothing",
+      "topicSlug": "battle los angeles 1942 ufo",
+      "format": "long",
+      "category": "historical anomaly",
+      "publishAt": "2026-07-25T12:30:00.000Z",
+      "wordCount": 610,
+      "durationSec": 118.3,
+      "sceneCount": 8,
+      "loggedAt": "2026-07-25T06:43:54.033Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "qRYqcDjPIHw",
+      "title": "Flannan Isles: Lighthouse Empty. What Happened?",
+      "topicSlug": "flannan isles disappearance 1900",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-07-25T12:30:00.000Z",
+      "wordCount": 42,
+      "durationSec": 25.4,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-25T06:46:17.562Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "4b5Q9D8_Aik",
+      "title": "Taos Hum: Unheard, Undetected.",
+      "topicSlug": "taos hum mystery",
+      "format": "short",
+      "category": "psychological phenomenon",
+      "publishAt": "2026-07-26T12:30:00.000Z",
+      "wordCount": 38,
+      "durationSec": 23.7,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-25T12:34:08.213Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "nzzd2shwnag",
+      "title": "Ancient Greek Computer: Impossible Tech?",
+      "topicSlug": "Antikythera Mechanism",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-07-26T12:30:00.000Z",
+      "wordCount": 35,
+      "durationSec": 21,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-25T12:34:17.049Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "B5lQ9B6QmMs",
+      "title": "Siberia's 1908 Explosion: No Asteroid?",
+      "topicSlug": "tunguska event siberia 1908",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-07-27T12:30:00.000Z",
+      "wordCount": 41,
+      "durationSec": 20.8,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-26T14:36:03.329Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "nOjXNdmTSFo",
+      "title": "USS Cyclops: 306 Vanished Without Trace",
+      "topicSlug": "USS Cyclops Disappearance",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-07-28T12:30:00.000Z",
+      "wordCount": 39,
+      "durationSec": 24.4,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-27T12:33:33.467Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "cTzHdezFDxA",
+      "title": "The Book No Human Can Read",
+      "topicSlug": "voynich manuscript mystery",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-07-28T12:30:00.000Z",
+      "wordCount": 41,
+      "durationSec": 22.8,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-27T12:34:02.921Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "7Zn7rFoH91Q",
+      "title": "The Great Dying: Earth's Own Apocalypse?",
+      "topicSlug": "Great Dying Permian Extinction",
+      "format": "short",
+      "category": "biological extreme",
+      "publishAt": "2026-07-29T12:30:00.000Z",
+      "wordCount": 45,
+      "durationSec": 27.5,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-28T12:37:28.786Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "1K8m9KkAFqY",
+      "title": "Roanoke: 115 Vanished Souls",
+      "topicSlug": "Roanoke Lost Colony 1587",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-07-29T12:30:00.000Z",
+      "wordCount": 43,
+      "durationSec": 27.5,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-28T12:37:30.382Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "simulated_1785246034518",
+      "title": "Ice Maiden's Tattoo: Rewriting History",
+      "topicSlug": "siberian ice maiden ukok",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-07-29T12:30:00.000Z",
+      "wordCount": 40,
+      "durationSec": 23,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-28T13:40:34.520Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "simulated_1785246281428",
+      "title": "The Island That Never Was: Sandy Island's Vanishing Act",
+      "topicSlug": "sandy island cartographic phantom",
+      "format": "long",
+      "category": "historical anomaly",
+      "publishAt": "2026-07-29T12:30:00.000Z",
+      "wordCount": 587,
+      "durationSec": 233.7,
+      "sceneCount": 8,
+      "loggedAt": "2026-07-28T13:44:41.430Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "NFtqij_gE44",
+      "title": "Body Ignites: The Reeser Anomaly",
+      "topicSlug": "spontaneous human combustion reeser",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-07-29T12:30:00.000Z",
+      "wordCount": 43,
+      "durationSec": 20.3,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-28T16:25:38.864Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "jzNgOp6nAmc",
+      "title": "The 13,000-Year-Old Satellite Nobody Launched",
+      "topicSlug": "black knight satellite",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-07-29T12:30:00.000Z",
+      "wordCount": 50,
+      "durationSec": 25.9,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-28T18:32:16.618Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "7m7LHKjTIfw",
+      "title": "Brain Thinks It's Dead",
+      "topicSlug": "cotards delusion patients",
+      "format": "short",
+      "category": "psychological phenomenon",
+      "publishAt": "2026-07-31T12:30:00.000Z",
+      "wordCount": 45,
+      "durationSec": 21.1,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-31T11:20:04.229Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "9zAwRmFQEhY",
+      "title": "12,000 Feet Down: The Eltanin Antenna Anomaly",
+      "topicSlug": "eltanin anomaly deep sea",
+      "format": "short",
+      "category": "physics edge case",
+      "publishAt": "2026-07-31T12:30:00.000Z",
+      "wordCount": 44,
+      "durationSec": 24.1,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-31T11:28:01.638Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "2iUNO1aw5KI",
+      "title": "Mary Celeste: The Vanished Crew",
+      "topicSlug": "mary celeste ghost ship",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-01T12:30:00.000Z",
+      "wordCount": 52,
+      "durationSec": 19.2,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-31T12:32:14.578Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "wDnnemtxKpA",
+      "title": "Internal Blast: Sleep's Unheard Secret",
+      "topicSlug": "exploding head syndrome",
+      "format": "short",
+      "category": "psychological phenomenon",
+      "publishAt": "2026-08-01T12:30:00.000Z",
+      "wordCount": 39,
+      "durationSec": 19.2,
+      "sceneCount": 5,
+      "loggedAt": "2026-07-31T12:33:34.033Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "nFaPuBPrqVc",
+      "title": "Body Turning to Bone: The Agca Case",
+      "topicSlug": "fop stone man disease",
+      "format": "short",
+      "category": "biological extreme",
+      "publishAt": "2026-08-02T12:30:00.000Z",
+      "wordCount": 43,
+      "durationSec": 20.7,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-02T07:37:16.981Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "A9ENuPrb0CY",
+      "title": "Tardigrades: Surviving the Vacuum of Space",
+      "topicSlug": "tardigrade space survival",
+      "format": "short",
+      "category": "biological extreme",
+      "publishAt": "2026-08-02T12:30:00.000Z",
+      "wordCount": 40,
+      "durationSec": 20.5,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-02T09:56:22.296Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "-hz1aTvHjVI",
+      "title": "1513 Map Shows Ice-Free Antarctica?",
+      "topicSlug": "piri reis map mystery",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-03T12:30:00.000Z",
+      "wordCount": 40,
+      "durationSec": 21.3,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-02T12:35:46.771Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "V2lymcfVoyk",
+      "title": "The Bloop: A Vanished Sound Deeper Than Any Creature",
+      "topicSlug": "the bloop sound anomaly",
+      "format": "short",
+      "category": "physics edge case",
+      "publishAt": "2026-08-03T12:30:00.000Z",
+      "wordCount": 42,
+      "durationSec": 21.3,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-02T12:35:55.561Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "cQudRA9-Vhs",
+      "title": "Ancient Baghdad's Forgotten Power?",
+      "topicSlug": "Baghdad Battery Ancient Current",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-04T12:30:00.000Z",
+      "wordCount": 41,
+      "durationSec": 20.7,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-03T13:02:00.563Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "kyOwxbSAXgs",
+      "title": "The Lake That Killed 1,746 Silently",
+      "topicSlug": "lake nyos limnic eruption",
+      "format": "short",
+      "category": "physics edge case",
+      "publishAt": "2026-08-06T12:30:00.000Z",
+      "wordCount": 39,
+      "durationSec": 21.2,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-05T12:33:42.158Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "KRgkzUfZgzc",
+      "title": "70,000 Witnessed This. Science Saw Nothing.",
+      "topicSlug": "fatima miracle sun 1917",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-06T12:30:00.000Z",
+      "wordCount": 39,
+      "durationSec": 23.3,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-05T15:05:09.337Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "jrRNGJhxfQw",
+      "title": "Tarrare: The Man Who Ate The Unthinkable",
+      "topicSlug": "tarrare insatiable hunger",
+      "format": "short",
+      "category": "biological extreme",
+      "publishAt": "2026-08-06T12:30:00.000Z",
+      "wordCount": 40,
+      "durationSec": 22.2,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-05T18:32:29.630Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "W8LlBQPM2u8",
+      "title": "Ukok Princess: Unearthing Ancient Secrets",
+      "topicSlug": "siberian ice maiden",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-06T12:30:00.000Z",
+      "wordCount": 39,
+      "durationSec": 21.9,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-06T07:59:18.820Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "YShH12tQE0Y",
+      "title": "Europe's Ancient City Burners",
+      "topicSlug": "cucuteni-trypillia city burning",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-07T12:30:00.000Z",
+      "wordCount": 38,
+      "durationSec": 20.5,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-06T15:27:13.476Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "5yCPbJDRX4c",
+      "title": "Eilean Mòr: Three Keepers Vanished",
+      "topicSlug": "eilean mor mystery",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-07T12:30:00.000Z",
+      "wordCount": 40,
+      "durationSec": 22.9,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-07T10:50:58.356Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "Rt_hsjaoJlE",
+      "title": "Dyatlov Pass: The Unseen Force",
+      "topicSlug": "dyatlov pass incident 1959",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-08T12:30:00.000Z",
+      "wordCount": 40,
+      "durationSec": 22.2,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-07T12:34:55.561Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "jUjoCTd_edI",
+      "title": "London's Lethal Fog: December 1952",
+      "topicSlug": "great smog london 1952",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-08T12:30:00.000Z",
+      "wordCount": 39,
+      "durationSec": 22,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-07T15:27:15.288Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "Gd8en9bktWg",
+      "title": "Costa Rica's Perfect Stone Spheres: Vanished Makers",
+      "topicSlug": "costa rica stone spheres",
+      "format": "short",
+      "category": "lost civilization",
+      "publishAt": "2026-08-08T12:30:00.000Z",
+      "wordCount": 35,
+      "durationSec": 19.5,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-07T18:34:14.774Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "p6sieteXAbg",
+      "title": "Puma Punku: Impossible Stone Cuts?",
+      "topicSlug": "puma punku megalithic stonework",
+      "format": "short",
+      "category": "lost civilization",
+      "publishAt": "2026-08-09T12:30:00.000Z",
+      "wordCount": 45,
+      "durationSec": 24.7,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-08T14:48:45.013Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "wWrmRCJ8YkM",
+      "title": "The Brain Disease That Steals Sleep",
+      "topicSlug": "fatal familial insomnia history",
+      "format": "short",
+      "category": "biological extreme",
+      "publishAt": "2026-08-10T12:30:00.000Z",
+      "wordCount": 47,
+      "durationSec": 26.5,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-09T12:33:39.863Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "StyecnCPvwo",
+      "title": "Kentucky's Sky Flesh: 1876 Anomaly",
+      "topicSlug": "kentucky meat shower 1876",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-11T12:30:00.000Z",
+      "wordCount": 41,
+      "durationSec": 20.8,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-10T12:33:09.019Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "9uXsPWfz5Jo",
+      "title": "1374's Dance Epidemic: Unseen Compulsion?",
+      "topicSlug": "dancing mania rhine 1374",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-11T12:30:00.000Z",
+      "wordCount": 45,
+      "durationSec": 21.3,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-10T15:24:37.843Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "L6GnB6ZCGCE",
+      "title": "Nazca Lines: Who Saw Their Secrets?",
+      "topicSlug": "nazca lines peru geoglyphs",
+      "format": "short",
+      "category": "lost civilization",
+      "publishAt": "2026-08-11T12:30:00.000Z",
+      "wordCount": 46,
+      "durationSec": 23.3,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-11T06:41:49.312Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "jz-o7-KqVSw",
+      "title": "Tacoma Bridge: The Unseen Killer Frequency",
+      "topicSlug": "tacoma narrows bridge collapse",
+      "format": "short",
+      "category": "engineering disaster",
+      "publishAt": "2026-08-14T12:30:00.000Z",
+      "wordCount": 38,
+      "durationSec": 19.2,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-13T17:09:10.001Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "tjqpAhGwgJ0",
+      "title": "Krakatoa's Earth-Shaking Roar",
+      "topicSlug": "krakatoa eruption sound wave",
+      "format": "short",
+      "category": "physics edge case",
+      "publishAt": "2026-08-14T12:30:00.000Z",
+      "wordCount": 42,
+      "durationSec": 23.4,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-13T17:11:21.177Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "B59cTWUPSWE",
+      "title": "Egypt's Screaming Mummy Secret",
+      "topicSlug": "screaming mummy prince pentawere",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-15T12:30:00.000Z",
+      "wordCount": 41,
+      "durationSec": 21.8,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-14T13:15:03.332Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "YQ92gw23gsc",
+      "title": "The Wow! Signal: A Message From The Void?",
+      "topicSlug": "wow signal 1977 big ear",
+      "format": "short",
+      "category": "physics edge case",
+      "publishAt": "2026-08-15T12:30:00.000Z",
+      "wordCount": 42,
+      "durationSec": 22.3,
+      "sceneCount": 3,
+      "loggedAt": "2026-08-14T16:14:29.098Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "9pM7kO1avp0",
+      "title": "The Awful Sleep: Trapped Conscious for Decades",
+      "topicSlug": "encephalitis lethargica epidemic",
+      "format": "short",
+      "category": "psychological phenomenon",
+      "publishAt": "2026-08-15T12:30:00.000Z",
+      "wordCount": 42,
+      "durationSec": 24.7,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-15T09:19:04.324Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "Zm2j81U39L4",
+      "title": "River Vanishes: Devil's Kettle Secret",
+      "topicSlug": "devil's kettle vanishing river",
+      "format": "short",
+      "category": "physics edge case",
+      "publishAt": "2026-08-16T12:30:00.000Z",
+      "wordCount": 43,
+      "durationSec": 20.6,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-15T12:34:39.060Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "RvvjqEUiMuY",
+      "title": "Frozen Hamster: Revival 0°C",
+      "topicSlug": "hamster cryo-revival smith 1951",
+      "format": "short",
+      "category": "biological extreme",
+      "publishAt": "2026-08-18T12:30:00.000Z",
+      "wordCount": 41,
+      "durationSec": 22.9,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-17T12:33:24.498Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "P5EEyK2lzAE",
+      "title": "Göbekli Tepe: The Buried Mystery of 9,600 BCE",
+      "topicSlug": "gobekli tepe buried temples",
+      "format": "short",
+      "category": "lost civilization",
+      "publishAt": "2026-08-18T12:30:00.000Z",
+      "wordCount": 41,
+      "durationSec": 23.8,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-18T02:22:48.104Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "WAS_cqFh8BE",
+      "title": "The Man Who Vanished From Taured",
+      "topicSlug": "man from taured mystery",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-18T12:30:00.000Z",
+      "wordCount": 43,
+      "durationSec": 21.8,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-18T06:38:22.006Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "vY421dgIN2M",
+      "title": "Laughing Death: Kuru's Primal Origin",
+      "topicSlug": "kuru laughing sickness PNG",
+      "format": "short",
+      "category": "biological extreme",
+      "publishAt": "2026-08-18T12:30:00.000Z",
+      "wordCount": 38,
+      "durationSec": 20.4,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-18T09:18:35.238Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "4XKta-8O8j4",
+      "title": "Imposter Parents: A 1923 Case",
+      "topicSlug": "capgras syndrome 1923",
+      "format": "short",
+      "category": "psychological phenomenon",
+      "publishAt": "2026-08-18T12:30:00.000Z",
+      "wordCount": 42,
+      "durationSec": 20.9,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-18T12:09:12.686Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "-4XcRtgfQ7I",
+      "title": "Animal Survives BELOW Freezing?",
+      "topicSlug": "arctic ground squirrel cryo",
+      "format": "short",
+      "category": "biological extreme",
+      "publishAt": "2026-08-19T12:30:00.000Z",
+      "wordCount": 41,
+      "durationSec": 22.5,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-19T05:26:36.713Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "wE1m8FeLDjo",
+      "title": "The Rock That Rewrites American History",
+      "topicSlug": "dighton rock massachusetts petroglyphs",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-19T12:30:00.000Z",
+      "wordCount": 39,
+      "durationSec": 20.9,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-19T06:40:28.340Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "F38Y95Oy89w",
+      "title": "Mohenjo-Daro: The City That Just Vanished",
+      "topicSlug": "mohenjo daro lost city",
+      "format": "short",
+      "category": "lost civilization",
+      "publishAt": "2026-08-20T12:30:00.000Z",
+      "wordCount": 40,
+      "durationSec": 24.1,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-20T04:06:29.374Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "uC9UuYtRF9A",
+      "title": "The Taos Hum: A Sound Only Some Hear",
+      "topicSlug": "taos hum unexplained sound",
+      "format": "short",
+      "category": "physics edge case",
+      "publishAt": "2026-08-20T12:30:00.000Z",
+      "wordCount": 42,
+      "durationSec": 19.8,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-20T04:15:07.041Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "DqIjXLJ21Y8",
+      "title": "Unbroken Cipher: The Voynich Manuscript",
+      "topicSlug": "voynich manuscript decipherment",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-20T12:30:00.000Z",
+      "wordCount": 38,
+      "durationSec": 20.3,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-20T05:22:47.843Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "n05qmS9SsMs",
+      "title": "The Jellyfish That Cheats Death",
+      "topicSlug": "immortal jellyfish biology",
+      "format": "short",
+      "category": "biological extreme",
+      "publishAt": "2026-08-20T12:30:00.000Z",
+      "wordCount": 37,
+      "durationSec": 22.5,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-20T12:16:40.872Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "ltN889fihGQ",
+      "title": "Ancient Computer: 150 BC Time Machine Found?",
+      "topicSlug": "antikythera mechanism ancient computer",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-21T12:30:00.000Z",
+      "wordCount": 43,
+      "durationSec": 22.4,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-20T12:38:24.893Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "STPM-UlE_XE",
+      "title": "Hot Water Freezes First? The Mpemba Effect",
+      "topicSlug": "mpemba effect hot freezes first",
+      "format": "short",
+      "category": "physics edge case",
+      "publishAt": "2026-08-21T12:30:00.000Z",
+      "wordCount": 40,
+      "durationSec": 22,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-21T06:36:13.792Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "sVe6oFIYfDY",
+      "title": "The Patient Who Knew She Was Dead",
+      "topicSlug": "cotard delusion walking corpse",
+      "format": "short",
+      "category": "psychological phenomenon",
+      "publishAt": "2026-08-21T12:30:00.000Z",
+      "wordCount": 40,
+      "durationSec": 20.2,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-21T09:03:00.587Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "8QotJKOa5B4",
+      "title": "The Day Science Caught Ball Lightning",
+      "topicSlug": "ball lightning qinghai 2012",
+      "format": "short",
+      "category": "physics edge case",
+      "publishAt": "2026-08-21T12:30:00.000Z",
+      "wordCount": 41,
+      "durationSec": 23.4,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-21T11:45:25.108Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "Tp4bOLB1MZk",
+      "title": "Saqqara Bird: Ancient Egypt's Secret Glider?",
+      "topicSlug": "saqqara bird ancient glider",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-22T12:30:00.000Z",
+      "wordCount": 39,
+      "durationSec": 21.2,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-21T12:35:35.402Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "KW-b1Gb39FA",
+      "title": "Did Our Life Begin In Space?",
+      "topicSlug": "murchison meteorite origins",
+      "format": "short",
+      "category": "biological extreme",
+      "publishAt": "2026-08-22T12:30:00.000Z",
+      "wordCount": 41,
+      "durationSec": 22.9,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-22T06:36:39.293Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "vZZBDx3D-vQ",
+      "title": "Giza Pyramid: Impossible Precision",
+      "topicSlug": "giza pyramid casing precision",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-22T12:30:00.000Z",
+      "wordCount": 40,
+      "durationSec": 20.7,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-22T07:30:09.145Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "mQotvx1Vzfk",
+      "title": "Honduras: Fish Rain Mystery",
+      "topicSlug": "yoro fish rain honduras",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-23T12:30:00.000Z",
+      "wordCount": 44,
+      "durationSec": 21,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-22T15:10:07.840Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "fBAc5G8BkxE",
+      "title": "1925: The Stray Dog That Almost Started a War",
+      "topicSlug": "stray dog war 1925",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-23T12:30:00.000Z",
+      "wordCount": 43,
+      "durationSec": 23.4,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-22T15:17:13.503Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "GvxXg7_dfig",
+      "title": "Body Turned to Ash: Mary Reeser Mystery",
+      "topicSlug": "mary reeser shc 1951",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-23T12:30:00.000Z",
+      "wordCount": 46,
+      "durationSec": 24.7,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-22T18:37:03.396Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "cmOWqxX-A2I",
+      "title": "Nimitz Tic-Tac: Physics Defied",
+      "topicSlug": "Nimitz Tic-Tac UFO 2004",
+      "format": "short",
+      "category": "physics edge case",
+      "publishAt": "2026-08-25T12:30:00.000Z",
+      "wordCount": 40,
+      "durationSec": 20.6,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-25T05:49:16.240Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "Bb6p_ucGe3A",
+      "title": "The Bloop: What Lurks Beneath the Pacific?",
+      "topicSlug": "bloop ocean signal 1997",
+      "format": "short",
+      "category": "biological extreme",
+      "publishAt": "2026-08-26T12:30:00.000Z",
+      "wordCount": 41,
+      "durationSec": 22.7,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-25T12:37:02.357Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "u0RFsqezxSk",
+      "title": "Ancient Baghdad Battery: Current?",
+      "topicSlug": "Baghdad Battery Anomaly",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-26T12:30:00.000Z",
+      "wordCount": 36,
+      "durationSec": 20.6,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-25T15:30:36.592Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "laccTyPz8kw",
+      "title": "Lake Peigneur Vanished: The Day it Drained",
+      "topicSlug": "lake peigneur disaster 1980",
+      "format": "short",
+      "category": "engineering disaster",
+      "publishAt": "2026-08-26T12:30:00.000Z",
+      "wordCount": 46,
+      "durationSec": 22.4,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-26T02:30:09.821Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "7R6bYW3KRfw",
+      "title": "LA 1942: Air Raid on Nothing?",
+      "topicSlug": "battle los angeles 1942",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-27T12:30:00.000Z",
+      "wordCount": 40,
+      "durationSec": 21.3,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-26T12:37:11.155Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    },
+    {
+      "id": "pCA1Y82IH7k",
+      "title": "3 Billion-Year-Old Spheres: Impossible?",
+      "topicSlug": "klerksdorp spheres anomaly",
+      "format": "short",
+      "category": "historical anomaly",
+      "publishAt": "2026-08-27T12:30:00.000Z",
+      "wordCount": 38,
+      "durationSec": 18.9,
+      "sceneCount": 5,
+      "loggedAt": "2026-08-26T12:37:21.792Z",
+      "metrics": {
+        "ctr": null,
+        "avgViewDuration": null,
+        "retentionPct": null,
+        "subscribersGained": null,
+        "views": null
+      }
+    }
+  ]
+}

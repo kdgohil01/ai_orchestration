@@ -1,0 +1,859 @@
+{"timestamp":"2026-07-25T06:36:07.074Z","stage":"Preflight System Checks","durationMs":94,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:36:27.538Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":20463,"status":"SUCCESS","title":"Roanoke: Why No Maltese Cross?","topicSlug":"roanoke lost colony 1590"}
+{"timestamp":"2026-07-25T06:36:30.346Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2806,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-25T06:36:43.544Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":13198,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-25T06:36:47.622Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":4077,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:36:53.814Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":6180,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:36:59.962Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":6148,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":8633,"duration":24,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-25T06:36:59.963Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":1,"status":"SUCCESS","videoId":"simulated_1784961419963","simulated":true}
+{"timestamp":"2026-07-25T06:36:59.964Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":1,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:37:01.592Z","stage":"Preflight System Checks","durationMs":86,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:37:23.886Z","stage":"Stage 1: 4-ACT Script Generation & Quality Gate","durationMs":22293,"status":"SUCCESS","title":"The Silent Ship: What Happened to the Mary Celeste?","topicSlug":"mary celeste phantom ship"}
+{"timestamp":"2026-07-25T06:37:44.220Z","stage":"Stage 2: Master Voiceover Synthesis","durationMs":20332,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-25T06:38:10.518Z","stage":"Stage 3: 8 Landscape B-Roll Scenes Acquisition","durationMs":26298,"status":"SUCCESS","scenesCount":8}
+{"timestamp":"2026-07-25T06:38:40.635Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":30115,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:39:28.646Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":48011,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:39:28.760Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":113,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_long.mp4","sizeKb":99375,"duration":155.7,"width":1920,"height":1080,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-25T06:39:28.761Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":1,"status":"SUCCESS","videoId":"simulated_1784961568761","simulated":true}
+{"timestamp":"2026-07-25T06:39:28.763Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":1,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:40:19.472Z","stage":"Preflight System Checks","durationMs":90,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:40:44.518Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":25046,"status":"SUCCESS","title":"Believed She Was Dead. What if?","topicSlug":"cotard delusion reality"}
+{"timestamp":"2026-07-25T06:40:49.799Z","stage":"Stage 2: Voiceover Synthesis","durationMs":5280,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-25T06:41:05.129Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":15329,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-25T06:41:15.124Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":9995,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:41:28.220Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":13095,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:41:28.306Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":86,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":39831,"duration":24,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-25T06:41:28.308Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":1,"status":"SUCCESS","videoId":"simulated_1784961688308","simulated":true}
+{"timestamp":"2026-07-25T06:41:28.309Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":1,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:41:49.325Z","stage":"Preflight System Checks","durationMs":87,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:42:14.492Z","stage":"Stage 1: 4-ACT Script Generation & Quality Gate","durationMs":25166,"status":"SUCCESS","title":"Los Angeles 1942: The Night They Fought Nothing","topicSlug":"battle los angeles 1942 ufo"}
+{"timestamp":"2026-07-25T06:42:32.909Z","stage":"Stage 2: Master Voiceover Synthesis","durationMs":18416,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-07-25T06:42:53.735Z","stage":"Stage 3: 8 Landscape B-Roll Scenes Acquisition","durationMs":20824,"status":"SUCCESS","scenesCount":8}
+{"timestamp":"2026-07-25T06:43:17.382Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":23647,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:43:53.928Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":36546,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:43:54.031Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":102,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_long.mp4","sizeKb":75342,"duration":118.3,"width":1920,"height":1080,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-25T06:43:54.032Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":0,"status":"SUCCESS","videoId":"simulated_1784961834032","simulated":true}
+{"timestamp":"2026-07-25T06:43:54.034Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":0,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:44:06.693Z","stage":"Preflight System Checks","durationMs":83,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:44:23.723Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":17029,"status":"SUCCESS","title":"Flannan Isles: Lighthouse Empty. What Happened?","topicSlug":"flannan isles disappearance 1900"}
+{"timestamp":"2026-07-25T06:44:26.970Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3246,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-07-25T06:44:37.066Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":10096,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-25T06:44:46.342Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":9275,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:44:58.305Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":11962,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:44:58.383Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":76,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":24781,"duration":25.4,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-25T06:46:17.558Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":79175,"status":"SUCCESS","videoId":"qRYqcDjPIHw"}
+{"timestamp":"2026-07-25T06:46:17.563Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":3,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:46:43.154Z","stage":"Preflight System Checks","durationMs":86,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:47:25.723Z","stage":"Stage 1: 4-ACT Script Generation & Quality Gate","durationMs":42568,"status":"SUCCESS","title":"The Blast That Left No Trace: Siberia's 1908 Enigma","topicSlug":"tunguska event siberia 1908"}
+{"timestamp":"2026-07-25T06:47:41.074Z","stage":"Stage 2: Master Voiceover Synthesis","durationMs":15348,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-07-25T06:48:09.839Z","stage":"Stage 3: 8 Landscape B-Roll Scenes Acquisition","durationMs":28765,"status":"SUCCESS","scenesCount":8}
+{"timestamp":"2026-07-25T06:48:48.421Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":38581,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:49:51.140Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":62719,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:49:51.250Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":109,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_long.mp4","sizeKb":116167,"duration":208.5,"width":1920,"height":1080,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-25T06:54:35.548Z","stage":"Preflight System Checks","durationMs":104,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:55:01.245Z","stage":"Stage 1: 4-ACT Script Generation & Quality Gate","durationMs":25696,"status":"SUCCESS","title":"The Oregon Coast and The Whale That Exploded","topicSlug":"exploding whale oregon 1970"}
+{"timestamp":"2026-07-25T06:55:42.955Z","stage":"Stage 2: Master Voiceover Synthesis","durationMs":41708,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-25T06:56:24.267Z","stage":"Stage 3: 8 Landscape B-Roll Scenes Acquisition","durationMs":41311,"status":"SUCCESS","scenesCount":8}
+{"timestamp":"2026-07-25T06:57:13.497Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":49229,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:58:34.958Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":81461,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T06:58:35.051Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":92,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_long.mp4","sizeKb":206356,"duration":238.8,"width":1920,"height":1080,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-25T07:06:45.173Z","stage":"Preflight System Checks","durationMs":146,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T07:07:45.629Z","stage":"Stage 1: 4-ACT Script Generation & Quality Gate","durationMs":60456,"status":"SUCCESS","title":"The Night an Army Fought Itself: Caransebeș 1788","topicSlug":"battle karansebes 1788 friendly fire"}
+{"timestamp":"2026-07-25T07:08:02.427Z","stage":"Stage 2: Master Voiceover Synthesis","durationMs":16796,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-25T07:08:30.722Z","stage":"Stage 3: 8 Landscape B-Roll Scenes Acquisition","durationMs":28295,"status":"SUCCESS","scenesCount":8}
+{"timestamp":"2026-07-25T07:09:02.171Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":31448,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T07:09:56.316Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":54145,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T07:09:56.444Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":128,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_long.mp4","sizeKb":82075,"duration":174.4,"width":1920,"height":1080,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-25T09:41:32.032Z","stage":"Preflight System Checks","durationMs":205,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T12:30:06.471Z","stage":"Preflight System Checks","durationMs":155,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T12:30:06.471Z","stage":"Preflight System Checks","durationMs":229,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T12:30:41.025Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":34551,"status":"SUCCESS","title":"Ancient Greek Computer: Impossible Tech?","topicSlug":"Antikythera Mechanism"}
+{"timestamp":"2026-07-25T12:30:41.316Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":34842,"status":"SUCCESS","title":"Taos Hum: Unheard, Undetected.","topicSlug":"taos hum mystery"}
+{"timestamp":"2026-07-25T12:30:42.940Z","stage":"Stage 2: Voiceover Synthesis","durationMs":1914,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-07-25T12:30:44.193Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2874,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-25T12:30:53.378Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":9184,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-25T12:30:54.808Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":11866,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-25T12:31:20.201Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":26821,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T12:31:20.696Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":25887,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T12:32:06.940Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":46242,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T12:32:07.444Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":500,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":24334,"duration":21,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-25T12:32:07.901Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":47697,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T12:32:08.036Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":133,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":24334,"duration":23.7,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-25T12:34:08.207Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":120170,"status":"SUCCESS","videoId":"4b5Q9D8_Aik"}
+{"timestamp":"2026-07-25T12:34:08.215Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":7,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T12:34:17.043Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":129596,"status":"SUCCESS","videoId":"nzzd2shwnag"}
+{"timestamp":"2026-07-25T12:34:17.051Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":7,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T15:38:20.437Z","stage":"Preflight System Checks","durationMs":374,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T15:38:49.382Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":28942,"status":"SUCCESS","title":"Dyatlov Pass: The Unexplained Force","topicSlug":"dyatlov pass incident 1959"}
+{"timestamp":"2026-07-25T15:38:52.889Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3507,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-07-25T15:39:06.402Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":13512,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-25T15:39:32.250Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":25847,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T15:40:03.049Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":30797,"status":"SUCCESS"}
+{"timestamp":"2026-07-25T15:40:03.366Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":316,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":24994,"duration":25.6,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-25T18:50:28.142Z","stage":"Preflight System Checks","durationMs":102,"status":"SUCCESS"}
+{"timestamp":"2026-07-26T14:27:49.482Z","stage":"Preflight System Checks","durationMs":207,"status":"SUCCESS"}
+{"timestamp":"2026-07-26T14:33:37.890Z","stage":"Preflight System Checks","durationMs":92,"status":"SUCCESS"}
+{"timestamp":"2026-07-26T14:33:49.130Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":11240,"status":"SUCCESS","title":"Siberia's 1908 Explosion: No Asteroid?","topicSlug":"tunguska event siberia 1908"}
+{"timestamp":"2026-07-26T14:33:51.537Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2406,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-07-26T14:34:07.262Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":15723,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-26T14:34:17.405Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":10142,"status":"SUCCESS"}
+{"timestamp":"2026-07-26T14:35:01.358Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":43952,"status":"SUCCESS"}
+{"timestamp":"2026-07-26T14:35:02.270Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":911,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":15425,"duration":20.8,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-26T14:36:03.322Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":61051,"status":"SUCCESS","videoId":"B5lQ9B6QmMs"}
+{"timestamp":"2026-07-26T14:36:03.330Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":7,"status":"SUCCESS"}
+{"timestamp":"2026-07-27T12:20:33.673Z","stage":"Preflight System Checks","durationMs":151,"status":"SUCCESS"}
+{"timestamp":"2026-07-27T12:30:04.685Z","stage":"Preflight System Checks","durationMs":193,"status":"SUCCESS"}
+{"timestamp":"2026-07-27T12:30:05.342Z","stage":"Preflight System Checks","durationMs":102,"status":"SUCCESS"}
+{"timestamp":"2026-07-27T12:30:26.797Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":22110,"status":"SUCCESS","title":"The Book No Human Can Read","topicSlug":"voynich manuscript mystery"}
+{"timestamp":"2026-07-27T12:30:31.001Z","stage":"Stage 2: Voiceover Synthesis","durationMs":4203,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-27T12:30:31.529Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":26185,"status":"SUCCESS","title":"USS Cyclops: 306 Vanished Without Trace","topicSlug":"USS Cyclops Disappearance"}
+{"timestamp":"2026-07-27T12:30:34.315Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2783,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-27T12:30:42.613Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":11611,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-27T12:30:51.067Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":16752,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-27T12:31:00.661Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":18046,"status":"SUCCESS"}
+{"timestamp":"2026-07-27T12:31:06.473Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":15402,"status":"SUCCESS"}
+{"timestamp":"2026-07-27T12:31:38.433Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":31957,"status":"SUCCESS"}
+{"timestamp":"2026-07-27T12:31:39.310Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":875,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":20992,"duration":24.4,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-27T12:31:41.635Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":40970,"status":"SUCCESS"}
+{"timestamp":"2026-07-27T12:31:41.757Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":121,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":24527,"duration":22.8,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-27T12:33:33.451Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":114136,"status":"SUCCESS","videoId":"nOjXNdmTSFo"}
+{"timestamp":"2026-07-27T12:33:33.468Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":15,"status":"SUCCESS"}
+{"timestamp":"2026-07-27T12:34:02.916Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":141157,"status":"SUCCESS","videoId":"cTzHdezFDxA"}
+{"timestamp":"2026-07-27T12:34:02.923Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":6,"status":"SUCCESS"}
+{"timestamp":"2026-07-27T14:49:09.021Z","stage":"Preflight System Checks","durationMs":288,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T12:16:12.528Z","stage":"Preflight System Checks","durationMs":291,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T12:30:05.975Z","stage":"Preflight System Checks","durationMs":195,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T12:30:06.533Z","stage":"Preflight System Checks","durationMs":102,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T12:30:26.436Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":20458,"status":"SUCCESS","title":"Roanoke: 115 Vanished Souls","topicSlug":"Roanoke Lost Colony 1587"}
+{"timestamp":"2026-07-28T12:30:29.689Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3251,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-28T12:30:34.380Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":27843,"status":"SUCCESS","title":"The Great Dying: Earth's Own Apocalypse?","topicSlug":"Great Dying Permian Extinction"}
+{"timestamp":"2026-07-28T12:30:38.456Z","stage":"Stage 2: Voiceover Synthesis","durationMs":4075,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-07-28T12:30:40.703Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":11012,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-28T12:30:48.797Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":10339,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-28T12:31:02.669Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":21964,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T12:31:12.768Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":23969,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T12:31:55.552Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":52879,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T12:31:55.761Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":42991,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T12:31:55.810Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":257,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":46245,"duration":27.5,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-28T12:31:55.869Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":106,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":46245,"duration":27.5,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-28T12:37:28.768Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":332898,"status":"SUCCESS","videoId":"7Zn7rFoH91Q"}
+{"timestamp":"2026-07-28T12:37:28.787Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":16,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T12:37:30.375Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":334564,"status":"SUCCESS","videoId":"1K8m9KkAFqY"}
+{"timestamp":"2026-07-28T12:37:30.383Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":7,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T13:31:06.138Z","stage":"Preflight System Checks","durationMs":143,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T13:31:33.594Z","stage":"Preflight System Checks","durationMs":144,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T13:39:19.353Z","stage":"Preflight System Checks","durationMs":137,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T13:39:48.093Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":28738,"status":"SUCCESS","title":"Ice Maiden's Tattoo: Rewriting History","topicSlug":"siberian ice maiden ukok"}
+{"timestamp":"2026-07-28T13:39:52.412Z","stage":"Stage 2: Voiceover Synthesis","durationMs":4318,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-28T13:40:10.625Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":18213,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-28T13:40:20.341Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":9715,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T13:40:34.419Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":14077,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T13:40:34.516Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":97,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":14365,"duration":23,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-28T13:40:34.518Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":1,"status":"SUCCESS","videoId":"simulated_1785246034518","simulated":true}
+{"timestamp":"2026-07-28T13:40:34.521Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":2,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T13:40:36.687Z","stage":"Preflight System Checks","durationMs":139,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T13:41:07.194Z","stage":"Stage 1: 4-ACT Script Generation & Quality Gate","durationMs":30506,"status":"SUCCESS","title":"The Island That Never Was: Sandy Island's Vanishing Act","topicSlug":"sandy island cartographic phantom"}
+{"timestamp":"2026-07-28T13:41:17.005Z","stage":"Stage 2: Master Voiceover Synthesis","durationMs":9810,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-07-28T13:41:44.280Z","stage":"Stage 3: 8 Landscape B-Roll Scenes Acquisition","durationMs":27274,"status":"SUCCESS","scenesCount":8}
+{"timestamp":"2026-07-28T13:43:02.555Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":78264,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T13:44:41.308Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":98752,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T13:44:41.426Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":117,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_long.mp4","sizeKb":132614,"duration":233.7,"width":1920,"height":1080,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-28T13:44:41.428Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":1,"status":"SUCCESS","videoId":"simulated_1785246281428","simulated":true}
+{"timestamp":"2026-07-28T13:44:41.431Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":2,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T16:21:47.015Z","stage":"Preflight System Checks","durationMs":167,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T16:22:02.004Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":14988,"status":"SUCCESS","title":"Body Ignites: The Reeser Anomaly","topicSlug":"spontaneous human combustion reeser"}
+{"timestamp":"2026-07-28T16:22:05.178Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3173,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-28T16:22:26.700Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":21522,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-28T16:22:57.358Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":30654,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T16:23:40.211Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":42852,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T16:23:40.301Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":89,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":17154,"duration":20.3,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-28T16:25:38.857Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":118554,"status":"SUCCESS","videoId":"NFtqij_gE44"}
+{"timestamp":"2026-07-28T16:25:38.868Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":9,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T18:30:10.625Z","stage":"Preflight System Checks","durationMs":287,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T18:30:27.191Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":16562,"status":"SUCCESS","title":"The 13,000-Year-Old Satellite Nobody Launched","topicSlug":"black knight satellite"}
+{"timestamp":"2026-07-28T18:30:29.869Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2676,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-28T18:30:38.912Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":9041,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-28T18:30:53.361Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":14446,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T18:31:29.053Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":35691,"status":"SUCCESS"}
+{"timestamp":"2026-07-28T18:31:29.171Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":117,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":23015,"duration":25.9,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-28T18:32:16.596Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":47423,"status":"SUCCESS","videoId":"jzNgOp6nAmc"}
+{"timestamp":"2026-07-28T18:32:16.620Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":23,"status":"SUCCESS"}
+{"timestamp":"2026-07-29T15:18:24.689Z","stage":"Preflight System Checks","durationMs":155,"status":"SUCCESS"}
+{"timestamp":"2026-07-29T15:24:10.379Z","stage":"Preflight System Checks","durationMs":84,"status":"SUCCESS"}
+{"timestamp":"2026-07-29T15:24:39.404Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":29023,"status":"SUCCESS","title":"Ancient Spheres: 2.8 Billion Years Old?","topicSlug":"klerksdorp spheres mystery"}
+{"timestamp":"2026-07-29T15:24:54.895Z","stage":"Stage 2: Voiceover Synthesis","durationMs":15489,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-29T15:26:22.739Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":87842,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-29T15:26:33.467Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":10728,"status":"SUCCESS"}
+{"timestamp":"2026-07-29T15:27:42.448Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":68981,"status":"SUCCESS"}
+{"timestamp":"2026-07-29T15:27:42.528Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":78,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":22439,"duration":20,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-31T11:17:17.918Z","stage":"Preflight System Checks","durationMs":208,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T11:17:48.168Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":30249,"status":"SUCCESS","title":"Brain Thinks It's Dead","topicSlug":"cotards delusion patients"}
+{"timestamp":"2026-07-31T11:17:52.288Z","stage":"Stage 2: Voiceover Synthesis","durationMs":4117,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-31T11:18:17.890Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":25601,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-31T11:18:35.099Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":17208,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T11:18:59.940Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":24839,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T11:19:00.012Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":71,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":11303,"duration":21.1,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-31T11:20:04.223Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":64210,"status":"SUCCESS","videoId":"7m7LHKjTIfw"}
+{"timestamp":"2026-07-31T11:20:04.230Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":6,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T11:25:46.694Z","stage":"Preflight System Checks","durationMs":98,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T11:26:07.239Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":20545,"status":"SUCCESS","title":"12,000 Feet Down: The Eltanin Antenna Anomaly","topicSlug":"eltanin anomaly deep sea"}
+{"timestamp":"2026-07-31T11:26:09.509Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2269,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-07-31T11:26:22.372Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":12861,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-31T11:26:32.452Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":10080,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T11:26:48.173Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":15719,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T11:26:48.234Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":60,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":22271,"duration":24.1,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-31T11:28:01.631Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":73396,"status":"SUCCESS","videoId":"9zAwRmFQEhY"}
+{"timestamp":"2026-07-31T11:28:01.639Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":7,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T12:30:15.818Z","stage":"Preflight System Checks","durationMs":934,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T12:30:15.823Z","stage":"Preflight System Checks","durationMs":941,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T12:30:29.327Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":13502,"status":"SUCCESS","title":"Mary Celeste: The Vanished Crew","topicSlug":"mary celeste ghost ship"}
+{"timestamp":"2026-07-31T12:30:31.833Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2504,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-07-31T12:30:45.769Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":13934,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-31T12:31:07.730Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":51906,"status":"SUCCESS","title":"Internal Blast: Sleep's Unheard Secret","topicSlug":"exploding head syndrome"}
+{"timestamp":"2026-07-31T12:31:10.888Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3149,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-07-31T12:31:11.522Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":25741,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T12:31:24.800Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":13908,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-07-31T12:31:42.244Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":17442,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T12:32:01.092Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":49568,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T12:32:01.781Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":686,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":11813,"duration":19.2,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-31T12:32:14.563Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":12780,"status":"SUCCESS","videoId":"2iUNO1aw5KI"}
+{"timestamp":"2026-07-31T12:32:14.581Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":16,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T12:32:20.431Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":38183,"status":"SUCCESS"}
+{"timestamp":"2026-07-31T12:32:20.504Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":72,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":11816,"duration":19.2,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-07-31T12:33:34.025Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":73519,"status":"SUCCESS","videoId":"wDnnemtxKpA"}
+{"timestamp":"2026-07-31T12:33:34.035Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":7,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T04:32:59.897Z","stage":"Preflight System Checks","durationMs":170,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T05:54:29.107Z","stage":"Preflight System Checks","durationMs":548,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T05:55:03.017Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":33908,"status":"SUCCESS","title":"Peru's Unexplained Stone Walls","topicSlug":"sacsayhuaman stone walls"}
+{"timestamp":"2026-08-01T05:55:07.180Z","stage":"Stage 2: Voiceover Synthesis","durationMs":4163,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-01T05:55:18.610Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":11430,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-01T05:55:33.769Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":15158,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T05:56:02.802Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":29030,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T05:56:02.882Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":79,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":23515,"duration":21.7,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-01T05:57:50.715Z","stage":"Preflight System Checks","durationMs":197,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T05:59:00.154Z","stage":"Preflight System Checks","durationMs":250,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T05:59:41.382Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":41227,"status":"SUCCESS","title":"Baghdad Battery: 2000-Year-Old Power?","topicSlug":"Baghdad Battery Anomaly"}
+{"timestamp":"2026-08-01T05:59:48.053Z","stage":"Stage 2: Voiceover Synthesis","durationMs":6670,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-01T06:00:11.399Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":23344,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-01T06:00:25.050Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":13650,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T06:00:52.200Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":27148,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T06:00:52.282Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":81,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":19499,"duration":20.7,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-01T06:30:13.304Z","stage":"Preflight System Checks","durationMs":260,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T06:30:42.571Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":29262,"status":"SUCCESS","title":"Dyatlov Pass: What Crushed Them?","topicSlug":"dyatlov pass incident"}
+{"timestamp":"2026-08-01T06:30:45.428Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2843,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-01T10:49:46.162Z","stage":"Preflight System Checks","durationMs":291,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T10:50:11.134Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":24970,"status":"SUCCESS","title":"Scotland's Deadly Dog Bridge Mystery","topicSlug":"Overtoun Bridge dog mystery"}
+{"timestamp":"2026-08-01T10:50:18.891Z","stage":"Stage 2: Voiceover Synthesis","durationMs":7755,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-01T10:50:35.175Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":16282,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-01T10:50:47.563Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":12387,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T10:51:16.764Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":29199,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T10:51:16.863Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":98,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":27303,"duration":18.6,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-01T12:30:24.427Z","stage":"Preflight System Checks","durationMs":281,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T12:30:46.083Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":21654,"status":"SUCCESS","title":"The Map That Shouldn't Exist: Piri Reis Antarctica","topicSlug":"piri reis map anomaly"}
+{"timestamp":"2026-08-01T12:30:49.868Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3783,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-01T12:31:18.488Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":28619,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-01T12:31:38.329Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":19840,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T12:32:16.973Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":38641,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T12:32:17.085Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":111,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":20392,"duration":21.8,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-01T13:54:13.514Z","stage":"Preflight System Checks","durationMs":274,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T14:50:20.399Z","stage":"Preflight System Checks","durationMs":168,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T14:51:05.413Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":45011,"status":"SUCCESS","title":"40-Ton Mystery: Whose Symbols Are These?","topicSlug":"dighton rock carvings"}
+{"timestamp":"2026-08-01T14:51:09.589Z","stage":"Stage 2: Voiceover Synthesis","durationMs":4174,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-01T14:51:37.081Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":27490,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-01T14:51:55.746Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":18663,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T14:52:33.145Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":37396,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T14:52:33.225Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":79,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":33454,"duration":26.5,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-01T17:23:44.511Z","stage":"Preflight System Checks","durationMs":188,"status":"SUCCESS"}
+{"timestamp":"2026-08-01T18:30:05.517Z","stage":"Preflight System Checks","durationMs":101,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T03:33:53.859Z","stage":"Preflight System Checks","durationMs":242,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T06:30:07.840Z","stage":"Preflight System Checks","durationMs":247,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T07:32:43.733Z","stage":"Preflight System Checks","durationMs":266,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T07:32:58.339Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":14603,"status":"SUCCESS","title":"Body Turning to Bone: The Agca Case","topicSlug":"fop stone man disease"}
+{"timestamp":"2026-08-02T07:33:03.820Z","stage":"Stage 2: Voiceover Synthesis","durationMs":5481,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-02T07:33:20.399Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":16578,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-02T07:33:38.396Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":17996,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T07:34:10.018Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":31621,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T07:34:10.108Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":88,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":21935,"duration":20.7,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-02T07:37:16.961Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":186852,"status":"SUCCESS","videoId":"nFaPuBPrqVc"}
+{"timestamp":"2026-08-02T07:37:16.982Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":20,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T09:52:26.535Z","stage":"Preflight System Checks","durationMs":169,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T09:53:07.826Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":41289,"status":"SUCCESS","title":"Tardigrades: Surviving the Vacuum of Space","topicSlug":"tardigrade space survival"}
+{"timestamp":"2026-08-02T09:53:10.218Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2391,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-02T09:53:21.662Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":11442,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-02T09:53:37.683Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":16021,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T09:54:08.925Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":31240,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T09:54:09.057Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":130,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":30609,"duration":20.5,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-02T09:56:22.279Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":133222,"status":"SUCCESS","videoId":"A9ENuPrb0CY"}
+{"timestamp":"2026-08-02T09:56:22.297Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":17,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T12:30:06.931Z","stage":"Preflight System Checks","durationMs":192,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T12:30:07.051Z","stage":"Preflight System Checks","durationMs":112,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T12:30:19.006Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":11952,"status":"SUCCESS","title":"The Bloop: A Vanished Sound Deeper Than Any Creature","topicSlug":"the bloop sound anomaly"}
+{"timestamp":"2026-08-02T12:30:22.130Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3122,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-02T12:30:23.985Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":17051,"status":"SUCCESS","title":"1513 Map Shows Ice-Free Antarctica?","topicSlug":"piri reis map mystery"}
+{"timestamp":"2026-08-02T12:30:26.751Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2764,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-02T12:30:34.509Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":12377,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-02T12:30:51.001Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":24245,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-02T12:30:59.884Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":25374,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T12:31:16.211Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":25206,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T12:32:06.293Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":50080,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T12:32:06.551Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":256,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":32000,"duration":21.3,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-02T12:32:06.783Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":66897,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T12:32:06.836Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":52,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":32341,"duration":21.3,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-02T12:35:46.763Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":220211,"status":"SUCCESS","videoId":"-hz1aTvHjVI"}
+{"timestamp":"2026-08-02T12:35:46.774Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":8,"status":"SUCCESS"}
+{"timestamp":"2026-08-02T12:35:55.554Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":228716,"status":"SUCCESS","videoId":"V2lymcfVoyk"}
+{"timestamp":"2026-08-02T12:35:55.563Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":8,"status":"SUCCESS"}
+{"timestamp":"2026-08-03T12:52:58.399Z","stage":"Preflight System Checks","durationMs":165,"status":"SUCCESS"}
+{"timestamp":"2026-08-03T12:59:38.275Z","stage":"Preflight System Checks","durationMs":162,"status":"SUCCESS"}
+{"timestamp":"2026-08-03T12:59:48.177Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":9900,"status":"SUCCESS","title":"Ancient Baghdad's Forgotten Power?","topicSlug":"Baghdad Battery Ancient Current"}
+{"timestamp":"2026-08-03T12:59:50.552Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2373,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-08-03T13:00:01.517Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":10963,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-03T13:00:19.926Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":18406,"status":"SUCCESS"}
+{"timestamp":"2026-08-03T13:01:11.701Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":51772,"status":"SUCCESS"}
+{"timestamp":"2026-08-03T13:01:12.616Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":894,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":14912,"duration":20.7,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-03T13:02:00.549Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":47929,"status":"SUCCESS","videoId":"cQudRA9-Vhs"}
+{"timestamp":"2026-08-03T13:02:00.567Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":15,"status":"SUCCESS"}
+{"timestamp":"2026-08-03T15:01:57.762Z","stage":"Preflight System Checks","durationMs":191,"status":"SUCCESS"}
+{"timestamp":"2026-08-04T05:31:30.013Z","stage":"Preflight System Checks","durationMs":196,"status":"SUCCESS"}
+{"timestamp":"2026-08-04T06:30:10.592Z","stage":"Preflight System Checks","durationMs":225,"status":"SUCCESS"}
+{"timestamp":"2026-08-04T06:30:36.680Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":26084,"status":"SUCCESS","title":"Havana Syndrome: The Unseen Attack","topicSlug":"havana syndrome mystery"}
+{"timestamp":"2026-08-04T06:30:53.492Z","stage":"Stage 2: Voiceover Synthesis","durationMs":16810,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-08-04T06:31:46.777Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":53284,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-04T06:31:59.411Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":12632,"status":"SUCCESS"}
+{"timestamp":"2026-08-04T06:32:28.393Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":28980,"status":"SUCCESS"}
+{"timestamp":"2026-08-04T06:32:28.585Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":191,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":30873,"duration":22.3,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-04T12:45:50.605Z","stage":"Preflight System Checks","durationMs":601,"status":"SUCCESS"}
+{"timestamp":"2026-08-04T12:49:47.508Z","stage":"Preflight System Checks","durationMs":97,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T12:01:51.652Z","stage":"Preflight System Checks","durationMs":178,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T12:30:07.689Z","stage":"Preflight System Checks","durationMs":439,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T12:30:28.549Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":20855,"status":"SUCCESS","title":"The Lake That Killed 1,746 Silently","topicSlug":"lake nyos limnic eruption"}
+{"timestamp":"2026-08-05T12:30:32.255Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3704,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-05T12:30:45.448Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":13192,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-05T12:30:59.523Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":14074,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T12:31:30.108Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":30582,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T12:31:30.211Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":102,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":34986,"duration":21.2,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-05T12:33:42.140Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":131927,"status":"SUCCESS","videoId":"kyOwxbSAXgs"}
+{"timestamp":"2026-08-05T12:33:42.161Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":19,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T15:02:16.146Z","stage":"Preflight System Checks","durationMs":234,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T15:02:48.728Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":32581,"status":"SUCCESS","title":"70,000 Witnessed This. Science Saw Nothing.","topicSlug":"fatima miracle sun 1917"}
+{"timestamp":"2026-08-05T15:02:50.979Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2249,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-08-05T15:02:58.883Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":7904,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-05T15:03:17.035Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":18151,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T15:03:45.421Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":28385,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T15:03:45.514Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":92,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":16780,"duration":23.3,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-05T15:05:09.320Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":83805,"status":"SUCCESS","videoId":"KRgkzUfZgzc"}
+{"timestamp":"2026-08-05T15:05:09.339Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":17,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T17:14:17.524Z","stage":"Preflight System Checks","durationMs":191,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T18:30:05.529Z","stage":"Preflight System Checks","durationMs":189,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T18:30:32.764Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":27232,"status":"SUCCESS","title":"Tarrare: The Man Who Ate The Unthinkable","topicSlug":"tarrare insatiable hunger"}
+{"timestamp":"2026-08-05T18:30:36.076Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3311,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-05T18:31:01.950Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":25873,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-05T18:31:13.037Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":11076,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T18:31:36.272Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":23234,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T18:31:36.351Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":78,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":15880,"duration":22.2,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-05T18:32:29.607Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":53253,"status":"SUCCESS","videoId":"jrRNGJhxfQw"}
+{"timestamp":"2026-08-05T18:32:29.632Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":24,"status":"SUCCESS"}
+{"timestamp":"2026-08-05T19:03:38.947Z","stage":"Preflight System Checks","durationMs":184,"status":"SUCCESS"}
+{"timestamp":"2026-08-06T03:41:55.571Z","stage":"Preflight System Checks","durationMs":204,"status":"SUCCESS"}
+{"timestamp":"2026-08-06T07:56:59.419Z","stage":"Preflight System Checks","durationMs":229,"status":"SUCCESS"}
+{"timestamp":"2026-08-06T07:57:19.065Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":19643,"status":"SUCCESS","title":"Ukok Princess: Unearthing Ancient Secrets","topicSlug":"siberian ice maiden"}
+{"timestamp":"2026-08-06T07:57:21.689Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2623,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-06T07:58:12.413Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":50723,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-06T07:58:26.940Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":14526,"status":"SUCCESS"}
+{"timestamp":"2026-08-06T07:59:01.967Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":35025,"status":"SUCCESS"}
+{"timestamp":"2026-08-06T07:59:02.075Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":107,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":19401,"duration":21.9,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-06T07:59:18.801Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":16725,"status":"SUCCESS","videoId":"W8LlBQPM2u8"}
+{"timestamp":"2026-08-06T07:59:18.821Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":18,"status":"SUCCESS"}
+{"timestamp":"2026-08-06T15:24:40.237Z","stage":"Preflight System Checks","durationMs":196,"status":"SUCCESS"}
+{"timestamp":"2026-08-06T15:25:17.738Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":37500,"status":"SUCCESS","title":"Europe's Ancient City Burners","topicSlug":"cucuteni-trypillia city burning"}
+{"timestamp":"2026-08-06T15:25:20.323Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2581,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-06T15:25:31.211Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":10886,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-06T15:25:55.379Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":24168,"status":"SUCCESS"}
+{"timestamp":"2026-08-06T15:26:21.947Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":26567,"status":"SUCCESS"}
+{"timestamp":"2026-08-06T15:26:22.031Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":82,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":14448,"duration":20.5,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-06T15:27:13.459Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":51427,"status":"SUCCESS","videoId":"YShH12tQE0Y"}
+{"timestamp":"2026-08-06T15:27:13.477Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":16,"status":"SUCCESS"}
+{"timestamp":"2026-08-06T15:29:00.609Z","stage":"Preflight System Checks","durationMs":84,"status":"SUCCESS"}
+{"timestamp":"2026-08-06T15:29:24.048Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":23439,"status":"SUCCESS","title":"Japan's Underwater Anomaly: What Lies Beneath?","topicSlug":"yonaguni monument japan"}
+{"timestamp":"2026-08-06T15:29:26.972Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2923,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-06T15:29:37.733Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":10759,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-06T15:29:56.298Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":18563,"status":"SUCCESS"}
+{"timestamp":"2026-08-06T15:30:17.468Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":21168,"status":"SUCCESS"}
+{"timestamp":"2026-08-06T15:30:17.537Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":67,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":28038,"duration":22.8,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-07T10:47:55.747Z","stage":"Preflight System Checks","durationMs":227,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T10:48:13.140Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":17391,"status":"SUCCESS","title":"Eilean Mòr: Three Keepers Vanished","topicSlug":"eilean mor mystery"}
+{"timestamp":"2026-08-07T10:48:16.319Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3178,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-07T10:48:25.312Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":8993,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-07T10:48:46.770Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":21457,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T10:49:13.684Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":26913,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T10:49:13.795Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":110,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":15661,"duration":22.9,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-07T10:50:58.349Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":104552,"status":"SUCCESS","videoId":"5yCPbJDRX4c"}
+{"timestamp":"2026-08-07T10:50:58.358Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":8,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T12:31:03.545Z","stage":"Preflight System Checks","durationMs":246,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T12:31:03.544Z","stage":"Preflight System Checks","durationMs":244,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T12:31:18.903Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":15355,"status":"SUCCESS","title":"She Can't Forget ANYTHING Since 1980","topicSlug":"jill price hyperthymesia"}
+{"timestamp":"2026-08-07T12:31:21.723Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2818,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-07T12:31:26.469Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":22922,"status":"SUCCESS","title":"Dyatlov Pass: The Unseen Force","topicSlug":"dyatlov pass incident 1959"}
+{"timestamp":"2026-08-07T12:31:30.932Z","stage":"Stage 2: Voiceover Synthesis","durationMs":4459,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-07T12:31:36.971Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":15246,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-07T12:31:44.471Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":13537,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-07T12:32:07.781Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":23306,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T12:32:31.226Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":23442,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T12:32:31.406Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":179,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":15381,"duration":22.2,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-07T12:34:55.544Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":144138,"status":"SUCCESS","videoId":"Rt_hsjaoJlE"}
+{"timestamp":"2026-08-07T12:34:55.562Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":17,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T15:25:02.105Z","stage":"Preflight System Checks","durationMs":322,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T15:25:37.350Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":35243,"status":"SUCCESS","title":"London's Lethal Fog: December 1952","topicSlug":"great smog london 1952"}
+{"timestamp":"2026-08-07T15:25:40.402Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3049,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-07T15:25:51.560Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":11156,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-07T15:26:07.198Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":15636,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T15:26:34.297Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":27097,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T15:26:34.374Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":75,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":11806,"duration":22,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-07T15:27:15.238Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":40863,"status":"SUCCESS","videoId":"jUjoCTd_edI"}
+{"timestamp":"2026-08-07T15:27:15.291Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":50,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T18:31:07.884Z","stage":"Preflight System Checks","durationMs":227,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T18:31:25.917Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":18029,"status":"SUCCESS","title":"Costa Rica's Perfect Stone Spheres: Vanished Makers","topicSlug":"costa rica stone spheres"}
+{"timestamp":"2026-08-07T18:31:28.407Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2487,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-07T18:31:46.929Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":18520,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-07T18:31:58.688Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":11757,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T18:32:22.533Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":23843,"status":"SUCCESS"}
+{"timestamp":"2026-08-07T18:32:22.625Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":90,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":31599,"duration":19.5,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-07T18:34:14.755Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":112129,"status":"SUCCESS","videoId":"Gd8en9bktWg"}
+{"timestamp":"2026-08-07T18:34:14.775Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":18,"status":"SUCCESS"}
+{"timestamp":"2026-08-08T14:37:12.654Z","stage":"Preflight System Checks","durationMs":173,"status":"SUCCESS"}
+{"timestamp":"2026-08-08T14:44:57.305Z","stage":"Preflight System Checks","durationMs":92,"status":"SUCCESS"}
+{"timestamp":"2026-08-08T14:45:28.803Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":31497,"status":"SUCCESS","title":"Puma Punku: Impossible Stone Cuts?","topicSlug":"puma punku megalithic stonework"}
+{"timestamp":"2026-08-08T14:45:31.715Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2910,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-08-08T14:45:42.674Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":10957,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-08T14:46:00.638Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":17962,"status":"SUCCESS"}
+{"timestamp":"2026-08-08T14:46:28.269Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":27630,"status":"SUCCESS"}
+{"timestamp":"2026-08-08T14:46:28.344Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":74,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":28203,"duration":24.7,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-08T14:48:44.995Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":136649,"status":"SUCCESS","videoId":"p6sieteXAbg"}
+{"timestamp":"2026-08-08T14:48:45.015Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":19,"status":"SUCCESS"}
+{"timestamp":"2026-08-09T04:40:56.722Z","stage":"Preflight System Checks","durationMs":324,"status":"SUCCESS"}
+{"timestamp":"2026-08-09T06:31:08.405Z","stage":"Preflight System Checks","durationMs":207,"status":"SUCCESS"}
+{"timestamp":"2026-08-09T09:35:21.123Z","stage":"Preflight System Checks","durationMs":162,"status":"SUCCESS"}
+{"timestamp":"2026-08-09T12:31:09.170Z","stage":"Preflight System Checks","durationMs":216,"status":"SUCCESS"}
+{"timestamp":"2026-08-09T12:31:09.169Z","stage":"Preflight System Checks","durationMs":217,"status":"SUCCESS"}
+{"timestamp":"2026-08-09T12:31:25.682Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":16508,"status":"SUCCESS","title":"1938 Panic: The Radio That Broke America","topicSlug":"war of the worlds panic 1938"}
+{"timestamp":"2026-08-09T12:31:29.005Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3319,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-09T12:31:30.315Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":21142,"status":"SUCCESS","title":"The Brain Disease That Steals Sleep","topicSlug":"fatal familial insomnia history"}
+{"timestamp":"2026-08-09T12:31:35.928Z","stage":"Stage 2: Voiceover Synthesis","durationMs":5603,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-09T12:31:42.554Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":13548,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-09T12:31:46.073Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":10141,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-09T12:32:07.498Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":21404,"status":"SUCCESS"}
+{"timestamp":"2026-08-09T12:32:31.819Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":24311,"status":"SUCCESS"}
+{"timestamp":"2026-08-09T12:32:32.020Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":200,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":19497,"duration":26.5,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-09T12:33:39.852Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":67830,"status":"SUCCESS","videoId":"wWrmRCJ8YkM"}
+{"timestamp":"2026-08-09T12:33:39.866Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":13,"status":"SUCCESS"}
+{"timestamp":"2026-08-10T08:18:42.766Z","stage":"Preflight System Checks","durationMs":239,"status":"SUCCESS"}
+{"timestamp":"2026-08-10T12:03:55.630Z","stage":"Preflight System Checks","durationMs":235,"status":"SUCCESS"}
+{"timestamp":"2026-08-10T12:31:09.782Z","stage":"Preflight System Checks","durationMs":823,"status":"SUCCESS"}
+{"timestamp":"2026-08-10T12:31:32.515Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":22730,"status":"SUCCESS","title":"Kentucky's Sky Flesh: 1876 Anomaly","topicSlug":"kentucky meat shower 1876"}
+{"timestamp":"2026-08-10T12:31:34.889Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2371,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-08-10T12:31:42.959Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":8069,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-10T12:31:59.192Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":16231,"status":"SUCCESS"}
+{"timestamp":"2026-08-10T12:32:38.664Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":39469,"status":"SUCCESS"}
+{"timestamp":"2026-08-10T12:32:38.926Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":260,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":18271,"duration":20.8,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-10T12:33:09.001Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":30074,"status":"SUCCESS","videoId":"StyecnCPvwo"}
+{"timestamp":"2026-08-10T12:33:09.021Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":18,"status":"SUCCESS"}
+{"timestamp":"2026-08-10T15:21:02.187Z","stage":"Preflight System Checks","durationMs":177,"status":"SUCCESS"}
+{"timestamp":"2026-08-10T15:21:44.740Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":42550,"status":"SUCCESS","title":"1374's Dance Epidemic: Unseen Compulsion?","topicSlug":"dancing mania rhine 1374"}
+{"timestamp":"2026-08-10T15:21:48.809Z","stage":"Stage 2: Voiceover Synthesis","durationMs":4066,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-10T15:22:00.437Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":11627,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-10T15:22:24.438Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":24000,"status":"SUCCESS"}
+{"timestamp":"2026-08-10T15:23:01.536Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":37097,"status":"SUCCESS"}
+{"timestamp":"2026-08-10T15:23:01.661Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":123,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":22736,"duration":21.3,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-10T15:24:37.832Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":96169,"status":"SUCCESS","videoId":"9uXsPWfz5Jo"}
+{"timestamp":"2026-08-10T15:24:37.845Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":11,"status":"SUCCESS"}
+{"timestamp":"2026-08-11T05:29:02.932Z","stage":"Preflight System Checks","durationMs":168,"status":"SUCCESS"}
+{"timestamp":"2026-08-11T06:31:33.702Z","stage":"Preflight System Checks","durationMs":477,"status":"SUCCESS"}
+{"timestamp":"2026-08-11T06:31:49.202Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":15496,"status":"SUCCESS","title":"Nazca Lines: Who Saw Their Secrets?","topicSlug":"nazca lines peru geoglyphs"}
+{"timestamp":"2026-08-11T06:31:52.432Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3228,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-11T06:32:22.336Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":29903,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-11T06:33:28.170Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":65831,"status":"SUCCESS"}
+{"timestamp":"2026-08-11T06:35:04.789Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":96609,"status":"SUCCESS"}
+{"timestamp":"2026-08-11T06:35:05.111Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":321,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":17759,"duration":23.3,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-11T06:41:49.299Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":404186,"status":"SUCCESS","videoId":"L6GnB6ZCGCE"}
+{"timestamp":"2026-08-11T06:41:49.315Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":13,"status":"SUCCESS"}
+{"timestamp":"2026-08-13T17:05:36.882Z","stage":"Preflight System Checks","durationMs":2966,"status":"SUCCESS"}
+{"timestamp":"2026-08-13T17:05:57.820Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":20935,"status":"SUCCESS","title":"Tacoma Bridge: The Unseen Killer Frequency","topicSlug":"tacoma narrows bridge collapse"}
+{"timestamp":"2026-08-13T17:06:04.106Z","stage":"Stage 2: Voiceover Synthesis","durationMs":6285,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-08-13T17:07:23.033Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":78925,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-13T17:07:32.050Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":9015,"status":"SUCCESS"}
+{"timestamp":"2026-08-13T17:08:03.820Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":31769,"status":"SUCCESS"}
+{"timestamp":"2026-08-13T17:08:03.900Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":77,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":17380,"duration":19.2,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-13T17:08:34.046Z","stage":"Preflight System Checks","durationMs":103,"status":"SUCCESS"}
+{"timestamp":"2026-08-13T17:09:09.914Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":66013,"status":"SUCCESS","videoId":"jz-o7-KqVSw"}
+{"timestamp":"2026-08-13T17:09:10.003Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":88,"status":"SUCCESS"}
+{"timestamp":"2026-08-13T17:09:36.759Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":62709,"status":"SUCCESS","title":"Krakatoa's Earth-Shaking Roar","topicSlug":"krakatoa eruption sound wave"}
+{"timestamp":"2026-08-13T17:09:40.532Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3772,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-13T17:09:49.730Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":9196,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-13T17:09:59.892Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":10160,"status":"SUCCESS"}
+{"timestamp":"2026-08-13T17:10:20.597Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":20703,"status":"SUCCESS"}
+{"timestamp":"2026-08-13T17:10:20.646Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":48,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":19609,"duration":23.4,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-13T17:11:21.170Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":60522,"status":"SUCCESS","videoId":"tjqpAhGwgJ0"}
+{"timestamp":"2026-08-13T17:11:21.179Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":7,"status":"SUCCESS"}
+{"timestamp":"2026-08-14T12:54:22.682Z","stage":"Preflight System Checks","durationMs":174,"status":"SUCCESS"}
+{"timestamp":"2026-08-14T13:03:33.131Z","stage":"Preflight System Checks","durationMs":241,"status":"SUCCESS"}
+{"timestamp":"2026-08-14T13:12:54.909Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":561776,"status":"SUCCESS","title":"Egypt's Screaming Mummy Secret","topicSlug":"screaming mummy prince pentawere"}
+{"timestamp":"2026-08-14T13:12:57.982Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3070,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-14T13:13:13.968Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":15984,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-14T13:13:34.140Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":20171,"status":"SUCCESS"}
+{"timestamp":"2026-08-14T13:14:11.602Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":37460,"status":"SUCCESS"}
+{"timestamp":"2026-08-14T13:14:11.814Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":211,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":19156,"duration":21.8,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-14T13:15:03.310Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":51494,"status":"SUCCESS","videoId":"B59cTWUPSWE"}
+{"timestamp":"2026-08-14T13:15:03.333Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":22,"status":"SUCCESS"}
+{"timestamp":"2026-08-14T15:58:26.028Z","stage":"Preflight System Checks","durationMs":173,"status":"SUCCESS"}
+{"timestamp":"2026-08-14T15:58:43.690Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":17661,"status":"SUCCESS","title":"The Wow! Signal: A Message From The Void?","topicSlug":"wow signal 1977 big ear"}
+{"timestamp":"2026-08-14T15:58:46.345Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2654,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-14T16:12:28.690Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":822343,"status":"SUCCESS","scenesCount":3}
+{"timestamp":"2026-08-14T16:12:35.667Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":6975,"status":"SUCCESS"}
+{"timestamp":"2026-08-14T16:13:02.108Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":26440,"status":"SUCCESS"}
+{"timestamp":"2026-08-14T16:13:02.177Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":67,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":9364,"duration":22.3,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-14T16:14:29.089Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":86911,"status":"SUCCESS","videoId":"YQ92gw23gsc"}
+{"timestamp":"2026-08-14T16:14:29.099Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":9,"status":"SUCCESS"}
+{"timestamp":"2026-08-15T08:16:40.260Z","stage":"Preflight System Checks","durationMs":251,"status":"SUCCESS"}
+{"timestamp":"2026-08-15T09:13:38.746Z","stage":"Preflight System Checks","durationMs":429,"status":"SUCCESS"}
+{"timestamp":"2026-08-15T09:14:39.459Z","stage":"Preflight System Checks","durationMs":232,"status":"SUCCESS"}
+{"timestamp":"2026-08-15T09:15:49.892Z","stage":"Preflight System Checks","durationMs":154,"status":"SUCCESS"}
+{"timestamp":"2026-08-15T09:17:34.461Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":104568,"status":"SUCCESS","title":"The Awful Sleep: Trapped Conscious for Decades","topicSlug":"encephalitis lethargica epidemic"}
+{"timestamp":"2026-08-15T09:17:37.937Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3473,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-15T09:17:47.257Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":9319,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-15T09:17:58.951Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":11692,"status":"SUCCESS"}
+{"timestamp":"2026-08-15T09:18:27.786Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":28834,"status":"SUCCESS"}
+{"timestamp":"2026-08-15T09:18:27.848Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":61,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":14297,"duration":24.7,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-15T09:19:04.321Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":36471,"status":"SUCCESS","videoId":"9pM7kO1avp0"}
+{"timestamp":"2026-08-15T09:19:04.325Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":4,"status":"SUCCESS"}
+{"timestamp":"2026-08-15T12:30:54.512Z","stage":"Preflight System Checks","durationMs":861,"status":"SUCCESS"}
+{"timestamp":"2026-08-15T12:31:13.845Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":19330,"status":"SUCCESS","title":"River Vanishes: Devil's Kettle Secret","topicSlug":"devil's kettle vanishing river"}
+{"timestamp":"2026-08-15T12:31:16.823Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2975,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-15T12:31:33.674Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":16850,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-15T12:31:53.408Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":19732,"status":"SUCCESS"}
+{"timestamp":"2026-08-15T12:32:27.086Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":33677,"status":"SUCCESS"}
+{"timestamp":"2026-08-15T12:32:27.345Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":255,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":50718,"duration":20.6,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-15T12:34:39.040Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":131694,"status":"SUCCESS","videoId":"Zm2j81U39L4"}
+{"timestamp":"2026-08-15T12:34:39.062Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":21,"status":"SUCCESS"}
+{"timestamp":"2026-08-15T16:55:18.140Z","stage":"Preflight System Checks","durationMs":214,"status":"SUCCESS"}
+{"timestamp":"2026-08-15T18:30:14.013Z","stage":"Preflight System Checks","durationMs":148,"status":"SUCCESS"}
+{"timestamp":"2026-08-17T10:40:39.494Z","stage":"Preflight System Checks","durationMs":182,"status":"SUCCESS"}
+{"timestamp":"2026-08-17T10:47:54.246Z","stage":"Preflight System Checks","durationMs":169,"status":"SUCCESS"}
+{"timestamp":"2026-08-17T12:31:07.596Z","stage":"Preflight System Checks","durationMs":224,"status":"SUCCESS"}
+{"timestamp":"2026-08-17T12:31:20.718Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":13119,"status":"SUCCESS","title":"Frozen Hamster: Revival 0°C","topicSlug":"hamster cryo-revival smith 1951"}
+{"timestamp":"2026-08-17T12:31:23.692Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2972,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-17T12:31:47.737Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":24042,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-17T12:32:02.846Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":15107,"status":"SUCCESS"}
+{"timestamp":"2026-08-17T12:32:35.203Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":32356,"status":"SUCCESS"}
+{"timestamp":"2026-08-17T12:32:35.396Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":192,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":17508,"duration":22.9,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-17T12:33:24.477Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":49080,"status":"SUCCESS","videoId":"RvvjqEUiMuY"}
+{"timestamp":"2026-08-17T12:33:24.500Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":21,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T02:19:02.697Z","stage":"Preflight System Checks","durationMs":968,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T02:19:36.612Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":33913,"status":"SUCCESS","title":"Göbekli Tepe: The Buried Mystery of 9,600 BCE","topicSlug":"gobekli tepe buried temples"}
+{"timestamp":"2026-08-18T02:19:39.918Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3304,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-18T02:19:53.234Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":13315,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-18T02:20:28.431Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":35197,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T02:21:45.854Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":77420,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T02:21:45.970Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":115,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":21661,"duration":23.8,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-18T02:22:48.096Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":62125,"status":"SUCCESS","videoId":"P5EEyK2lzAE"}
+{"timestamp":"2026-08-18T02:22:48.105Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":8,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T05:27:55.333Z","stage":"Preflight System Checks","durationMs":227,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T06:31:17.740Z","stage":"Preflight System Checks","durationMs":283,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T06:33:04.927Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":107183,"status":"SUCCESS","title":"The Man Who Vanished From Taured","topicSlug":"man from taured mystery"}
+{"timestamp":"2026-08-18T06:33:08.403Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3449,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-18T06:34:03.194Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":54790,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-18T06:34:16.704Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":13508,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T06:34:54.995Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":38288,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T06:34:55.204Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":207,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":19171,"duration":21.8,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-18T06:38:21.963Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":206757,"status":"SUCCESS","videoId":"WAS_cqFh8BE"}
+{"timestamp":"2026-08-18T06:38:22.008Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":44,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T09:16:14.943Z","stage":"Preflight System Checks","durationMs":191,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T09:16:34.210Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":19264,"status":"SUCCESS","title":"Laughing Death: Kuru's Primal Origin","topicSlug":"kuru laughing sickness PNG"}
+{"timestamp":"2026-08-18T09:16:37.097Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2887,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-18T09:17:14.729Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":37629,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-18T09:17:28.155Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":13424,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T09:18:00.142Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":31986,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T09:18:00.267Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":124,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":21126,"duration":20.4,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-18T09:18:35.228Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":34960,"status":"SUCCESS","videoId":"vY421dgIN2M"}
+{"timestamp":"2026-08-18T09:18:35.240Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":9,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T12:05:26.799Z","stage":"Preflight System Checks","durationMs":174,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T12:06:05.166Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":38366,"status":"SUCCESS","title":"Imposter Parents: A 1923 Case","topicSlug":"capgras syndrome 1923"}
+{"timestamp":"2026-08-18T12:06:07.882Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2713,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-18T12:06:18.380Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":10496,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-18T12:06:55.300Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":36919,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T12:08:20.948Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":85645,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T12:08:21.162Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":210,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":16727,"duration":20.9,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-18T12:09:12.662Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":51499,"status":"SUCCESS","videoId":"4XKta-8O8j4"}
+{"timestamp":"2026-08-18T12:09:12.690Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":25,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T12:31:08.215Z","stage":"Preflight System Checks","durationMs":163,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T12:31:08.214Z","stage":"Preflight System Checks","durationMs":163,"status":"SUCCESS"}
+{"timestamp":"2026-08-18T12:34:26.428Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":198211,"status":"SUCCESS","title":"The Oslo Woman Who Spoke Like the Enemy","topicSlug":"foreign accent syndrome 1941 oslo"}
+{"timestamp":"2026-08-19T05:23:48.839Z","stage":"Preflight System Checks","durationMs":191,"status":"SUCCESS"}
+{"timestamp":"2026-08-19T05:24:10.034Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":21194,"status":"SUCCESS","title":"Animal Survives BELOW Freezing?","topicSlug":"arctic ground squirrel cryo"}
+{"timestamp":"2026-08-19T05:24:13.269Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3233,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-19T05:24:27.821Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":14550,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-19T05:25:02.810Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":34987,"status":"SUCCESS"}
+{"timestamp":"2026-08-19T05:25:49.658Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":46845,"status":"SUCCESS"}
+{"timestamp":"2026-08-19T05:25:49.738Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":79,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":19541,"duration":22.5,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-19T05:26:36.703Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":46964,"status":"SUCCESS","videoId":"-4XcRtgfQ7I"}
+{"timestamp":"2026-08-19T05:26:36.714Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":10,"status":"SUCCESS"}
+{"timestamp":"2026-08-19T06:33:55.744Z","stage":"Preflight System Checks","durationMs":1642,"status":"SUCCESS"}
+{"timestamp":"2026-08-19T06:35:14.856Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":79110,"status":"SUCCESS","title":"The Rock That Rewrites American History","topicSlug":"dighton rock massachusetts petroglyphs"}
+{"timestamp":"2026-08-19T06:35:18.579Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3692,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-19T06:35:38.583Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":20002,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-19T06:36:32.748Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":53984,"status":"SUCCESS"}
+{"timestamp":"2026-08-19T06:39:27.829Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":175049,"status":"SUCCESS"}
+{"timestamp":"2026-08-19T06:39:35.366Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":7492,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":19238,"duration":20.9,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-19T06:40:28.313Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":52946,"status":"SUCCESS","videoId":"wE1m8FeLDjo"}
+{"timestamp":"2026-08-19T06:40:28.344Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":29,"status":"SUCCESS"}
+{"timestamp":"2026-08-19T12:09:28.090Z","stage":"Preflight System Checks","durationMs":182,"status":"SUCCESS"}
+{"timestamp":"2026-08-19T12:31:14.897Z","stage":"Preflight System Checks","durationMs":477,"status":"SUCCESS"}
+{"timestamp":"2026-08-19T12:31:14.899Z","stage":"Preflight System Checks","durationMs":479,"status":"SUCCESS"}
+{"timestamp":"2026-08-19T12:31:45.216Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":30313,"status":"SUCCESS","title":"Ourang Medan: The Ship of Frozen Fear","topicSlug":"ourang medan ghost ship 1947"}
+{"timestamp":"2026-08-19T12:31:47.881Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2662,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-19T12:31:56.045Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":41142,"status":"SUCCESS","title":"25 CM: The Fungus's Deadly Precision","topicSlug":"ophiocordyceps zombie ant"}
+{"timestamp":"2026-08-19T12:31:59.508Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3462,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-19T12:32:01.971Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":14087,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-19T12:32:18.270Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":18760,"status":"SUCCESS","scenesCount":3}
+{"timestamp":"2026-08-19T13:40:01.312Z","stage":"Preflight System Checks","durationMs":188,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T03:45:29.820Z","stage":"Preflight System Checks","durationMs":1944,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T04:03:27.629Z","stage":"Preflight System Checks","durationMs":397,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T04:03:47.604Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":19970,"status":"SUCCESS","title":"Mohenjo-Daro: The City That Just Vanished","topicSlug":"mohenjo daro lost city"}
+{"timestamp":"2026-08-20T04:03:51.125Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3518,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-20T04:04:00.966Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":9836,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-20T04:04:40.109Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":39141,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T04:05:46.036Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":65926,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T04:05:46.107Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":69,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":25089,"duration":24.1,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-20T04:06:29.354Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":43246,"status":"SUCCESS","videoId":"F38Y95Oy89w"}
+{"timestamp":"2026-08-20T04:06:29.380Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":22,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T04:10:43.964Z","stage":"Preflight System Checks","durationMs":167,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T04:11:33.116Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":49151,"status":"SUCCESS","title":"The Taos Hum: A Sound Only Some Hear","topicSlug":"taos hum unexplained sound"}
+{"timestamp":"2026-08-20T04:11:37.452Z","stage":"Stage 2: Voiceover Synthesis","durationMs":4331,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-20T04:11:50.640Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":13184,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-20T04:12:35.160Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":44517,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T04:13:42.280Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":67117,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T04:13:42.402Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":120,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":15221,"duration":19.8,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-20T04:15:07.014Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":84611,"status":"SUCCESS","videoId":"uC9UuYtRF9A"}
+{"timestamp":"2026-08-20T04:15:07.044Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":25,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T05:17:23.257Z","stage":"Preflight System Checks","durationMs":439,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T05:17:38.556Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":15296,"status":"SUCCESS","title":"Unbroken Cipher: The Voynich Manuscript","topicSlug":"voynich manuscript decipherment"}
+{"timestamp":"2026-08-20T05:17:44.045Z","stage":"Stage 2: Voiceover Synthesis","durationMs":5478,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-20T05:17:58.672Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":14624,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-20T05:19:02.332Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":63658,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T05:22:00.995Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":178660,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T05:22:01.230Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":224,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":11630,"duration":20.3,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-20T05:22:47.827Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":46591,"status":"SUCCESS","videoId":"DqIjXLJ21Y8"}
+{"timestamp":"2026-08-20T05:22:47.847Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":17,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T06:31:55.532Z","stage":"Preflight System Checks","durationMs":476,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T06:32:30.847Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":35310,"status":"SUCCESS","title":"The Green Children of Woolpit (1150)","topicSlug":"green children woolpit 1150"}
+{"timestamp":"2026-08-20T06:32:35.048Z","stage":"Stage 2: Voiceover Synthesis","durationMs":4194,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-08-20T06:32:52.072Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":17020,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-20T06:34:07.382Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":75306,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T06:36:43.213Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":155823,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T06:36:43.994Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":777,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":14361,"duration":19.6,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-20T12:09:29.848Z","stage":"Preflight System Checks","durationMs":149,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T12:10:51.173Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":81324,"status":"SUCCESS","title":"The Jellyfish That Cheats Death","topicSlug":"immortal jellyfish biology"}
+{"timestamp":"2026-08-20T12:10:54.045Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2864,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-20T12:11:05.234Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":11185,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-20T12:11:54.318Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":49081,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T12:14:59.528Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":185207,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T12:14:59.831Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":302,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":20296,"duration":22.5,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-20T12:16:40.861Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":101026,"status":"SUCCESS","videoId":"n05qmS9SsMs"}
+{"timestamp":"2026-08-20T12:16:40.875Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":12,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T12:31:39.043Z","stage":"Preflight System Checks","durationMs":909,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T12:32:45.229Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":66183,"status":"SUCCESS","title":"Ancient Computer: 150 BC Time Machine Found?","topicSlug":"antikythera mechanism ancient computer"}
+{"timestamp":"2026-08-20T12:32:48.253Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3020,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-20T12:32:59.318Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":11062,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-20T12:34:12.214Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":72895,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T12:35:57.397Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":105180,"status":"SUCCESS"}
+{"timestamp":"2026-08-20T12:35:57.593Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":191,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":24924,"duration":22.4,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-20T12:38:24.872Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":147278,"status":"SUCCESS","videoId":"ltN889fihGQ"}
+{"timestamp":"2026-08-20T12:38:24.896Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":21,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T04:31:25.273Z","stage":"Preflight System Checks","durationMs":172,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T06:31:35.480Z","stage":"Preflight System Checks","durationMs":329,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T06:32:21.324Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":45840,"status":"SUCCESS","title":"Hot Water Freezes First? The Mpemba Effect","topicSlug":"mpemba effect hot freezes first"}
+{"timestamp":"2026-08-21T06:32:24.723Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3391,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-21T06:32:39.869Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":15144,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-21T06:33:31.219Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":51347,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T06:34:45.842Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":74620,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T06:34:46.096Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":248,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":14973,"duration":22,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-21T06:36:13.766Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":87669,"status":"SUCCESS","videoId":"STPM-UlE_XE"}
+{"timestamp":"2026-08-21T06:36:13.794Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":25,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T08:59:58.674Z","stage":"Preflight System Checks","durationMs":366,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T09:00:23.666Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":24989,"status":"SUCCESS","title":"The Patient Who Knew She Was Dead","topicSlug":"cotard delusion walking corpse"}
+{"timestamp":"2026-08-21T09:00:26.997Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3322,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-21T09:00:36.189Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":9189,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-21T09:01:14.473Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":38281,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T09:02:18.852Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":64375,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T09:02:18.967Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":113,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":12757,"duration":20.2,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-21T09:03:00.568Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":41599,"status":"SUCCESS","videoId":"sVe6oFIYfDY"}
+{"timestamp":"2026-08-21T09:03:00.589Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":20,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T11:41:09.647Z","stage":"Preflight System Checks","durationMs":311,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T11:41:27.200Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":17550,"status":"SUCCESS","title":"The Day Science Caught Ball Lightning","topicSlug":"ball lightning qinghai 2012"}
+{"timestamp":"2026-08-21T11:41:32.472Z","stage":"Stage 2: Voiceover Synthesis","durationMs":5255,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-21T11:41:43.668Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":11190,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-21T11:43:15.222Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":91550,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T11:44:51.410Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":96185,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T11:44:51.596Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":181,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":33458,"duration":23.4,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-21T11:45:25.089Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":33490,"status":"SUCCESS","videoId":"8QotJKOa5B4"}
+{"timestamp":"2026-08-21T11:45:25.110Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":19,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T12:31:04.323Z","stage":"Preflight System Checks","durationMs":334,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T12:31:04.325Z","stage":"Preflight System Checks","durationMs":334,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T12:32:39.318Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":94985,"status":"SUCCESS","title":"Saqqara Bird: Ancient Egypt's Secret Glider?","topicSlug":"saqqara bird ancient glider"}
+{"timestamp":"2026-08-21T12:32:41.746Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2421,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-08-21T12:32:49.611Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":7861,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-21T12:33:20.094Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":30480,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T12:34:05.237Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":45141,"status":"SUCCESS"}
+{"timestamp":"2026-08-21T12:34:05.317Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":79,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":12756,"duration":21.2,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-21T12:35:35.352Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":90035,"status":"SUCCESS","videoId":"Tp4bOLB1MZk"}
+{"timestamp":"2026-08-21T12:35:35.405Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":49,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T02:41:31.565Z","stage":"Preflight System Checks","durationMs":187,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T06:31:38.554Z","stage":"Preflight System Checks","durationMs":507,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T06:32:08.229Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":29672,"status":"SUCCESS","title":"Did Our Life Begin In Space?","topicSlug":"murchison meteorite origins"}
+{"timestamp":"2026-08-22T06:32:11.922Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3681,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-22T06:32:19.196Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":7272,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-22T06:33:21.942Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":62743,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T06:35:00.138Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":98194,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T06:35:00.333Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":191,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":29750,"duration":22.9,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-22T06:36:39.271Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":98936,"status":"SUCCESS","videoId":"KW-b1Gb39FA"}
+{"timestamp":"2026-08-22T06:36:39.296Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":22,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T07:25:26.413Z","stage":"Preflight System Checks","durationMs":171,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T07:26:13.577Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":47162,"status":"SUCCESS","title":"Giza Pyramid: Impossible Precision","topicSlug":"giza pyramid casing precision"}
+{"timestamp":"2026-08-22T07:26:17.323Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3743,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-22T07:26:26.440Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":9115,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-22T07:27:21.005Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":54563,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T07:28:34.362Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":73354,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T07:28:34.573Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":206,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":20455,"duration":20.7,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-22T07:30:09.135Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":94559,"status":"SUCCESS","videoId":"vZZBDx3D-vQ"}
+{"timestamp":"2026-08-22T07:30:09.147Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":11,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T08:22:35.029Z","stage":"Preflight System Checks","durationMs":173,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T15:04:52.677Z","stage":"Preflight System Checks","durationMs":176,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T15:06:04.177Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":71499,"status":"SUCCESS","title":"Honduras: Fish Rain Mystery","topicSlug":"yoro fish rain honduras"}
+{"timestamp":"2026-08-22T15:06:09.492Z","stage":"Stage 2: Voiceover Synthesis","durationMs":5307,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-22T15:06:24.492Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":14996,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-22T15:07:33.936Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":69443,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T15:08:46.816Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":72876,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T15:08:46.945Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":128,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":21605,"duration":21,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-22T15:10:07.829Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":80883,"status":"SUCCESS","videoId":"mQotvx1Vzfk"}
+{"timestamp":"2026-08-22T15:10:07.842Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":11,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T15:12:09.677Z","stage":"Preflight System Checks","durationMs":238,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T15:12:41.078Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":31395,"status":"SUCCESS","title":"1925: The Stray Dog That Almost Started a War","topicSlug":"stray dog war 1925"}
+{"timestamp":"2026-08-22T15:12:45.251Z","stage":"Stage 2: Voiceover Synthesis","durationMs":4169,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-22T15:12:54.454Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":9201,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-22T15:13:43.643Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":49187,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T15:14:48.882Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":65233,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T15:14:49.020Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":136,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":20962,"duration":23.4,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-22T15:17:13.496Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":144474,"status":"SUCCESS","videoId":"fBAc5G8BkxE"}
+{"timestamp":"2026-08-22T15:17:13.505Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":8,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T18:31:40.599Z","stage":"Preflight System Checks","durationMs":371,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T18:32:40.895Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":60293,"status":"SUCCESS","title":"Body Turned to Ash: Mary Reeser Mystery","topicSlug":"mary reeser shc 1951"}
+{"timestamp":"2026-08-22T18:32:44.590Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3692,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-22T18:32:55.163Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":10571,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-22T18:33:51.139Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":55973,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T18:35:08.018Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":76875,"status":"SUCCESS"}
+{"timestamp":"2026-08-22T18:35:08.229Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":207,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":17118,"duration":24.7,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-22T18:37:03.376Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":115144,"status":"SUCCESS","videoId":"GvxXg7_dfig"}
+{"timestamp":"2026-08-22T18:37:03.399Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":21,"status":"SUCCESS"}
+{"timestamp":"2026-08-23T04:42:32.070Z","stage":"Preflight System Checks","durationMs":173,"status":"SUCCESS"}
+{"timestamp":"2026-08-23T06:31:22.542Z","stage":"Preflight System Checks","durationMs":374,"status":"SUCCESS"}
+{"timestamp":"2026-08-23T06:31:39.016Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":16471,"status":"SUCCESS","title":"The Baghdad Battery: An Ancient Electrical Mystery","topicSlug":"baghdad battery parthian artifact"}
+{"timestamp":"2026-08-23T06:31:41.733Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2712,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-23T06:32:02.524Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":20784,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-23T06:32:52.335Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":49808,"status":"SUCCESS"}
+{"timestamp":"2026-08-23T06:34:31.496Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":99158,"status":"SUCCESS"}
+{"timestamp":"2026-08-23T06:34:31.848Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":350,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":24188,"duration":22,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-23T09:08:44.516Z","stage":"Preflight System Checks","durationMs":190,"status":"SUCCESS"}
+{"timestamp":"2026-08-23T12:31:28.540Z","stage":"Preflight System Checks","durationMs":311,"status":"SUCCESS"}
+{"timestamp":"2026-08-23T13:02:47.453Z","stage":"Preflight System Checks","durationMs":197,"status":"SUCCESS"}
+{"timestamp":"2026-08-24T02:06:50.145Z","stage":"Preflight System Checks","durationMs":189,"status":"SUCCESS"}
+{"timestamp":"2026-08-24T05:31:37.219Z","stage":"Preflight System Checks","durationMs":193,"status":"SUCCESS"}
+{"timestamp":"2026-08-24T10:41:25.700Z","stage":"Preflight System Checks","durationMs":349,"status":"SUCCESS"}
+{"timestamp":"2026-08-24T12:32:15.203Z","stage":"Preflight System Checks","durationMs":707,"status":"SUCCESS"}
+{"timestamp":"2026-08-24T12:32:15.204Z","stage":"Preflight System Checks","durationMs":675,"status":"SUCCESS"}
+{"timestamp":"2026-08-24T12:32:40.294Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":25082,"status":"SUCCESS","title":"We Sent a Map to Aliens","topicSlug":"voyager golden record map"}
+{"timestamp":"2026-08-24T12:32:43.688Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3392,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-08-24T12:32:56.435Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":12737,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-24T12:32:57.891Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":42682,"status":"SUCCESS","title":"The Laughter That Closed Schools (1962)","topicSlug":"tanganyika laughter epidemic 1962"}
+{"timestamp":"2026-08-24T12:33:05.868Z","stage":"Stage 2: Voiceover Synthesis","durationMs":7773,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-24T12:33:38.909Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":32603,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-24T12:34:41.724Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":105250,"status":"SUCCESS"}
+{"timestamp":"2026-08-24T12:36:35.291Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":176251,"status":"SUCCESS"}
+{"timestamp":"2026-08-24T12:41:14.864Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":393047,"status":"SUCCESS"}
+{"timestamp":"2026-08-24T12:41:15.804Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":838,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":16640,"duration":19.8,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-24T12:41:36.532Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":301237,"status":"SUCCESS"}
+{"timestamp":"2026-08-24T12:41:36.660Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":126,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":20111,"duration":24,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-24T12:43:44.092Z","stage":"Preflight System Checks","durationMs":218,"status":"SUCCESS"}
+{"timestamp":"2026-08-24T16:08:53.479Z","stage":"Preflight System Checks","durationMs":178,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T02:20:09.015Z","stage":"Preflight System Checks","durationMs":193,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T05:43:03.438Z","stage":"Preflight System Checks","durationMs":7621,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T05:43:38.652Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":35183,"status":"SUCCESS","title":"Nimitz Tic-Tac: Physics Defied","topicSlug":"Nimitz Tic-Tac UFO 2004"}
+{"timestamp":"2026-08-25T05:43:41.533Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2873,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-25T05:44:22.965Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":41429,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-25T05:45:23.332Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":60364,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T05:47:56.995Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":153657,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T05:47:59.706Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":2464,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":15331,"duration":20.6,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-25T05:49:16.207Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":75546,"status":"SUCCESS","videoId":"cmOWqxX-A2I"}
+{"timestamp":"2026-08-25T05:49:16.251Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":38,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T06:31:31.388Z","stage":"Preflight System Checks","durationMs":603,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T10:58:39.222Z","stage":"Preflight System Checks","durationMs":308,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T12:31:35.351Z","stage":"Preflight System Checks","durationMs":545,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T12:31:35.359Z","stage":"Preflight System Checks","durationMs":556,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T12:31:55.592Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":20230,"status":"SUCCESS","title":"Giza: The Missing Pyramid Secret","topicSlug":"giza pyramid capstone"}
+{"timestamp":"2026-08-25T12:31:58.247Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2653,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-25T12:32:09.508Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":11260,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-25T12:32:57.156Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":81787,"status":"SUCCESS","title":"The Bloop: What Lurks Beneath the Pacific?","topicSlug":"bloop ocean signal 1997"}
+{"timestamp":"2026-08-25T12:33:01.317Z","stage":"Stage 2: Voiceover Synthesis","durationMs":4025,"status":"SUCCESS","voice":"en-US-ChristopherNeural"}
+{"timestamp":"2026-08-25T12:33:04.485Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":54975,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T12:33:18.002Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":16653,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-25T12:34:33.192Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":75188,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T12:36:13.790Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":100593,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T12:36:13.966Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":175,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":40151,"duration":22.7,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-25T12:37:02.338Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":48372,"status":"SUCCESS","videoId":"Bb6p_ucGe3A"}
+{"timestamp":"2026-08-25T12:37:02.359Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":20,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T15:26:18.461Z","stage":"Preflight System Checks","durationMs":254,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T15:26:55.880Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":37417,"status":"SUCCESS","title":"Ancient Baghdad Battery: Current?","topicSlug":"Baghdad Battery Anomaly"}
+{"timestamp":"2026-08-25T15:26:59.033Z","stage":"Stage 2: Voiceover Synthesis","durationMs":3151,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-08-25T15:27:10.284Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":11249,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-25T15:28:09.965Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":59680,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T15:29:40.640Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":90672,"status":"SUCCESS"}
+{"timestamp":"2026-08-25T15:29:40.780Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":138,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":24613,"duration":20.6,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-25T15:30:36.575Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":55794,"status":"SUCCESS","videoId":"u0RFsqezxSk"}
+{"timestamp":"2026-08-25T15:30:36.595Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":18,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T02:23:33.671Z","stage":"Preflight System Checks","durationMs":174,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T02:24:17.493Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":43820,"status":"SUCCESS","title":"Lake Peigneur Vanished: The Day it Drained","topicSlug":"lake peigneur disaster 1980"}
+{"timestamp":"2026-08-26T02:24:38.792Z","stage":"Stage 2: Voiceover Synthesis","durationMs":21296,"status":"SUCCESS","voice":"en-GB-RyanNeural"}
+{"timestamp":"2026-08-26T02:25:01.803Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":23009,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-26T02:26:17.964Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":76159,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T02:28:02.406Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":104441,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T02:28:02.527Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":120,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":31521,"duration":22.4,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-26T02:30:09.801Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":127273,"status":"SUCCESS","videoId":"laccTyPz8kw"}
+{"timestamp":"2026-08-26T02:30:09.823Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":19,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T05:16:31.627Z","stage":"Preflight System Checks","durationMs":1110,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T06:31:30.253Z","stage":"Preflight System Checks","durationMs":226,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T11:39:28.775Z","stage":"Preflight System Checks","durationMs":169,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T12:31:21.611Z","stage":"Preflight System Checks","durationMs":289,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T12:31:21.599Z","stage":"Preflight System Checks","durationMs":290,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T12:31:58.262Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":36642,"status":"SUCCESS","title":"LA 1942: Air Raid on Nothing?","topicSlug":"battle los angeles 1942"}
+{"timestamp":"2026-08-26T12:32:02.491Z","stage":"Stage 2: Voiceover Synthesis","durationMs":4223,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-08-26T12:32:09.549Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":7057,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-26T12:32:20.133Z","stage":"Stage 1: Script Generation & Quality Gate","durationMs":58516,"status":"SUCCESS","title":"3 Billion-Year-Old Spheres: Impossible?","topicSlug":"klerksdorp spheres anomaly"}
+{"timestamp":"2026-08-26T12:32:22.491Z","stage":"Stage 2: Voiceover Synthesis","durationMs":2298,"status":"SUCCESS","voice":"en-US-GuyNeural"}
+{"timestamp":"2026-08-26T12:32:45.523Z","stage":"Stage 3: Pexels B-Roll Acquisition","durationMs":22992,"status":"SUCCESS","scenesCount":5}
+{"timestamp":"2026-08-26T12:32:49.064Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":39513,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T12:33:36.364Z","stage":"Stage 4a: Multi-Scene Video Compilation","durationMs":50800,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T12:35:36.489Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":167405,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T12:35:37.425Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":890,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":18688,"duration":21.3,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-26T12:35:44.501Z","stage":"Stage 4b: Whisper Dynamic Subtitles","durationMs":128134,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T12:35:44.607Z","stage":"Stage 4c: Media Render Integrity Check","durationMs":103,"status":"SUCCESS","filePath":"K:\\1.Projects\\youtube\\output_short.mp4","sizeKb":22902,"duration":18.9,"width":1080,"height":1920,"hasAudio":true,"codecVideo":"h264","codecAudio":"aac"}
+{"timestamp":"2026-08-26T12:37:11.142Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":93688,"status":"SUCCESS","videoId":"7R6bYW3KRfw"}
+{"timestamp":"2026-08-26T12:37:11.158Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":14,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T12:37:21.776Z","stage":"Stage 5: YouTube Upload & Scheduling","durationMs":97166,"status":"SUCCESS","videoId":"pCA1Y82IH7k"}
+{"timestamp":"2026-08-26T12:37:21.798Z","stage":"Stage 6: Memory & Analytics Logging","durationMs":20,"status":"SUCCESS"}
+{"timestamp":"2026-08-26T15:52:57.874Z","stage":"Preflight System Checks","durationMs":212,"status":"SUCCESS"}
+{"timestamp":"2026-08-29T05:22:54.126Z","stage":"Preflight System Checks","durationMs":277,"status":"SUCCESS"}
+{"timestamp":"2026-08-29T05:32:08.251Z","stage":"Preflight System Checks","durationMs":301,"status":"SUCCESS"}
+{"timestamp":"2026-08-29T06:35:35.112Z","stage":"Preflight System Checks","durationMs":851,"status":"SUCCESS"}
+{"timestamp":"2026-08-29T07:29:52.802Z","stage":"Preflight System Checks","durationMs":198,"status":"SUCCESS"}
+{"timestamp":"2026-08-29T07:30:55.412Z","stage":"Preflight System Checks","durationMs":390,"status":"SUCCESS"}
+{"timestamp":"2026-08-29T07:32:07.649Z","stage":"Preflight System Checks","durationMs":146,"status":"SUCCESS"}
+{"timestamp":"2026-08-29T13:18:05.518Z","stage":"Preflight System Checks","durationMs":238,"status":"SUCCESS"}
+{"timestamp":"2026-08-29T13:25:01.234Z","stage":"Preflight System Checks","durationMs":188,"status":"SUCCESS"}

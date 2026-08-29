@@ -7,49 +7,105 @@ import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
 import https from 'https';
+import { execSync } from 'child_process';
 import nodemailer from 'nodemailer';
 
 dotenv.config();
 
-// Initialize API Clients
 const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const pexels = createClient(process.env.PEXELS_API_KEY);
 
-// Define file processing paths
 const AUDIO_PATH = path.resolve('voice.mp3');
 const FINAL_VIDEO_PATH = path.resolve('output.mp4');
-const LOG_PATH = path.resolve('history-log.txt'); // 💡 New Memory file
+const LOG_PATH = path.resolve('history-log.txt');
+const ERROR_LOG_PATH = path.resolve('error-log.txt');
 const TEMP_DIR = path.resolve('short_temp');
 
-async function main() {
-  try {
-    if (!fs.existsSync(TEMP_DIR)) fs.mkdirSync(TEMP_DIR);
+function logError(stage, error) {
+  const timestamp = new Date().toISOString();
+  const entry = `\n[${timestamp}] ❌ FAILED AT: ${stage}\n  Message : ${error.message}\n  Code    : ${error.code || 'N/A'}\n  Stack   : ${(error.stack || '').split('\n').slice(0, 3).join(' | ')}\n${'─'.repeat(60)}`;
+  fs.appendFileSync(ERROR_LOG_PATH, entry, 'utf8');
+  console.error(entry);
+}
 
-    // 💡 Read previous topics from memory log to avoid duplication
+const HOOKS = [
+  "Did you know",
+  "Imagine if",
+  "Here's why",
+  "This is how",
+  "The real reason",
+  "What if I told you"
+];
+
+const TTS_VOICES = [
+  'en-US-ChristopherNeural',
+  'en-US-JennyNeural',
+  'en-US-GuyNeural',
+  'en-GB-RyanNeural',
+  'en-US-AriaNeural',
+  'en-US-EricNeural'
+];
+
+async function generateWithRetry(model, prompt, retries = 3) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      return await model.generateContent(prompt);
+    } catch (err) {
+      console.warn(`⚠️ Gemini API attempt ${attempt}/${retries} failed: ${err.message}`);
+      if (attempt === retries) throw err;
+      await new Promise(res => setTimeout(res, 2000 * attempt));
+    }
+  }
+}
+
+async function main() {
+  const startTime = new Date().toISOString();
+  console.log(`\n🟢 [${startTime}] Short-form agent started.`);
+  try {
+    if (!fs.existsSync(TEMP_DIR)) {
+      fs.mkdirSync(TEMP_DIR, { recursive: true });
+    }
+
     let pastTopics = "";
     if (fs.existsSync(LOG_PATH)) {
       pastTopics = fs.readFileSync(LOG_PATH, 'utf8').trim();
     }
 
-    console.log('🤖 Stage 1: Asking Gemini for a UNIQUE trending Short script...');
-    const model = ai.getGenerativeModel({ model: 'gemini-2.5-flash' });
-    
-    // 💡 We inject the past topics list straight into the prompt dynamically
-    const prompt = `Create a brief, highly engaging script for a 25-second YouTube Short focusing on "Historical Absurdities" (e.g., bizarre contrasts, People vs. Nature/Animals). 
-    
+    const selectedHook = HOOKS[Math.floor(Math.random() * HOOKS.length)];
+    const selectedVoice = TTS_VOICES[Math.floor(Math.random() * TTS_VOICES.length)];
+
+    console.log(`🤖 Stage 1: Asking Gemini for a UNIQUE trending Short script...`);
+    let model;
+    try {
+      model = ai.getGenerativeModel({ model: 'gemini-2.5-flash' });
+    } catch (err) {
+      logError('Stage 1 - Gemini Init', err);
+      throw err;
+    }
+
+    const prompt = `Create a brief, highly engaging script for a 25-second YouTube Short on a fascinating "mind-blowing fact" topic. Choose from ANY of these categories randomly: historical absurdities, scientific paradoxes, psychological quirks, nature's strangest adaptations, or everyday mysteries explained.
+
     CRITICAL CONSTRAINTS:
     1. Do NOT write about these used topics: [${pastTopics || "None yet"}]
-    2. Hook: Must start with either "Did you know..." or "Imagine if..." consistently.
-    3. Loop Strategy: The final sentence must perfectly set up the beginning so the video loops seamlessly (e.g., ends with "Imagine..." if it starts with "Imagine if...").
+    2. Hook: Start with "${selectedHook}..." - use EXACTLY this opener.
+    3. Loop Strategy: The final sentence must perfectly set up the beginning so the video loops seamlessly.
     4. Length: Script must be around 40 words for a 25-second read.
     5. Pacing: Break the visual pacing into exactly 5 sequential parts (each ~5 seconds).
     6. Emojis: Do NOT use ANY emojis in the description or anywhere else.
-    
+    7. Visuals & Overlays: Do NOT generate or request any top banner images, title cards, or overlay graphics. Produce only script text and caption timings for full-screen Pexels video background.
+
     Return the response strictly as a raw JSON object (do not include any markdown formatting wrappers or backticks) following this exact structure:
     {
       "script": "The text to be read aloud (around 40 words)",
       "title": "A high-CTR title under 50 characters",
-      "description": "First 2 lines MUST be a 'bonus fact' not in the video. Then add a specific question (CTA) for comments. Lastly, include 3rd-tier keywords (e.g., 'weird ancient laws').",
+      "description": "First 2 lines MUST be a 'bonus fact' not in the video. Then add a specific question (CTA) for comments. Lastly, include 3rd-tier keywords.",
+      "segmentTexts": [
+        "Short text overlay for segment 1 (~7 words)",
+        "Short text overlay for segment 2 (~7 words)",
+        "Short text overlay for segment 3 (~7 words)",
+        "Short text overlay for segment 4 (~7 words)",
+        "Short text overlay for segment 5 (~7 words)"
+      ],
       "visualSegments": [
         { "part": 1, "keyword": "A portrait video search term for part 1" },
         { "part": 2, "keyword": "A portrait video search term for part 2" },
@@ -59,9 +115,13 @@ async function main() {
       ]
     }`;
 
-    const aiResponse = await model.generateContent(prompt);
-    
-    // Clean up any potential markdown formatting wrapping the JSON string
+    let aiResponse;
+    try {
+      aiResponse = await generateWithRetry(model, prompt);
+    } catch (err) {
+      logError('Stage 1 - Gemini generateContent', err);
+      throw err;
+    }
     let responseText = aiResponse.response.text().trim();
     if (responseText.startsWith('```json')) {
       responseText = responseText.substring(7, responseText.length - 3).trim();
@@ -69,19 +129,30 @@ async function main() {
       responseText = responseText.substring(3, responseText.length - 3).trim();
     }
 
-    const data = JSON.parse(responseText);
-    console.log(`✨ Gemini generated a new topic: "${data.title}"`);
+    let data;
+    try {
+      data = JSON.parse(responseText);
+    } catch (err) {
+      logError('Stage 1 - JSON Parse (Gemini response)', err);
+      throw err;
+    }
+    console.log(`✨ Gemini generated: "${data.title}" (hook: ${selectedHook}, voice: ${selectedVoice})`);
 
-    console.log('🎙️ Stage 2: Generating free AI voiceover via Edge-TTS...');
-    const tts = new EdgeTTS(data.script, 'en-US-ChristopherNeural');
-    const result = await tts.synthesize();
-    const audioBuffer = Buffer.from(await result.audio.arrayBuffer());
-    await fs.promises.writeFile(AUDIO_PATH, audioBuffer);
+    console.log('🎙️ Stage 2: Generating AI voiceover via Edge-TTS...');
+    try {
+      const tts = new EdgeTTS(data.script, selectedVoice);
+      const result = await tts.synthesize();
+      const audioBuffer = Buffer.from(await result.audio.arrayBuffer());
+      await fs.promises.writeFile(AUDIO_PATH, audioBuffer);
+    } catch (err) {
+      logError('Stage 2 - Edge-TTS voiceover', err);
+      throw err;
+    }
     console.log('✅ Voiceover saved as voice.mp3');
 
     console.log('📹 Stage 3: Fetching multi-scene portrait footage from Pexels...');
     const localVideoPaths = [];
-    
+
     for (const segment of data.visualSegments) {
       console.log(`🔍 Searching scene ${segment.part} for portrait keyword: "${segment.keyword}"`);
       let videoUrl = null;
@@ -95,7 +166,7 @@ async function main() {
       } catch (err) {
         console.log(`⚠️ Pexels fetch failed for scene ${segment.part}.`);
       }
-      
+
       const destPath = path.join(TEMP_DIR, `scene_${segment.part}.mp4`);
       if (videoUrl) {
         await downloadFile(videoUrl, destPath);
@@ -107,84 +178,127 @@ async function main() {
       }
     }
 
-    console.log('🎬 Stage 4: Sewing multi-clip timeline asset blocks with FFmpeg...');
-    await compileShortVideo(localVideoPaths, AUDIO_PATH, FINAL_VIDEO_PATH);
-    console.log('✅ Final render ready: output.mp4');
+    console.log('🎬 Stage 4: Compiling video and burning dynamic Whisper captions...');
+    const tempUncaptionedPath = path.join(TEMP_DIR, 'uncaptioned_video.mp4');
+    try {
+      await compileShortVideo(localVideoPaths, AUDIO_PATH, tempUncaptionedPath, TEMP_DIR);
+      console.log('🎙️ Stage 4b: Hardburning dynamic 2-4 word Whisper captions...');
+      execSync(`python burn_captions.py --input "${tempUncaptionedPath}" --output "${FINAL_VIDEO_PATH}" --target-y 1450`, { stdio: 'inherit' });
+    } catch (err) {
+      logError('Stage 4 - FFmpeg compilation', err);
+      throw err;
+    }
+    console.log('✅ Final render ready with burnt-in captions: output.mp4');
 
-    console.log('🚀 Stage 5: Uploading directly to your YouTube channel...');
-    await uploadToYouTube(FINAL_VIDEO_PATH, data);
+    console.log('🚀 Stage 5: Uploading to YouTube with hashtags and engagement...');
+    try {
+      await uploadToYouTube(FINAL_VIDEO_PATH, data);
+    } catch (err) {
+      logError('Stage 5 - YouTube Upload', err);
+      throw err;
+    }
 
-    // 💡 SAVE TOPIC TO LOG FILE AFTER SUCCESSFUL UPLOAD
     fs.appendFileSync(LOG_PATH, `${data.title}, `);
     console.log(`💾 Saved "${data.title}" into history-log.txt memory stack.`);
 
-    // Clean up temporary workspace items
     if (fs.existsSync(AUDIO_PATH)) fs.unlinkSync(AUDIO_PATH);
     fs.rmSync(TEMP_DIR, { recursive: true, force: true });
     console.log('🏁 Daily Automation Finished Smoothly!');
 
   } catch (error) {
-    console.error('❌ Automation sequence failed:', error);
+    logError('main() top-level catch', error);
+    console.error('❌ Automation sequence failed. See error-log.txt for details.');
+    process.exit(1);
   }
 }
 
-// Helper to handle background video streams
-function downloadFile(url, dest) {
+function downloadFile(url, dest, maxRedirects = 5) {
   return new Promise((resolve, reject) => {
-    const file = fs.createWriteStream(dest);
-    https.get(url, (response) => {
+    if (maxRedirects <= 0) return reject(new Error('Too many redirects downloading video'));
+    const req = https.get(url, (response) => {
+      if (response.statusCode >= 300 && response.statusCode < 400 && response.headers.location) {
+        return downloadFile(response.headers.location, dest, maxRedirects - 1).then(resolve).catch(reject);
+      }
+      if (response.statusCode !== 200) return reject(new Error(`HTTP status ${response.statusCode}`));
+      const file = fs.createWriteStream(dest);
       response.pipe(file);
-      file.on('finish', () => file.close(resolve));
-    }).on('error', (err) => {
-      fs.unlink(dest, () => reject(err));
+      file.on('finish', () => {
+        file.close(() => {
+          try {
+            const stats = fs.statSync(dest);
+            if (stats.size < 50000) {
+              fs.unlinkSync(dest);
+              return reject(new Error('File size too small (<50KB)'));
+            }
+            resolve();
+          } catch (e) { reject(e); }
+        });
+      });
+      file.on('error', err => { fs.unlink(dest, () => {}); reject(err); });
+    });
+    req.on('error', err => { fs.unlink(dest, () => {}); reject(err); });
+  });
+}
+
+function getAudioDuration(audioPath) {
+  return new Promise((resolve, reject) => {
+    ffmpeg.ffprobe(audioPath, (err, metadata) => {
+      if (err) return reject(err);
+      const dur = parseFloat(metadata.format?.duration || 0);
+      if (dur <= 0) return reject(new Error(`Invalid audio duration: ${dur}`));
+      resolve(dur);
     });
   });
 }
 
-// Robust multi-clip stitching engine for shorts that standardizes resolutions and frame rates automatically
-function compileShortVideo(videoArray, audioIn, videoOut) {
+async function compileShortVideo(videoArray, audioIn, videoOut, tempDir) {
+  if (videoArray.length === 0) throw new Error('No video inputs provided');
+
+  const audioDuration = await getAudioDuration(audioIn);
+  const sceneDuration = (audioDuration / videoArray.length).toFixed(3);
+  console.log(`⏱️ Audio duration: ${audioDuration}s | Per-scene target duration: ${sceneDuration}s (${videoArray.length} scenes)`);
+
   return new Promise((resolve, reject) => {
     let proc = ffmpeg();
-    
-    // Feed each downloaded video block into the processing engine
-    videoArray.forEach(vPath => {
-      proc = proc.input(vPath);
-    });
-    
+    videoArray.forEach(vPath => { proc = proc.input(vPath); });
     proc = proc.input(audioIn);
 
-    // This filter explicitly rescales every video to 1080x1920 (portrait), 
-    // forces 30fps (fps=30), and standardizes sample aspect ratios (setsar=1) before joining them.
     let filterString = "";
     videoArray.forEach((_, index) => {
-      filterString += `[${index}:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2,fps=30,setsar=1[v${index}];`;
+      filterString += `[${index}:v]loop=loop=-1:size=300,scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,settb=AVTB,trim=duration=${sceneDuration},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[v${index}];`;
     });
-    
-    // Concatenate the perfectly standardized video tracks
-    videoArray.forEach((_, index) => {
-      filterString += `[v${index}]`;
-    });
+
+    videoArray.forEach((_, index) => { filterString += `[v${index}]`; });
     filterString += `concat=n=${videoArray.length}:v=1:a=0[vct]`;
 
-    proc.outputOptions([
+    let outputOptions = [
       '-filter_complex', filterString,
       '-map', '[vct]',
-      '-map', `${videoArray.length}:a`, // Maps the final audio track input seamlessly
-      '-c:v libx264',
-      '-c:a aac',
-      '-shortest', // Automatically truncates the video track once the audio track finishes
-      '-pix_fmt yuv420p'
-    ])
-    .save(videoOut)
-    .on('end', resolve)
-    .on('error', (err) => {
-      console.error('FFmpeg compilation failed details:', err.message);
-      reject(err);
-    });
+      '-map', `${videoArray.length}:a`,
+      '-c:v', 'libx264',
+      '-preset', 'fast',
+      '-crf', '18',
+      '-c:a', 'aac',
+      '-b:a', '192k',
+      '-t', String(audioDuration),
+      '-pix_fmt', 'yuv420p'
+    ];
+
+    proc.outputOptions(outputOptions)
+      .save(videoOut)
+      .on('stderr', (stderrLine) => {
+        if (/error|invalid|failed|cannot|no such/i.test(stderrLine)) {
+          console.error('FFmpeg STDERR:', stderrLine);
+        }
+      })
+      .on('end', resolve)
+      .on('error', (err) => {
+        console.error('FFmpeg compilation failed details:', err.message);
+        reject(err);
+      });
   });
 }
 
-// YouTube Data API endpoint distribution handler with built-in instant telemetry alerts
 async function uploadToYouTube(videoPath, metadata) {
   const oauth2Client = new google.auth.OAuth2(
     process.env.CLIENT_ID,
@@ -195,18 +309,23 @@ async function uploadToYouTube(videoPath, metadata) {
   oauth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
   const youtube = google.youtube({ version: 'v3', auth: oauth2Client });
 
-  const fullyCompliantDescription = metadata.description;
+  const hashtags = '#shorts #history #didyouknow #mindblown #weirdhistory #facts';
+  const descriptionWithHashtags = `${metadata.description}\n\n${hashtags}`;
+
+  const words = metadata.title.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(' ').filter(w => w.length > 2);
+  const tags = ['shorts', 'history', 'facts', ...words.slice(0, 5)];
 
   const response = await youtube.videos.insert({
     part: 'snippet,status',
     requestBody: {
       snippet: {
         title: metadata.title,
-        description: fullyCompliantDescription, 
-        categoryId: '22' 
+        description: descriptionWithHashtags,
+        categoryId: '22',
+        tags
       },
       status: {
-        privacyStatus: 'public', 
+        privacyStatus: 'public',
         selfDeclaredMadeForKids: false
       }
     },
@@ -217,36 +336,42 @@ async function uploadToYouTube(videoPath, metadata) {
   const videoLink = `https://youtu.be/${videoId}`;
   console.log(`🎉 Success! Upload completed. Video ID: ${videoId}`);
 
-  // ✉️ TRANSMIT INSTANT TELEMETRY ALERT TO YOUR PHONE
   try {
     console.log('✉️ Sending upload confirmation alert...');
-    
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
-    });
 
-    const mailOptions = {
-      from: `"DeedLamp Automation" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER, 
-      subject: `🎬 Upload Successful: ${metadata.title}`,
-      html: `
-        <div style="font-family: sans-serif; padding: 20px; border: 1px solid #ddd; border-radius: 8px; max-width: 500px;">
-          <h2 style="color: #4CAF50; margin-top: 0;">🚀 Video Live on DeedLamp!</h2>
-          <p><strong>Title:</strong> ${metadata.title}</p>
-          <p><strong>Watch Link:</strong> <a href="${videoLink}" style="color: #1e88e5; text-decoration: none; font-weight: bold;">${videoLink}</a></p>
-          <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-          <p style="font-size: 12px; color: #888; font-style: italic;">Processed and triggered completely hands-free by your background Windows Task Engine.</p>
-        </div>
-      `
-    };
+    const emailUser = process.env.EMAIL_USER ? process.env.EMAIL_USER.trim() : '';
+    const emailPass = process.env.EMAIL_PASS ? process.env.EMAIL_PASS.replace(/\s+/g, '') : '';
 
-    await transporter.sendMail(mailOptions);
-    console.log('✅ Telemetry confirmation email delivered successfully!');
-    
+    if (!emailUser || !emailPass) {
+      console.warn('⚠️ Email alert skipped: EMAIL_USER or EMAIL_PASS missing in .env');
+    } else {
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: emailUser,
+          pass: emailPass
+        }
+      });
+
+      const mailOptions = {
+        from: `"DeedLamp Automation" <${emailUser}>`,
+        to: emailUser,
+        subject: `🎬 Upload Successful: ${metadata.title}`,
+        html: `
+          <div style="font-family: sans-serif; padding: 20px; border: 1px solid #ddd; border-radius: 8px; max-width: 500px;">
+            <h2 style="color: #4CAF50; margin-top: 0;">🚀 Video Live on DeedLamp!</h2>
+            <p><strong>Title:</strong> ${metadata.title}</p>
+            <p><strong>Watch Link:</strong> <a href="${videoLink}" style="color: #1e88e5; text-decoration: none; font-weight: bold;">${videoLink}</a></p>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+            <p style="font-size: 12px; color: #888; font-style: italic;">Processed and triggered completely hands-free by your background Windows Task Engine.</p>
+          </div>
+        `
+      };
+
+      await transporter.sendMail(mailOptions);
+      console.log('✅ Telemetry confirmation email delivered successfully!');
+    }
+
   } catch (emailError) {
     console.error('⚠️ Video uploaded successfully, but confirmation email alert failed:', emailError.message);
   }

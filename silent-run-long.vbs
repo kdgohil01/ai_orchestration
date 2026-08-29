@@ -1,3 +1,2 @@
 Set WshShell = CreateObject("WScript.Shell")
-' Launch the long-form Node script with window style 0 (completely hidden)
-WshShell.Run "node long-form.js", 0, True
+WshShell.Run "cmd.exe /c K:\1.Projects\youtube\run-agent-long.bat", 0, False

@@ -15,7 +15,6 @@ const oauth2Client = new google.auth.OAuth2(
   REDIRECT_URI
 );
 
-// Generate the URL that requests access to your YouTube channel
 const authUrl = oauth2Client.generateAuthUrl({
   access_type: 'offline', // Crucial: This tells Google to issue a REFRESH TOKEN
   prompt: 'consent',     // Forces Google to show the consent screen every time
@@ -26,17 +25,34 @@ const authUrl = oauth2Client.generateAuthUrl({
 const server = http.createServer(async (req, res) => {
   if (req.url.startsWith('/oauth2callback')) {
     const q = url.parse(req.url, true).query;
-    res.end('Authentication successful! You can close this tab now. Look at your command prompt.');
+
+    if (!q.code) {
+      res.end('❌ Authorization failed — no code returned. Please try again.');
+      server.close();
+      console.error('\n❌ No authorization code received. Did you deny access in the browser?');
+      process.exit(1);
+      return;
+    }
+
+    res.end('✅ Authentication successful! You can close this tab now. Copy the token from your terminal.');
     server.close();
 
-    // Exchange the temporary code for your long-term tokens
-    const { tokens } = await oauth2Client.getToken(q.code);
-    console.log('\n================ SUCCESS! ================\n');
-    console.log('Copy this REFRESH_TOKEN into your .env file:\n');
-    console.log(tokens.refresh_token);
-    console.log('\n==========================================\n');
+    try {
+      // Exchange the temporary code for your long-term tokens
+      const { tokens } = await oauth2Client.getToken(q.code);
+      console.log('\n================ SUCCESS! ================\n');
+      console.log('Copy this REFRESH_TOKEN into your .env file:\n');
+      console.log(tokens.refresh_token);
+      console.log('\n==========================================\n');
+      console.log('✅ Now paste the above token as REFRESH_TOKEN in your .env file and restart the automation.');
+    } catch (err) {
+      console.error('\n❌ Failed to exchange code for token:', err.message);
+    }
+
+    process.exit(0);
   }
 }).listen(PORT, () => {
+    console.log(`✅ Listening on http://localhost:${PORT}`);
     console.log('Opening your browser to authorize your YouTube account...');
     open(authUrl);
 });

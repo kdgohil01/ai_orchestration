@@ -1,0 +1,789 @@
+{
+  "published": [
+    {
+      "title": "The Great Emu War: Australia vs. Birds!",
+      "topic_slug": "great emu war australia 1932",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-19T00:00:00.000Z"
+    },
+    {
+      "title": "The Shortest War Ever Fought",
+      "topic_slug": "shortest war in history zanzibar",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-19T00:00:00.000Z"
+    },
+    {
+      "title": "Rome's Craziest Emperor",
+      "topic_slug": "rome caligula mad emperor",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-19T00:00:00.000Z"
+    },
+    {
+      "title": "Animals on Trial in Medieval Courts",
+      "topic_slug": "animals on trial medieval justice",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-19T00:00:00.000Z"
+    },
+    {
+      "title": "The Boston Molasses Flood",
+      "topic_slug": "boston molasses flood 1919",
+      "category": "engineering disaster",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-19T00:00:00.000Z"
+    },
+    {
+      "title": "Pharaoh's Slave Anti-Fly Strategy",
+      "topic_slug": "pharaoh slaves honey flies ancient egypt",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-19T00:00:00.000Z"
+    },
+    {
+      "title": "The Dancing Plague of 1518",
+      "topic_slug": "dancing plague strasbourg 1518",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-19T00:00:00.000Z"
+    },
+    {
+      "title": "The Pig War of 1859",
+      "topic_slug": "pig war 1859 san juan island",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-19T00:00:00.000Z"
+    },
+    {
+      "title": "Napoleon's Rabbit Revolt",
+      "topic_slug": "napoleon rabbit attack 1807",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-19T00:00:00.000Z"
+    },
+    {
+      "title": "London's Deadly Beer Flood",
+      "topic_slug": "london beer flood 1814",
+      "category": "engineering disaster",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-20T00:00:00.000Z"
+    },
+    {
+      "title": "The Baader-Meinhof Frequency Illusion",
+      "topic_slug": "frequency illusion baader meinhof phenomenon",
+      "category": "psychological phenomenon",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-20T00:00:00.000Z"
+    },
+    {
+      "title": "Why We Say Bless You After Sneezing",
+      "topic_slug": "bless you sneezing history origin",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-20T00:00:00.000Z"
+    },
+    {
+      "title": "The Mantis Shrimp's Hypersonic Punch",
+      "topic_slug": "mantis shrimp punch speed biology",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-21T00:00:00.000Z"
+    },
+    {
+      "title": "Why Humans Get Goosebumps",
+      "topic_slug": "goosebumps evolution pilomotor reflex",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-21T00:00:00.000Z"
+    },
+    {
+      "title": "Why Rain Smells So Good — Petrichor",
+      "topic_slug": "petrichor rain smell actinomycetes",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-21T00:00:00.000Z"
+    },
+    {
+      "title": "The Jellyfish That Cannot Die",
+      "topic_slug": "immortal jellyfish turritopsis dohrnii",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-22T00:00:00.000Z"
+    },
+    {
+      "title": "Why You Suddenly Notice Things Everywhere",
+      "topic_slug": "selective attention frequency illusion cognitive",
+      "category": "psychological phenomenon",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-22T00:00:00.000Z"
+    },
+    {
+      "title": "Why You See Faces in Everything — Pareidolia",
+      "topic_slug": "pareidolia face recognition neural pattern",
+      "category": "psychological phenomenon",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-23T00:00:00.000Z"
+    },
+    {
+      "title": "The Frog That Freezes Solid and Survives",
+      "topic_slug": "wood frog freeze survival cryoprotection",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-24T00:00:00.000Z"
+    },
+    {
+      "title": "Why You Forget Things When You Walk Through a Door",
+      "topic_slug": "doorway effect memory location psychology",
+      "category": "psychological phenomenon",
+      "type": "short",
+      "youtubeId": null,
+      "uploadedAt": "2026-07-25T00:00:00.000Z"
+    },
+    {
+      "title": "1816: The Year Summer Vanished",
+      "topic_slug": "year without a summer",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "9XLTqAbrH30",
+      "uploadedAt": "2026-07-25T06:33:09.926Z"
+    },
+    {
+      "title": "Flannan Isles: Lighthouse Empty. What Happened?",
+      "topic_slug": "flannan isles disappearance 1900",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "qRYqcDjPIHw",
+      "uploadedAt": "2026-07-25T06:46:17.560Z"
+    },
+    {
+      "title": "Taos Hum: Unheard, Undetected.",
+      "topic_slug": "taos hum mystery",
+      "category": "psychological phenomenon",
+      "type": "short",
+      "youtubeId": "4b5Q9D8_Aik",
+      "uploadedAt": "2026-07-25T12:34:08.210Z"
+    },
+    {
+      "title": "Ancient Greek Computer: Impossible Tech?",
+      "topic_slug": "Antikythera Mechanism",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "nzzd2shwnag",
+      "uploadedAt": "2026-07-25T12:34:17.046Z"
+    },
+    {
+      "title": "Siberia's 1908 Explosion: No Asteroid?",
+      "topic_slug": "tunguska event siberia 1908",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "B5lQ9B6QmMs",
+      "uploadedAt": "2026-07-26T14:36:03.325Z"
+    },
+    {
+      "title": "USS Cyclops: 306 Vanished Without Trace",
+      "topic_slug": "USS Cyclops Disappearance",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "nOjXNdmTSFo",
+      "uploadedAt": "2026-07-27T12:33:33.463Z"
+    },
+    {
+      "title": "The Book No Human Can Read",
+      "topic_slug": "voynich manuscript mystery",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "cTzHdezFDxA",
+      "uploadedAt": "2026-07-27T12:34:02.918Z"
+    },
+    {
+      "title": "The Great Dying: Earth's Own Apocalypse?",
+      "topic_slug": "Great Dying Permian Extinction",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": "7Zn7rFoH91Q",
+      "uploadedAt": "2026-07-28T12:37:28.780Z"
+    },
+    {
+      "title": "Roanoke: 115 Vanished Souls",
+      "topic_slug": "Roanoke Lost Colony 1587",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "1K8m9KkAFqY",
+      "uploadedAt": "2026-07-28T12:37:30.378Z"
+    },
+    {
+      "title": "Body Ignites: The Reeser Anomaly",
+      "topic_slug": "spontaneous human combustion reeser",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "NFtqij_gE44",
+      "uploadedAt": "2026-07-28T16:25:38.861Z"
+    },
+    {
+      "title": "The 13,000-Year-Old Satellite Nobody Launched",
+      "topic_slug": "black knight satellite",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "jzNgOp6nAmc",
+      "uploadedAt": "2026-07-28T18:32:16.612Z"
+    },
+    {
+      "title": "Brain Thinks It's Dead",
+      "topic_slug": "cotards delusion patients",
+      "category": "psychological phenomenon",
+      "type": "short",
+      "youtubeId": "7m7LHKjTIfw",
+      "uploadedAt": "2026-07-31T11:20:04.225Z"
+    },
+    {
+      "title": "12,000 Feet Down: The Eltanin Antenna Anomaly",
+      "topic_slug": "eltanin anomaly deep sea",
+      "category": "physics edge case",
+      "type": "short",
+      "youtubeId": "9zAwRmFQEhY",
+      "uploadedAt": "2026-07-31T11:28:01.635Z"
+    },
+    {
+      "title": "Mary Celeste: The Vanished Crew",
+      "topic_slug": "mary celeste ghost ship",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "2iUNO1aw5KI",
+      "uploadedAt": "2026-07-31T12:32:14.571Z"
+    },
+    {
+      "title": "Internal Blast: Sleep's Unheard Secret",
+      "topic_slug": "exploding head syndrome",
+      "category": "psychological phenomenon",
+      "type": "short",
+      "youtubeId": "wDnnemtxKpA",
+      "uploadedAt": "2026-07-31T12:33:34.029Z"
+    },
+    {
+      "title": "Body Turning to Bone: The Agca Case",
+      "topic_slug": "fop stone man disease",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": "nFaPuBPrqVc",
+      "uploadedAt": "2026-08-02T07:37:16.965Z"
+    },
+    {
+      "title": "Tardigrades: Surviving the Vacuum of Space",
+      "topic_slug": "tardigrade space survival",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": "A9ENuPrb0CY",
+      "uploadedAt": "2026-08-02T09:56:22.283Z"
+    },
+    {
+      "title": "1513 Map Shows Ice-Free Antarctica?",
+      "topic_slug": "piri reis map mystery",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "-hz1aTvHjVI",
+      "uploadedAt": "2026-08-02T12:35:46.768Z"
+    },
+    {
+      "title": "The Bloop: A Vanished Sound Deeper Than Any Creature",
+      "topic_slug": "the bloop sound anomaly",
+      "category": "physics edge case",
+      "type": "short",
+      "youtubeId": "V2lymcfVoyk",
+      "uploadedAt": "2026-08-02T12:35:55.557Z"
+    },
+    {
+      "title": "Ancient Baghdad's Forgotten Power?",
+      "topic_slug": "Baghdad Battery Ancient Current",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "cQudRA9-Vhs",
+      "uploadedAt": "2026-08-03T13:02:00.555Z"
+    },
+    {
+      "title": "The Lake That Killed 1,746 Silently",
+      "topic_slug": "lake nyos limnic eruption",
+      "category": "physics edge case",
+      "type": "short",
+      "youtubeId": "kyOwxbSAXgs",
+      "uploadedAt": "2026-08-05T12:33:42.143Z"
+    },
+    {
+      "title": "70,000 Witnessed This. Science Saw Nothing.",
+      "topic_slug": "fatima miracle sun 1917",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "KRgkzUfZgzc",
+      "uploadedAt": "2026-08-05T15:05:09.323Z"
+    },
+    {
+      "title": "Tarrare: The Man Who Ate The Unthinkable",
+      "topic_slug": "tarrare insatiable hunger",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": "jrRNGJhxfQw",
+      "uploadedAt": "2026-08-05T18:32:29.612Z"
+    },
+    {
+      "title": "Ukok Princess: Unearthing Ancient Secrets",
+      "topic_slug": "siberian ice maiden",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "W8LlBQPM2u8",
+      "uploadedAt": "2026-08-06T07:59:18.806Z"
+    },
+    {
+      "title": "Europe's Ancient City Burners",
+      "topic_slug": "cucuteni-trypillia city burning",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "YShH12tQE0Y",
+      "uploadedAt": "2026-08-06T15:27:13.463Z"
+    },
+    {
+      "title": "Eilean Mòr: Three Keepers Vanished",
+      "topic_slug": "eilean mor mystery",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "5yCPbJDRX4c",
+      "uploadedAt": "2026-08-07T10:50:58.352Z"
+    },
+    {
+      "title": "Dyatlov Pass: The Unseen Force",
+      "topic_slug": "dyatlov pass incident 1959",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "Rt_hsjaoJlE",
+      "uploadedAt": "2026-08-07T12:34:55.557Z"
+    },
+    {
+      "title": "London's Lethal Fog: December 1952",
+      "topic_slug": "great smog london 1952",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "jUjoCTd_edI",
+      "uploadedAt": "2026-08-07T15:27:15.241Z"
+    },
+    {
+      "title": "Costa Rica's Perfect Stone Spheres: Vanished Makers",
+      "topic_slug": "costa rica stone spheres",
+      "category": "lost civilization",
+      "type": "short",
+      "youtubeId": "Gd8en9bktWg",
+      "uploadedAt": "2026-08-07T18:34:14.769Z"
+    },
+    {
+      "title": "Puma Punku: Impossible Stone Cuts?",
+      "topic_slug": "puma punku megalithic stonework",
+      "category": "lost civilization",
+      "type": "short",
+      "youtubeId": "p6sieteXAbg",
+      "uploadedAt": "2026-08-08T14:48:44.998Z"
+    },
+    {
+      "title": "The Brain Disease That Steals Sleep",
+      "topic_slug": "fatal familial insomnia history",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": "wWrmRCJ8YkM",
+      "uploadedAt": "2026-08-09T12:33:39.857Z"
+    },
+    {
+      "title": "Kentucky's Sky Flesh: 1876 Anomaly",
+      "topic_slug": "kentucky meat shower 1876",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "StyecnCPvwo",
+      "uploadedAt": "2026-08-10T12:33:09.014Z"
+    },
+    {
+      "title": "1374's Dance Epidemic: Unseen Compulsion?",
+      "topic_slug": "dancing mania rhine 1374",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "9uXsPWfz5Jo",
+      "uploadedAt": "2026-08-10T15:24:37.836Z"
+    },
+    {
+      "title": "Nazca Lines: Who Saw Their Secrets?",
+      "topic_slug": "nazca lines peru geoglyphs",
+      "category": "lost civilization",
+      "type": "short",
+      "youtubeId": "L6GnB6ZCGCE",
+      "uploadedAt": "2026-08-11T06:41:49.306Z"
+    },
+    {
+      "title": "Tacoma Bridge: The Unseen Killer Frequency",
+      "topic_slug": "tacoma narrows bridge collapse",
+      "category": "engineering disaster",
+      "type": "short",
+      "youtubeId": "jz-o7-KqVSw",
+      "uploadedAt": "2026-08-13T17:09:09.918Z"
+    },
+    {
+      "title": "Krakatoa's Earth-Shaking Roar",
+      "topic_slug": "krakatoa eruption sound wave",
+      "category": "physics edge case",
+      "type": "short",
+      "youtubeId": "tjqpAhGwgJ0",
+      "uploadedAt": "2026-08-13T17:11:21.173Z"
+    },
+    {
+      "title": "Egypt's Screaming Mummy Secret",
+      "topic_slug": "screaming mummy prince pentawere",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "B59cTWUPSWE",
+      "uploadedAt": "2026-08-14T13:15:03.327Z"
+    },
+    {
+      "title": "The Wow! Signal: A Message From The Void?",
+      "topic_slug": "wow signal 1977 big ear",
+      "category": "physics edge case",
+      "type": "short",
+      "youtubeId": "YQ92gw23gsc",
+      "uploadedAt": "2026-08-14T16:14:29.092Z"
+    },
+    {
+      "title": "The Awful Sleep: Trapped Conscious for Decades",
+      "topic_slug": "encephalitis lethargica epidemic",
+      "category": "psychological phenomenon",
+      "type": "short",
+      "youtubeId": "9pM7kO1avp0",
+      "uploadedAt": "2026-08-15T09:19:04.322Z"
+    },
+    {
+      "title": "River Vanishes: Devil's Kettle Secret",
+      "topic_slug": "devil's kettle vanishing river",
+      "category": "physics edge case",
+      "type": "short",
+      "youtubeId": "Zm2j81U39L4",
+      "uploadedAt": "2026-08-15T12:34:39.054Z"
+    },
+    {
+      "title": "Frozen Hamster: Revival 0°C",
+      "topic_slug": "hamster cryo-revival smith 1951",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": "RvvjqEUiMuY",
+      "uploadedAt": "2026-08-17T12:33:24.493Z"
+    },
+    {
+      "title": "Göbekli Tepe: The Buried Mystery of 9,600 BCE",
+      "topic_slug": "gobekli tepe buried temples",
+      "category": "lost civilization",
+      "type": "short",
+      "youtubeId": "P5EEyK2lzAE",
+      "uploadedAt": "2026-08-18T02:22:48.099Z"
+    },
+    {
+      "title": "The Man Who Vanished From Taured",
+      "topic_slug": "man from taured mystery",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "WAS_cqFh8BE",
+      "uploadedAt": "2026-08-18T06:38:21.967Z"
+    },
+    {
+      "title": "Laughing Death: Kuru's Primal Origin",
+      "topic_slug": "kuru laughing sickness PNG",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": "vY421dgIN2M",
+      "uploadedAt": "2026-08-18T09:18:35.233Z"
+    },
+    {
+      "title": "Imposter Parents: A 1923 Case",
+      "topic_slug": "capgras syndrome 1923",
+      "category": "psychological phenomenon",
+      "type": "short",
+      "youtubeId": "4XKta-8O8j4",
+      "uploadedAt": "2026-08-18T12:09:12.667Z"
+    },
+    {
+      "title": "Animal Survives BELOW Freezing?",
+      "topic_slug": "arctic ground squirrel cryo",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": "-4XcRtgfQ7I",
+      "uploadedAt": "2026-08-19T05:26:36.706Z"
+    },
+    {
+      "title": "The Rock That Rewrites American History",
+      "topic_slug": "dighton rock massachusetts petroglyphs",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "wE1m8FeLDjo",
+      "uploadedAt": "2026-08-19T06:40:28.318Z"
+    },
+    {
+      "title": "Mohenjo-Daro: The City That Just Vanished",
+      "topic_slug": "mohenjo daro lost city",
+      "category": "lost civilization",
+      "type": "short",
+      "youtubeId": "F38Y95Oy89w",
+      "uploadedAt": "2026-08-20T04:06:29.362Z"
+    },
+    {
+      "title": "The Taos Hum: A Sound Only Some Hear",
+      "topic_slug": "taos hum unexplained sound",
+      "category": "physics edge case",
+      "type": "short",
+      "youtubeId": "uC9UuYtRF9A",
+      "uploadedAt": "2026-08-20T04:15:07.023Z"
+    },
+    {
+      "title": "Unbroken Cipher: The Voynich Manuscript",
+      "topic_slug": "voynich manuscript decipherment",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "DqIjXLJ21Y8",
+      "uploadedAt": "2026-08-20T05:22:47.833Z"
+    },
+    {
+      "title": "The Jellyfish That Cheats Death",
+      "topic_slug": "immortal jellyfish biology",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": "n05qmS9SsMs",
+      "uploadedAt": "2026-08-20T12:16:40.865Z"
+    },
+    {
+      "title": "Ancient Computer: 150 BC Time Machine Found?",
+      "topic_slug": "antikythera mechanism ancient computer",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "ltN889fihGQ",
+      "uploadedAt": "2026-08-20T12:38:24.877Z"
+    },
+    {
+      "title": "Hot Water Freezes First? The Mpemba Effect",
+      "topic_slug": "mpemba effect hot freezes first",
+      "category": "physics edge case",
+      "type": "short",
+      "youtubeId": "STPM-UlE_XE",
+      "uploadedAt": "2026-08-21T06:36:13.783Z"
+    },
+    {
+      "title": "The Patient Who Knew She Was Dead",
+      "topic_slug": "cotard delusion walking corpse",
+      "category": "psychological phenomenon",
+      "type": "short",
+      "youtubeId": "sVe6oFIYfDY",
+      "uploadedAt": "2026-08-21T09:03:00.572Z"
+    },
+    {
+      "title": "The Day Science Caught Ball Lightning",
+      "topic_slug": "ball lightning qinghai 2012",
+      "category": "physics edge case",
+      "type": "short",
+      "youtubeId": "8QotJKOa5B4",
+      "uploadedAt": "2026-08-21T11:45:25.093Z"
+    },
+    {
+      "title": "Saqqara Bird: Ancient Egypt's Secret Glider?",
+      "topic_slug": "saqqara bird ancient glider",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "Tp4bOLB1MZk",
+      "uploadedAt": "2026-08-21T12:35:35.359Z"
+    },
+    {
+      "title": "Did Our Life Begin In Space?",
+      "topic_slug": "murchison meteorite origins",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": "KW-b1Gb39FA",
+      "uploadedAt": "2026-08-22T06:36:39.276Z"
+    },
+    {
+      "title": "Giza Pyramid: Impossible Precision",
+      "topic_slug": "giza pyramid casing precision",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "vZZBDx3D-vQ",
+      "uploadedAt": "2026-08-22T07:30:09.139Z"
+    },
+    {
+      "title": "Honduras: Fish Rain Mystery",
+      "topic_slug": "yoro fish rain honduras",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "mQotvx1Vzfk",
+      "uploadedAt": "2026-08-22T15:10:07.833Z"
+    },
+    {
+      "title": "1925: The Stray Dog That Almost Started a War",
+      "topic_slug": "stray dog war 1925",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "fBAc5G8BkxE",
+      "uploadedAt": "2026-08-22T15:17:13.500Z"
+    },
+    {
+      "title": "Body Turned to Ash: Mary Reeser Mystery",
+      "topic_slug": "mary reeser shc 1951",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "GvxXg7_dfig",
+      "uploadedAt": "2026-08-22T18:37:03.380Z"
+    },
+    {
+      "title": "Nimitz Tic-Tac: Physics Defied",
+      "topic_slug": "Nimitz Tic-Tac UFO 2004",
+      "category": "physics edge case",
+      "type": "short",
+      "youtubeId": "cmOWqxX-A2I",
+      "uploadedAt": "2026-08-25T05:49:16.224Z"
+    },
+    {
+      "title": "The Bloop: What Lurks Beneath the Pacific?",
+      "topic_slug": "bloop ocean signal 1997",
+      "category": "biological extreme",
+      "type": "short",
+      "youtubeId": "Bb6p_ucGe3A",
+      "uploadedAt": "2026-08-25T12:37:02.351Z"
+    },
+    {
+      "title": "Ancient Baghdad Battery: Current?",
+      "topic_slug": "Baghdad Battery Anomaly",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "u0RFsqezxSk",
+      "uploadedAt": "2026-08-25T15:30:36.581Z"
+    },
+    {
+      "title": "Lake Peigneur Vanished: The Day it Drained",
+      "topic_slug": "lake peigneur disaster 1980",
+      "category": "engineering disaster",
+      "type": "short",
+      "youtubeId": "laccTyPz8kw",
+      "uploadedAt": "2026-08-26T02:30:09.805Z"
+    },
+    {
+      "title": "LA 1942: Air Raid on Nothing?",
+      "topic_slug": "battle los angeles 1942",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "7R6bYW3KRfw",
+      "uploadedAt": "2026-08-26T12:37:11.149Z"
+    },
+    {
+      "title": "3 Billion-Year-Old Spheres: Impossible?",
+      "topic_slug": "klerksdorp spheres anomaly",
+      "category": "historical anomaly",
+      "type": "short",
+      "youtubeId": "pCA1Y82IH7k",
+      "uploadedAt": "2026-08-26T12:37:21.782Z"
+    }
+  ],
+  "topics_used": [
+    "great emu war australia 1932",
+    "shortest war in history zanzibar",
+    "rome caligula mad emperor",
+    "animals on trial medieval justice",
+    "boston molasses flood 1919",
+    "pharaoh slaves honey flies ancient egypt",
+    "dancing plague strasbourg 1518",
+    "pig war 1859 san juan island",
+    "napoleon rabbit attack 1807",
+    "london beer flood 1814",
+    "frequency illusion baader meinhof phenomenon",
+    "bless you sneezing history origin",
+    "mantis shrimp punch speed biology",
+    "goosebumps evolution pilomotor reflex",
+    "petrichor rain smell actinomycetes",
+    "immortal jellyfish turritopsis dohrnii",
+    "selective attention frequency illusion cognitive",
+    "pareidolia face recognition neural pattern",
+    "wood frog freeze survival cryoprotection",
+    "doorway effect memory location psychology",
+    "year without a summer",
+    "flannan isles disappearance 1900",
+    "taos hum mystery",
+    "antikythera mechanism",
+    "tunguska event siberia 1908",
+    "uss cyclops disappearance",
+    "voynich manuscript mystery",
+    "great dying permian extinction",
+    "roanoke lost colony 1587",
+    "spontaneous human combustion reeser",
+    "black knight satellite",
+    "cotards delusion patients",
+    "eltanin anomaly deep sea",
+    "mary celeste ghost ship",
+    "exploding head syndrome",
+    "fop stone man disease",
+    "tardigrade space survival",
+    "piri reis map mystery",
+    "the bloop sound anomaly",
+    "baghdad battery ancient current",
+    "lake nyos limnic eruption",
+    "fatima miracle sun 1917",
+    "tarrare insatiable hunger",
+    "siberian ice maiden",
+    "cucuteni-trypillia city burning",
+    "eilean mor mystery",
+    "dyatlov pass incident 1959",
+    "great smog london 1952",
+    "costa rica stone spheres",
+    "puma punku megalithic stonework",
+    "fatal familial insomnia history",
+    "kentucky meat shower 1876",
+    "dancing mania rhine 1374",
+    "nazca lines peru geoglyphs",
+    "tacoma narrows bridge collapse",
+    "krakatoa eruption sound wave",
+    "screaming mummy prince pentawere",
+    "wow signal 1977 big ear",
+    "encephalitis lethargica epidemic",
+    "devil's kettle vanishing river",
+    "hamster cryo-revival smith 1951",
+    "gobekli tepe buried temples",
+    "man from taured mystery",
+    "kuru laughing sickness png",
+    "capgras syndrome 1923",
+    "arctic ground squirrel cryo",
+    "dighton rock massachusetts petroglyphs",
+    "mohenjo daro lost city",
+    "taos hum unexplained sound",
+    "voynich manuscript decipherment",
+    "immortal jellyfish biology",
+    "antikythera mechanism ancient computer",
+    "mpemba effect hot freezes first",
+    "cotard delusion walking corpse",
+    "ball lightning qinghai 2012",
+    "saqqara bird ancient glider",
+    "murchison meteorite origins",
+    "giza pyramid casing precision",
+    "yoro fish rain honduras",
+    "stray dog war 1925",
+    "mary reeser shc 1951",
+    "nimitz tic-tac ufo 2004",
+    "bloop ocean signal 1997",
+    "baghdad battery anomaly",
+    "lake peigneur disaster 1980",
+    "battle los angeles 1942",
+    "klerksdorp spheres anomaly"
+  ]
+}
