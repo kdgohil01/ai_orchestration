@@ -156,6 +156,7 @@ def burn_captions(input_video: str, output_video: str, model_size: str = "base",
     """
     input_path = Path(input_video).resolve()
     output_path = Path(output_video).resolve()
+    output_path.parent.mkdir(parents=True, exist_ok=True)
 
     if not input_path.exists():
         print(f"❌ Input video not found: {input_path}")
@@ -195,7 +196,12 @@ def burn_captions(input_video: str, output_video: str, model_size: str = "base",
         print(f"🔥 Hardburning captions into '{output_path.name}' via FFmpeg...")
         # Format ASS file path for FFmpeg vf filter (escape Windows colon and backslashes)
         ass_str = str(ass_path).replace("\\", "/").replace(":", "\\:")
-        vf_filter = f"subtitles='{ass_str}'"
+        fonts_dir = (Path(__file__).resolve().parent / "assets")
+        if fonts_dir.exists():
+            fonts_str = str(fonts_dir).replace("\\", "/").replace(":", "\\:")
+            vf_filter = f"subtitles='{ass_str}':fontsdir='{fonts_str}'"
+        else:
+            vf_filter = f"subtitles='{ass_str}'"
 
         cmd = [
             ffmpeg_bin,
@@ -207,7 +213,6 @@ def burn_captions(input_video: str, output_video: str, model_size: str = "base",
             "-crf", "18",
             "-c:a", "aac",
             "-b:a", "192k",
-            "-async", "1",
             str(output_path)
         ]
 
