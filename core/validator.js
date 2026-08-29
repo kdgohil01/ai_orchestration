@@ -1,98 +1,43 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// DeedLamp — Media Render Integrity Checker
-// Verifies FFmpeg output resolution, audio stream, duration, and file size.
-// ─────────────────────────────────────────────────────────────────────────────
-
 import fs from 'fs';
-import ffmpeg from 'fluent-ffmpeg';
+import { getMediaDuration, probeMedia } from './process.js';
 
-/**
- * Runs ffprobe on a media file to retrieve metadata.
- * @param {string} filePath
- * @returns {Promise<object>} ffprobe metadata
- */
-function probeMedia(filePath) {
-  return new Promise((resolve, reject) => {
-    ffmpeg.ffprobe(filePath, (err, metadata) => {
-      if (err) return reject(err);
-      resolve(metadata);
-    });
-  });
+const TARGETS = {
+  short: { width: 1080, height: 1920, minDuration: 18, maxDuration: 32 },
+  long: { width: 1920, height: 1080, minDuration: 210, maxDuration: 270 }
+};
+
+export async function validateNarrationDuration(filePath, format) {
+  const target = TARGETS[format];
+  if (!target) throw new Error(`Unknown format: ${format}`);
+  const duration = await getMediaDuration(filePath);
+  if (duration < target.minDuration || duration > target.maxDuration) {
+    throw new Error(`${format} narration duration ${duration.toFixed(1)}s is outside ${target.minDuration}-${target.maxDuration}s.`);
+  }
+  return duration;
 }
 
-/**
- * Validates a final rendered video file before publication.
- *
- * @param {string} filePath - Absolute path to rendered MP4
- * @param {'short'|'long'} format - Content format
- * @returns {Promise<{valid: boolean, details: object}>}
- */
 export async function validateMediaIntegrity(filePath, format = 'short') {
-  console.log(`\n🔍 Verifying media render integrity: ${filePath}`);
-
-  // 1. File existence check
-  if (!fs.existsSync(filePath)) {
-    throw new Error(`Media validation failed: File does not exist at '${filePath}'`);
+  if (!fs.existsSync(filePath)) throw new Error(`Rendered file does not exist: ${filePath}`);
+  const sizeKb = Math.round(fs.statSync(filePath).size / 1024);
+  if (sizeKb < 500) throw new Error(`Rendered file is suspiciously small: ${sizeKb}KB.`);
+  const metadata = await probeMedia(filePath);
+  const video = (metadata.streams || []).find(stream => stream.codec_type === 'video');
+  const audio = (metadata.streams || []).find(stream => stream.codec_type === 'audio');
+  if (!video || !audio) throw new Error('Rendered file must contain both video and audio streams.');
+  const duration = Number.parseFloat(metadata.format?.duration || video.duration || 0);
+  const target = TARGETS[format];
+  if (video.width !== target.width || video.height !== target.height) {
+    throw new Error(`Invalid ${format} resolution ${video.width}x${video.height}; expected ${target.width}x${target.height}.`);
   }
-
-  // 2. Non-zero size check (> 500 KB)
-  const stats = fs.statSync(filePath);
-  const sizeKb = Math.round(stats.size / 1024);
-  if (sizeKb < 500) {
-    throw new Error(`Media validation failed: Rendered file size is too small (${sizeKb} KB). Likely corrupted output.`);
+  if (duration < target.minDuration || duration > target.maxDuration) {
+    throw new Error(`Rendered ${format} duration ${duration.toFixed(1)}s is outside ${target.minDuration}-${target.maxDuration}s.`);
   }
-
-  // 3. ffprobe metadata verification
-  let metadata;
-  try {
-    metadata = await probeMedia(filePath);
-  } catch (err) {
-    throw new Error(`Media validation failed: ffprobe could not parse video metadata — ${err.message}`);
-  }
-
-  const streams = metadata.streams || [];
-  const videoStream = streams.find(s => s.codec_type === 'video');
-  const audioStream = streams.find(s => s.codec_type === 'audio');
-
-  if (!videoStream) {
-    throw new Error('Media validation failed: Output video stream missing.');
-  }
-
-  if (!audioStream) {
-    throw new Error('Media validation failed: Output audio stream missing.');
-  }
-
-  const duration = parseFloat(metadata.format?.duration || videoStream.duration || 0);
-  if (duration <= 0) {
-    throw new Error(`Media validation failed: Invalid video duration (${duration}s).`);
-  }
-
-  const width = videoStream.width;
-  const height = videoStream.height;
-
-  // 4. Resolution check
-  if (format === 'short') {
-    if (width !== 1080 || height !== 1920) {
-      console.warn(`⚠️ Resolution warning for Short: ${width}x${height} (target 1080x1920)`);
+  return {
+    valid: true,
+    details: {
+      filePath, sizeKb, duration: Math.round(duration * 10) / 10,
+      width: video.width, height: video.height, hasAudio: true,
+      codecVideo: video.codec_name, codecAudio: audio.codec_name
     }
-  } else if (format === 'long') {
-    if (width !== 1920 || height !== 1080) {
-      console.warn(`⚠️ Resolution warning for Long-form: ${width}x${height} (target 1920x1080)`);
-    }
-  }
-
-  const details = {
-    filePath,
-    sizeKb,
-    duration: Math.round(duration * 10) / 10,
-    width,
-    height,
-    hasAudio: true,
-    codecVideo: videoStream.codec_name,
-    codecAudio: audioStream.codec_name
   };
-
-  console.log(`✅ Media Render Integrity Verified!`);
-  console.log(`   Resolution: ${width}x${height} | Duration: ${details.duration}s | Size: ${sizeKb} KB`);
-  return { valid: true, details };
 }

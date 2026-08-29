@@ -1,58 +1,73 @@
-import { google } from 'googleapis';
+import crypto from 'crypto';
 import http from 'http';
-import url from 'url';
-import open from 'open'; // You can install this using: npm install open
+import { URL } from 'url';
+import { google } from 'googleapis';
+import open from 'open';
 import dotenv from 'dotenv';
-
 dotenv.config();
 
-const PORT = 3000;
-const REDIRECT_URI = `http://localhost:${PORT}/oauth2callback`;
-
-const oauth2Client = new google.auth.OAuth2(
-  process.env.CLIENT_ID,
-  process.env.CLIENT_SECRET,
-  REDIRECT_URI
-);
-
-const authUrl = oauth2Client.generateAuthUrl({
-  access_type: 'offline', // Crucial: This tells Google to issue a REFRESH TOKEN
-  prompt: 'consent',     // Forces Google to show the consent screen every time
-  scope: ['https://www.googleapis.com/auth/youtube.upload']
+const host = '127.0.0.1';
+const port = 3000;
+const redirectUri = `http://${host}:${port}/oauth2callback`;
+const state = crypto.randomBytes(32).toString('hex');
+if (!process.env.CLIENT_ID || !process.env.CLIENT_SECRET) {
+  throw new Error('CLIENT_ID and CLIENT_SECRET are required in .env.');
+}
+const oauth = new google.auth.OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET, redirectUri);
+const authUrl = oauth.generateAuthUrl({
+  access_type: 'offline',
+  prompt: 'consent',
+  state,
+  scope: [
+    'https://www.googleapis.com/auth/youtube.upload',
+    'https://www.googleapis.com/auth/youtube.readonly',
+    'https://www.googleapis.com/auth/yt-analytics.readonly'
+  ]
 });
 
-// Start a temporary local server to catch the callback code from the browser
-const server = http.createServer(async (req, res) => {
-  if (req.url.startsWith('/oauth2callback')) {
-    const q = url.parse(req.url, true).query;
-
-    if (!q.code) {
-      res.end('❌ Authorization failed — no code returned. Please try again.');
-      server.close();
-      console.error('\n❌ No authorization code received. Did you deny access in the browser?');
-      process.exit(1);
-      return;
-    }
-
-    res.end('✅ Authentication successful! You can close this tab now. Copy the token from your terminal.');
-    server.close();
-
-    try {
-      // Exchange the temporary code for your long-term tokens
-      const { tokens } = await oauth2Client.getToken(q.code);
-      console.log('\n================ SUCCESS! ================\n');
-      console.log('Copy this REFRESH_TOKEN into your .env file:\n');
-      console.log(tokens.refresh_token);
-      console.log('\n==========================================\n');
-      console.log('✅ Now paste the above token as REFRESH_TOKEN in your .env file and restart the automation.');
-    } catch (err) {
-      console.error('\n❌ Failed to exchange code for token:', err.message);
-    }
-
-    process.exit(0);
+const server = http.createServer(async (request, response) => {
+  const callback = new URL(request.url, redirectUri);
+  if (callback.pathname !== '/oauth2callback') {
+    response.writeHead(404).end('Not found');
+    return;
   }
-}).listen(PORT, () => {
-    console.log(`✅ Listening on http://localhost:${PORT}`);
-    console.log('Opening your browser to authorize your YouTube account...');
-    open(authUrl);
+  if (callback.searchParams.get('state') !== state) {
+    response.writeHead(403).end('Invalid OAuth state.');
+    server.close();
+    return;
+  }
+  const code = callback.searchParams.get('code');
+  if (!code) {
+    response.writeHead(400).end('Authorization failed.');
+    server.close();
+    return;
+  }
+  try {
+    const { tokens } = await oauth.getToken(code);
+    response.end('Authentication successful. Return to the terminal.');
+    console.log('\nStore this value as REFRESH_TOKEN in .env. Do not commit or share it:\n');
+    console.log(tokens.refresh_token || '(Google did not return a new refresh token; revoke access and retry.)');
+  } catch (err) {
+    response.writeHead(500).end('Token exchange failed.');
+    console.error(err.message);
+    process.exitCode = 1;
+  } finally {
+    server.close();
+  }
 });
+
+server.on('error', err => {
+  console.error(`OAuth callback server failed: ${err.message}`);
+  process.exitCode = 1;
+});
+server.listen(port, host, async () => {
+  console.log(`Listening securely on ${redirectUri}`);
+  await open(authUrl);
+});
+setTimeout(() => {
+  if (server.listening) {
+    console.error('OAuth setup timed out after five minutes.');
+    server.close();
+    process.exitCode = 1;
+  }
+}, 5 * 60_000).unref();

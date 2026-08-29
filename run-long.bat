@@ -1,3 +1,5 @@
 @echo off
-cd /d "K:\1.Projects\youtube"
-node long.js
+setlocal
+set "PROJECT_DIR=%~dp0"
+cd /d "%PROJECT_DIR%"
+node long.js %*
