@@ -7,9 +7,25 @@ import { JobStore } from './job-store.js';
 const PRODUCTION_LOCK = 'render_upload';
 
 export class PipelineRun {
-  constructor(kind, mode) {
+  constructor(kind, mode, { jobId = null } = {}) {
     this.store = new JobStore();
-    this.job = this.store.createJob({ kind, metadata: { mode } });
+    try {
+      if (jobId) {
+        this.job = this.store.getJob(jobId);
+        if (!this.job) throw new Error(`Retry job not found: ${jobId}`);
+        if (this.job.kind !== kind) throw new Error(`Retry job ${jobId} is not a ${kind} job.`);
+        if (this.job.state !== 'queued') throw new Error(`Retry job ${jobId} must be queued; current state is ${this.job.state}.`);
+        this.job = this.store.updateJob(jobId, {
+          metadata: { ...this.job.metadata, mode, resumedAt: new Date().toISOString() },
+          nextAttemptAt: null,
+        });
+      } else {
+        this.job = this.store.createJob({ kind, metadata: { mode } });
+      }
+    } catch (error) {
+      this.store.close();
+      throw error;
+    }
     this.lockHeld = this.store.acquireLock(PRODUCTION_LOCK, this.job.id);
 
     if (!this.lockHeld) {
@@ -62,6 +78,8 @@ export class PipelineRun {
     this.job = this.store.failJob(this.job.id, error, {
       retryable: !error?.isQualityError,
       blocked: Boolean(error?.isBlocked || error?.isQuotaBlocked),
+      needsReview: Boolean(error?.isQualityError || error?.isUploadAmbiguous),
+      retryAfterSeconds: error?.isQuotaBlocked ? config.retryMaxSeconds : null,
     });
     return this.job;
   }

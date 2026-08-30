@@ -6,6 +6,9 @@
 import ffmpeg from 'fluent-ffmpeg';
 import fs from 'fs';
 import path from 'path';
+import { configureFluentFfmpeg } from './media-tools.js';
+
+configureFluentFfmpeg(ffmpeg);
 
 // Logo is searched in both /assets/ and root for backward compatibility
 function findLogo() {

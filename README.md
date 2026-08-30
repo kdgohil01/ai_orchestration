@@ -1,12 +1,12 @@
 # 🎬 DeedLamp AI — Modular YouTube Channel Automation Platform
 
-An upgraded, modular end-to-end AI publication engine built with Node.js ES Modules, Python, FFmpeg, and Faster-Whisper. It plans, scriptwrites, voice-synthesizes, gathers B-roll, edits, captions, and publishes YouTube Shorts and 4-ACT mini-documentaries hands-free under **The Weird Archivist** persona.
+An upgraded, modular end-to-end content engine built with Node.js ES Modules, Python, FFmpeg, and Faster-Whisper. It plans, scriptwrites, voice-synthesizes, gathers B-roll, edits, captions, validates, and—only with explicit authorization—publishes YouTube Shorts and 4-ACT mini-documentaries under **The Weird Archivist** persona.
 
-> **Local safety foundation (current branch):** Live YouTube upload is disabled by default. A live scheduled upload happens only when `--publish` is supplied explicitly. The supplied BAT/VBS scheduling path runs `--dry-run` until the workflow is deliberately promoted after review.
+> **Local safety rule:** Live YouTube upload is disabled by default. A live scheduled upload happens only when `--publish` is supplied explicitly. The scheduler installer is preview-only unless `-Apply` is supplied, and publish scheduling additionally requires `-AllowPublish`.
 
 ## What changed and why
 
-The first orchestration implementation slice addresses the duplicate/concurrent upload risk found in historical logs:
+The local orchestration implementation addresses the duplicate/concurrent upload risk found in historical logs and completes the initial four-module design:
 
 - Added a local SQLite source of truth at `data/orchestration.db` using Node's built-in `node:sqlite` module. No managed database or paid service is used.
 - Added the required job lifecycle, transition validation, attempt counts, structured error details, asset paths, source URL storage, validation results, script hashes, rendered-video fingerprints, YouTube IDs, and timestamps.
@@ -20,8 +20,12 @@ The first orchestration implementation slice addresses the duplicate/concurrent 
 - Added Faster-Whisper transcript export and a word-error-rate gate (maximum `0.25`) against the intended script.
 - Added a local operations report and automated SQLite/state/locking/security tests.
 - Changed local BAT runners to `--dry-run`. They cannot upload merely because Task Scheduler launches them.
-
-This slice does **not yet** claim production readiness. Citation verification, bounded post-upload status checks, automatic retry scheduling, and scheduler installation scripts remain planned work.
+- Added an authoritative-host allowlist plus a human-reviewed topic catalog containing exact URLs. Source pages are fetched with native HTTPS and redirect/content/size limits; Gemini never invents the URLs.
+- Added claim-level evidence checks, source manifests, description citations, and rejection of unsupported high-risk factual sentences.
+- Added deterministic exponential retries with bounded attempts and a due-job worker. Quota blocks wait; they never switch to a paid model or provider.
+- Added YouTube checks only at 30 seconds, 2 minutes, and 5 minutes. Ambiguous upload responses go to `needs_review`; recovery searches for a durable job marker instead of blindly re-uploading.
+- Added preview-first Windows Task Scheduler installation/removal scripts and isolated the two legacy direct-publication entry points.
+- Added daily/weekly Markdown and JSON operations reports under ignored local storage.
 
 ## ₹0-cost and local-only rules
 
@@ -36,25 +40,26 @@ This slice does **not yet** claim production readiness. Citation verification, b
 
 ```mermaid
 flowchart LR
-    S[CLI or dry-run Task Scheduler] --> C[SQLite Agent C foundation]
+    S[CLI or preview-first Task Scheduler] --> C[SQLite Agent C]
     C -->|lock + job| A[Long-form Agent A]
     C -->|lock + job| B[Shorts Agent B]
-    A & B --> R[Gemini / TTS / Pexels / FFmpeg / Whisper]
-    R --> V[Validation + hashes]
-    V -->|explicit --publish only| Y[YouTube uploader]
-    C --> M[Read-only local report]
+    A & B --> R[Approved URLs + Gemini + TTS + Pexels]
+    R --> V[FFmpeg + Whisper + quality gates + hashes]
+    V -->|explicit --publish only| Y[YouTube upload + 3 bounded checks]
+    Y --> C
+    C --> M[Read-only Master reports]
 ```
 
 - **Agent A:** `long.js`; creates 3.5–4.5 minute landscape jobs and artifacts.
 - **Agent B:** `short.js`; creates vertical Short jobs and artifacts.
-- **Agent C foundation:** `core/job-store.js` and `core/pipeline-run.js`; owns lifecycle transitions, one-job locking, attempts, paths, hashes, and upload identifiers.
-- **Master/reporting module:** `orchestrator.js report`; reads SQLite and reports states, recent jobs, repeated failures, and local disk usage. It does not change production jobs.
+- **Agent C:** `core/job-store.js`, `core/pipeline-run.js`, and `orchestrator.js`; owns lifecycle transitions, one-job locking, retries, paths, hashes, upload identifiers, recovery, and scheduling commands. It does not invent content.
+- **Master/reporting module:** `core/reporting.js` plus `orchestrator.js report`; reads SQLite and reports states, recent jobs, repeated failures, next retry, configured schedules, and disk usage. It does not alter production jobs.
 
 ## Required local software
 
 - Node.js 24 or later (the implementation uses the built-in `node:sqlite` API).
 - Python 3 with `faster-whisper` installed locally.
-- FFmpeg and ffprobe available on `PATH` to render or validate media.
+- FFmpeg and ffprobe available on `PATH`, configured with `FFMPEG_PATH`/`FFPROBE_PATH`, or unpacked beneath ignored `tools/ffmpeg/`.
 - Git for local source control.
 - Network access only when invoking Gemini, Pexels, Edge TTS, YouTube, or Gmail SMTP.
 
@@ -70,8 +75,8 @@ Verify required binaries:
 node --version
 python --version
 python -c "import faster_whisper; print('faster-whisper available')"
-ffmpeg -version
-ffprobe -version
+npm run db:init
+npm run check
 ```
 
 ## Environment configuration
@@ -89,12 +94,27 @@ Copy `.env.example` to `.env` and replace placeholders locally. Never commit `.e
 | `EMAIL_USER` | No | Gmail SMTP sender/recipient |
 | `EMAIL_PASS` | No | Gmail app password, not the normal account password |
 | `ORCHESTRATION_DB_PATH` | No | Local SQLite path; defaults to `data/orchestration.db` |
-| `TEMP_DIR` | No | Disposable render workspace; defaults to `temp` |
+| `TEMP_DIR` | No | Disposable render workspace; defaults to `.local/temp` |
 | `OUTPUT_DIR` | No | Durable per-job output; defaults to `output/jobs` |
+| `LOG_DIR` | No | Local log directory; defaults to `logs` |
+| `REPORT_DIR` | No | Generated local reports; defaults to `reports/generated` |
+| `FFMPEG_PATH` | No | Explicit local FFmpeg executable; auto-detected when blank |
+| `FFPROBE_PATH` | No | Explicit local ffprobe executable; auto-detected when blank |
 | `PUBLISH_HOUR_LOCAL` | No | Scheduled publish hour; defaults to `18` |
 | `PUBLISH_TIMEZONE` | No | Reporting timezone; defaults to `Asia/Kolkata` |
 | `MAX_JOB_ATTEMPTS` | No | Maximum recorded attempts; defaults to `3` |
+| `RETRY_BASE_SECONDS` | No | First retry delay; defaults to `300` |
+| `RETRY_MAX_SECONDS` | No | Maximum retry delay/quota wait; defaults to `21600` |
 | `LOCK_LEASE_MINUTES` | No | Local render/upload lease; defaults to `180` |
+
+### Free API credentials and quota safety
+
+- Create Gemini API credentials only in a project/account eligible for the free tier, leave billing disabled, and keep `GEMINI_MODEL=gemini-2.5-flash`. The code refuses unapproved model names and has no fallback provider.
+- Obtain a Pexels API key under Pexels' free API terms. Failed or empty downloads fail validation; they are not replaced by a paid stock provider.
+- Enable YouTube Data API access without enabling billing, create OAuth desktop credentials, and generate a refresh token locally with `node get-token.js`. Never commit the downloaded client secret or `.env`.
+- YouTube uploads consume free API quota. When quota is exhausted the job is blocked for later handling; do not create extra projects to evade limits.
+- Gmail SMTP is optional. Use an app password only; if it is absent, notification warnings are local and production processing remains deterministic.
+- Fact checking never uses Gemini Google Search grounding. Add reviewed exact pages to `config/approved-topics.json`; their hosts must also exist in `config/approved-sources.json`.
 
 ## Safe commands
 
@@ -109,6 +129,15 @@ npm run db:init
 # Read-only local operations report
 npm run report
 npm run report -- --json
+npm run report:daily
+npm run report:weekly
+
+# Inspect a job and run deterministic due retries
+node orchestrator.js job <job-id>
+npm run retry:due
+
+# Recover an ambiguous upload by its durable marker; never blindly retries
+npm run upload:recover -- <job-id>
 
 # Safe default: produces locally and does not upload
 node short.js
@@ -129,9 +158,12 @@ node long.js --review
 # Live scheduled upload: explicit authorization every invocation
 node short.js --publish
 node long.js --publish
+
+# Network-free 3.5-minute Agent A renderer verification
+npm run verify:long-render
 ```
 
-Do not combine `--dry-run`, `--skip-upload`, `--review`, or `--publish`.
+Do not combine `--dry-run`, `--skip-upload`, `--review`, or `--publish`. Add `--topic=<approved-topic-id>` to select an entry from the curated catalog.
 
 ## SQLite job lifecycle
 
@@ -148,21 +180,28 @@ Failure/manual states:
 retryable_failure | blocked | failed | needs_review
 ```
 
-Quota exhaustion and a busy production lock become `blocked`. A failed validation never reaches `uploading`. Private review uploads become `needs_review`. The current reporting module does not silently requeue or edit jobs.
+Quota exhaustion and a busy production lock become `blocked`. Retry timing is `min(RETRY_MAX_SECONDS, RETRY_BASE_SECONDS × 2^(attempt-1))`; no job exceeds `MAX_JOB_ATTEMPTS`. A failed validation never reaches `uploading`. Private review and ambiguous upload responses become `needs_review`. Upload-capable retries always require manual recovery/review. The Master reporting module never requeues or edits jobs.
 
 ## Windows Task Scheduler
 
-The checked-in `run-short.bat` and `run-long.bat` currently invoke `--dry-run`. Existing `silent-short.vbs` and `silent-long.vbs` call those safe runners.
+The checked-in BAT/VBS runners remain dry-run-only. The PowerShell installer directly invokes Node with an explicit mode and creates no task unless `-Apply` is supplied.
 
-For a safe test task:
+```powershell
+# Preview Agent C every 15 minutes and Shorts daily at 18:00; changes nothing
+powershell -ExecutionPolicy Bypass -File scripts\install-scheduled-tasks.ps1
 
-1. Use **Create Task**, not Basic Task, and run only while the local user is logged in during initial validation.
-2. Set the action to `wscript.exe` with the full path to `silent-short.vbs` or `silent-long.vbs` as its argument.
-3. Prevent starting a new instance when the task is already running. SQLite also enforces the production lock.
-4. Keep the BAT runner on `--dry-run` until a complete dry run passes and its SQLite record/output are reviewed.
-5. Do not switch a scheduled command to `--publish` until citation and transcript-comparison gates are implemented and verified.
+# Register safe dry-run tasks after reviewing the preview
+powershell -ExecutionPolicy Bypass -File scripts\install-scheduled-tasks.ps1 -Apply
 
-No task is automatically created or modified by this repository.
+# Optional local-only weekly long-form task
+powershell -ExecutionPolicy Bypass -File scripts\install-scheduled-tasks.ps1 -Mode LocalOnly -IncludeLong -Apply
+
+# Preview removal, then explicitly remove if desired
+powershell -ExecutionPolicy Bypass -File scripts\remove-scheduled-tasks.ps1
+powershell -ExecutionPolicy Bypass -File scripts\remove-scheduled-tasks.ps1 -Apply
+```
+
+The installer sets `MultipleInstances=IgnoreNew`, an execution limit, the repository working directory, a daily 18:00 Shorts default, an optional Sunday 18:00 long run, and a 15-minute due-retry check. Publish scheduling additionally requires both `-Mode Publish` and `-AllowPublish`; do not enable it until a real review upload is manually approved.
 
 ## Troubleshooting
 
@@ -171,9 +210,12 @@ No task is automatically created or modified by this repository.
 | `PRODUCTION_LOCKED` | Another job owns the render/upload lease. Do not start another render; inspect `npm run report`. |
 | `FREE_TIER_QUOTA_EXHAUSTED` | Job is blocked. Wait for free quota reset; do not enable billing or change providers. |
 | `YOUTUBE_FREE_QUOTA_EXHAUSTED` | Job is blocked. Retry after quota reset; do not re-upload blindly. |
+| `APPROVED_TOPIC_CATALOG_EXHAUSTED` | Review and add exact authoritative URLs to the curated topic catalog; do not ask Gemini to invent URLs. |
+| `CITATION_VALIDATION_FAILED` | A claim or high-risk script sentence could not be mapped to fetched evidence. Review sources or regenerate; never bypass it. |
+| Ambiguous YouTube response | Leave the job in `needs_review`, then run `npm run upload:recover -- <job-id>` after checking YouTube Studio. |
 | `DUPLICATE_SCRIPT_HASH` | Review the referenced earlier job before generating or uploading again. |
 | `DUPLICATE_VIDEO_FINGERPRINT` | Exact rendered content already exists in another job; do not upload it again. |
-| FFmpeg/ffprobe missing | Install FFmpeg locally and add its `bin` directory to Windows `PATH`. |
+| FFmpeg/ffprobe missing | Install/unpack FFmpeg locally, add `bin` to `PATH`, set explicit executable paths, or use ignored `tools/ffmpeg/`. |
 | Wrong dimensions/duration | Validation fails before upload. Correct the render settings; never bypass the gate. |
 | Gemini fetch failure | Treat as retryable only when it is not a quota/authentication error. Check local connectivity later. |
 | Task Scheduler access denied | Inspect or update the task manually from an elevated Windows Task Scheduler session. |
@@ -182,12 +224,22 @@ No task is automatically created or modified by this repository.
 
 - Gemini free-tier eligibility and quota depend on the Google account/project configuration; code cannot guarantee an account has billing disabled.
 - Edge TTS is network-dependent and may change availability.
-- Source URLs and citation fields exist in SQLite, but authoritative allowlist retrieval and claim-level verification are not implemented yet.
+- The curated topic catalog is intentionally small; every new topic and exact URL requires human review before it can be generated.
+- Claim matching is deterministic lexical evidence matching, not a complete semantic fact checker. Unsupported statistics/high-risk statements are rejected, but human editorial review remains required.
 - Faster-Whisper transcript comparison uses a simple normalized word-error-rate threshold of `0.25`; it may need calibration for names, dates, and accent-specific recognition.
-- YouTube upload IDs are persisted immediately after a successful response, but bounded 30-second/2-minute/5-minute verification is not implemented yet.
-- Automatic exponential-backoff requeue scheduling is not implemented yet; failures are recorded for deterministic future handling.
-- The repository still contains legacy `index.js` and `long-form.js`; do not schedule or run them because they contain the previous direct-publication implementation.
+- YouTube verification stops after three checks. Processing that is still incomplete at five minutes becomes `needs_review`; there is no continuous polling.
+- Ambiguous upload recovery searches only the most recent 50 channel uploads for the durable job reference. If it cannot prove identity, it does not retry.
+- `index.js` and `long-form.js` are retained for history but now throw immediately; only `short.js`, `long.js`, and `orchestrator.js` are supported entry points.
+- A real API-backed long dry run may be blocked until Gemini's free quota resets. `npm run verify:long-render` verifies Agent A's network-free FFmpeg path independently.
 - GitHub Actions is not configured. Prefer local tests; any future CI must remain charge-free or use a self-hosted runner.
+
+## Verification record
+
+- Local unit suite: 23 tests passed, covering SQLite lifecycle/migrations, cross-connection leases, retry timing/max attempts, quota blocking, secret redaction/artifact scanning, transcript WER, approved-source security, claim validation, Master report immutability, and bounded YouTube verification.
+- Short dry run: complete pipeline passed with job `41ef914d-622e-4167-8cf2-6df7dd9733f7`; output is 1080×1920, 22.3 seconds, includes audio/captions, and was not uploaded.
+- Long renderer fixture: passed at 1920×1080 and 212 seconds with H.264 video, AAC audio, eight scene inputs, and logo overlay; it never used a network API.
+- Real Chelyabinsk long dry run: authoritative sources were fetched, then Gemini returned `FREE_TIER_QUOTA_EXHAUSTED`; job `782d5abc-03a9-4c48-af53-4ce72fd366f6` is safely blocked with a later retry time.
+- No real/private YouTube upload was run because this repository has no explicit authorization flag for a test upload. The upload verifier is covered with mocked YouTube responses.
 
 ---
 
@@ -336,4 +388,4 @@ node long.js [options]
 - `--skip-upload`: Generates and renders video locally without uploading.
 
 ### 4. Windows Task Scheduler
-During stabilization, Windows Task Scheduler may run `silent-short.vbs` and `silent-long.vbs` only in their checked-in `--dry-run` configuration. Do not schedule `--publish` until all remaining safety gates pass.
+The legacy BAT/VBS launchers remain dry-run-only. Prefer the preview-first PowerShell installer documented above; do not schedule `--publish` until a real private review upload has been manually inspected and approved.

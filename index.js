@@ -10,6 +10,10 @@ import https from 'https';
 import { execSync } from 'child_process';
 import nodemailer from 'nodemailer';
 
+const legacyError = new Error('Legacy direct-publication entry point disabled. Use short.js, which requires explicit --publish for live upload.');
+legacyError.code = 'LEGACY_ENTRY_POINT_DISABLED';
+throw legacyError;
+
 dotenv.config();
 
 const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);

@@ -6,6 +6,34 @@ import { google } from 'googleapis';
 import fs from 'fs';
 import nodemailer from 'nodemailer';
 import { config } from './config.js';
+import { verifyUploadAtIntervals } from './youtube-verification.js';
+
+const JOB_REFERENCE_PREFIX = 'Automation reference:';
+
+function classifyYouTubeError(error, { uploadStarted = false } = {}) {
+  const message = error?.message || '';
+  if (/quota|dailyLimitExceeded|uploadLimitExceeded|rateLimitExceeded|429/i.test(message)) {
+    error.code = 'YOUTUBE_FREE_QUOTA_EXHAUSTED';
+    error.isQuotaBlocked = true;
+  } else if (/invalid.?grant|unauthorized|forbidden|401|403/i.test(message)) {
+    error.code = error.code || 'YOUTUBE_AUTH_FAILED';
+    error.isBlocked = true;
+  } else if (uploadStarted) {
+    error.code = error.code || 'YOUTUBE_UPLOAD_AMBIGUOUS';
+    error.isUploadAmbiguous = true;
+  }
+  return error;
+}
+
+export function createYouTubeClient() {
+  const oauth2Client = new google.auth.OAuth2(
+    process.env.CLIENT_ID,
+    process.env.CLIENT_SECRET,
+    'http://localhost:3000/oauth2callback'
+  );
+  oauth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
+  return google.youtube({ version: 'v3', auth: oauth2Client });
+}
 
 /**
  * Computes the next 18:00 local time as an ISO string.
@@ -48,6 +76,7 @@ function formatChapters(chapters) {
  * @param {string}   opts.type        - 'short' or 'long' (for email label only)
  * @param {boolean}  [opts.dryRun=false] - Simulation mode (skips real API upload)
  * @param {boolean}  [opts.humanReview=false] - Uploads as private draft without auto-publish
+ * @param {string}   opts.jobId - Durable local job reference embedded for recovery
  * @returns {Promise<{videoId: string, link: string, publishAt: string, simulated?: boolean}>}
  */
 export async function uploadToYouTube({
@@ -59,11 +88,14 @@ export async function uploadToYouTube({
   chapters = null,
   type = 'long',
   dryRun = false,
-  humanReview = false
+  humanReview = false,
+  jobId
 }) {
+  if (!dryRun && !jobId) throw new Error('Live/review YouTube upload requires a durable jobId.');
   const publishAt = getPublishAt();
   const chaptersText = formatChapters(chapters);
-  const fullDescription = `${description}${chaptersText}`;
+  const jobReference = jobId ? `\n\n${JOB_REFERENCE_PREFIX} ${jobId}` : '';
+  const fullDescription = `${description}${chaptersText}${jobReference}`;
 
   // ── Dry-Run Simulation Mode ────────────────────────────────────────────────
   if (dryRun) {
@@ -86,13 +118,7 @@ export async function uploadToYouTube({
   }
 
   // ── Real Upload ─────────────────────────────────────────────────────────────
-  const oauth2Client = new google.auth.OAuth2(
-    process.env.CLIENT_ID,
-    process.env.CLIENT_SECRET,
-    'http://localhost:3000/oauth2callback'
-  );
-  oauth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
-  const youtube = google.youtube({ version: 'v3', auth: oauth2Client });
+  const youtube = createYouTubeClient();
 
   // Status configuration: humanReview mode sets private without publishAt for manual approval
   const statusConfig = humanReview
@@ -115,12 +141,7 @@ export async function uploadToYouTube({
       media: { body: fs.createReadStream(videoPath) }
     });
   } catch (error) {
-    const message = error?.message || '';
-    if (/quota|dailyLimitExceeded|uploadLimitExceeded|rateLimitExceeded/i.test(message)) {
-      error.code = 'YOUTUBE_FREE_QUOTA_EXHAUSTED';
-      error.isQuotaBlocked = true;
-    }
-    throw error;
+    throw classifyYouTubeError(error, { uploadStarted: true });
   }
 
   const videoId = response.data.id;
@@ -137,6 +158,49 @@ export async function uploadToYouTube({
 
   await sendEmail({ title, link, publishAt, type, humanReview });
   return { videoId, link, publishAt };
+}
+
+export async function verifyYouTubeUpload(videoId, { onCheck = async () => {}, offsetsMs, sleepFn } = {}) {
+  const youtube = createYouTubeClient();
+  return verifyUploadAtIntervals({
+    videoId,
+    offsetsMs,
+    sleepFn,
+    onCheck,
+    fetchStatus: async id => {
+      try {
+        const response = await youtube.videos.list({ part: 'status,processingDetails', id: [id] });
+        return response.data.items?.[0] || null;
+      } catch (error) {
+        throw classifyYouTubeError(error);
+      }
+    },
+  });
+}
+
+export async function findUploadByJobReference(jobId) {
+  if (!jobId) throw new Error('Upload recovery requires a job ID.');
+  const youtube = createYouTubeClient();
+  try {
+    const channelResponse = await youtube.channels.list({ part: 'contentDetails', mine: true });
+    const uploadsPlaylist = channelResponse.data.items?.[0]?.contentDetails?.relatedPlaylists?.uploads;
+    if (!uploadsPlaylist) return null;
+    const playlistResponse = await youtube.playlistItems.list({
+      part: 'contentDetails',
+      playlistId: uploadsPlaylist,
+      maxResults: 50,
+    });
+    const videoIds = (playlistResponse.data.items || []).map(item => item.contentDetails?.videoId).filter(Boolean);
+    if (!videoIds.length) return null;
+    const videosResponse = await youtube.videos.list({
+      part: 'snippet,status,processingDetails',
+      id: videoIds,
+    });
+    const marker = `${JOB_REFERENCE_PREFIX} ${jobId}`;
+    return (videosResponse.data.items || []).find(video => video.snippet?.description?.includes(marker)) || null;
+  } catch (error) {
+    throw classifyYouTubeError(error);
+  }
 }
 
 async function sendEmail({ title, link, publishAt, type, humanReview }) {

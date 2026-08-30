@@ -32,7 +32,7 @@ const ALLOWED_TRANSITIONS = Object.freeze({
   uploading: ['published', 'retryable_failure', 'blocked', 'failed', 'needs_review'],
   retryable_failure: ['queued', 'blocked', 'failed', 'needs_review'],
   blocked: ['queued', 'failed', 'needs_review'],
-  needs_review: ['queued', 'failed'],
+  needs_review: ['queued', 'published', 'failed'],
   published: [],
   failed: [],
 });
@@ -90,6 +90,8 @@ export class JobStore {
         video_fingerprint TEXT,
         youtube_video_id TEXT,
         publish_at TEXT,
+        next_attempt_at TEXT,
+        last_attempt_at TEXT,
         metadata TEXT NOT NULL DEFAULT '{}'
       );
 
@@ -116,7 +118,13 @@ export class JobStore {
         expires_at INTEGER NOT NULL
       );
 
-      PRAGMA user_version = 1;
+    `);
+    const columns = new Set(this.db.prepare('PRAGMA table_info(jobs)').all().map(column => column.name));
+    if (!columns.has('next_attempt_at')) this.db.exec('ALTER TABLE jobs ADD COLUMN next_attempt_at TEXT;');
+    if (!columns.has('last_attempt_at')) this.db.exec('ALTER TABLE jobs ADD COLUMN last_attempt_at TEXT;');
+    this.db.exec(`
+      CREATE INDEX IF NOT EXISTS idx_jobs_retry_due ON jobs(state, next_attempt_at);
+      PRAGMA user_version = 2;
     `);
   }
 
@@ -163,6 +171,33 @@ export class JobStore {
     return rows.map(hydrateJob);
   }
 
+  listDueRetries({ now = isoNow(), limit = 10 } = {}) {
+    const boundedLimit = Math.max(1, Math.min(Number(limit) || 10, 100));
+    return this.db.prepare(`
+      SELECT * FROM jobs
+      WHERE state IN ('retryable_failure', 'blocked') AND next_attempt_at IS NOT NULL AND next_attempt_at <= ?
+      ORDER BY next_attempt_at ASC LIMIT ?
+    `).all(now, boundedLimit).map(hydrateJob);
+  }
+
+  recordEvent(id, type, details = {}) {
+    const current = this.getJob(id);
+    if (!current) throw new Error(`Job not found: ${id}`);
+    this.db.prepare(`
+      INSERT INTO job_events (job_id, created_at, from_state, to_state, details)
+      VALUES (?, ?, ?, ?, ?)
+    `).run(id, isoNow(), current.state, type, toJson(details, {}));
+  }
+
+  getEvents(id, limit = 100) {
+    return this.db.prepare(`
+      SELECT * FROM job_events WHERE job_id = ? ORDER BY id DESC LIMIT ?
+    `).all(id, Math.max(1, Math.min(Number(limit) || 100, 500))).map(row => ({
+      ...row,
+      details: fromJson(row.details, {}),
+    }));
+  }
+
   transition(id, nextState, details = {}) {
     if (!JOB_STATES.includes(nextState)) throw new Error(`Unknown job state: ${nextState}`);
     const current = this.getJob(id);
@@ -196,6 +231,8 @@ export class JobStore {
       ['videoFingerprint', ['video_fingerprint', value => value]],
       ['youtubeVideoId', ['youtube_video_id', value => value]],
       ['publishAt', ['publish_at', value => value]],
+      ['nextAttemptAt', ['next_attempt_at', value => value]],
+      ['lastAttemptAt', ['last_attempt_at', value => value]],
       ['metadata', ['metadata', value => toJson(value, {})]],
     ]);
     const assignments = [];
@@ -214,21 +251,37 @@ export class JobStore {
   }
 
   incrementAttempt(id) {
-    this.db.prepare('UPDATE jobs SET attempt_count = attempt_count + 1, updated_at = ? WHERE id = ?').run(isoNow(), id);
+    const now = isoNow();
+    this.db.prepare('UPDATE jobs SET attempt_count = attempt_count + 1, last_attempt_at = ?, updated_at = ? WHERE id = ?').run(now, now, id);
     return this.getJob(id);
   }
 
-  failJob(id, error, { retryable = true, blocked = false } = {}) {
+  failJob(id, error, { retryable = true, blocked = false, needsReview = false, retryAfterSeconds = null } = {}) {
     const current = this.getJob(id);
     if (!current || TERMINAL_STATES.has(current.state)) return current;
     const attempted = this.incrementAttempt(id);
     const errorDetails = safeErrorDetails(error);
     this.updateJob(id, { errorDetails });
     let nextState = 'failed';
-    if (blocked) nextState = 'blocked';
-    else if (retryable && attempted.attempt_count < attempted.max_attempts) nextState = 'retryable_failure';
+    let nextAttemptAt = null;
+    if (needsReview) nextState = 'needs_review';
+    else if (blocked) {
+      nextState = 'blocked';
+      if (retryAfterSeconds && attempted.attempt_count < attempted.max_attempts) {
+        nextAttemptAt = new Date(Date.now() + retryAfterSeconds * 1000).toISOString();
+      }
+    }
+    else if (retryable && attempted.attempt_count < attempted.max_attempts) {
+      nextState = 'retryable_failure';
+      const delaySeconds = Math.min(
+        config.retryMaxSeconds,
+        config.retryBaseSeconds * (2 ** Math.max(0, attempted.attempt_count - 1))
+      );
+      nextAttemptAt = new Date(Date.now() + delaySeconds * 1000).toISOString();
+    }
     if (!ALLOWED_TRANSITIONS[current.state].includes(nextState)) nextState = 'failed';
-    return this.transition(id, nextState, { error: errorDetails });
+    this.updateJob(id, { nextAttemptAt });
+    return this.transition(id, nextState, { error: errorDetails, nextAttemptAt });
   }
 
   acquireLock(resource, ownerId, leaseMs = config.lockLeaseMinutes * 60_000) {

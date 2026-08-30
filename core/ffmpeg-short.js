@@ -4,6 +4,9 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import ffmpeg from 'fluent-ffmpeg';
+import { configureFluentFfmpeg } from './media-tools.js';
+
+configureFluentFfmpeg(ffmpeg);
 
 /**
  * Compiles multiple portrait video clips and an audio track into a

@@ -4,7 +4,7 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { JobStore } from '../core/job-store.js';
-import { redactSecrets } from '../core/security.js';
+import { redactSecrets, scanForSecretLeaks } from '../core/security.js';
 import { calculateWordErrorRate } from '../core/transcript-validator.js';
 
 function withStore(callback) {
@@ -103,6 +103,39 @@ test('records free-tier quota failures as blocked', () => {
   });
 });
 
+test('persists deterministic exponential retry timing', () => {
+  withStore(store => {
+    const job = store.createJob({ kind: 'short' });
+    store.transition(job.id, 'researching');
+    const before = Date.now();
+    const failed = store.failJob(job.id, new Error('temporary network failure'));
+    assert.equal(failed.state, 'retryable_failure');
+    assert.ok(Date.parse(failed.next_attempt_at) >= before + 299_000);
+    assert.equal(store.listDueRetries({ now: '9999-12-31T23:59:59.999Z' })[0].id, job.id);
+  });
+});
+
+test('quota blocks receive a bounded later retry time', () => {
+  withStore(store => {
+    const job = store.createJob({ kind: 'long' });
+    store.transition(job.id, 'researching');
+    const error = new Error('quota exhausted');
+    const failed = store.failJob(job.id, error, { blocked: true, retryAfterSeconds: 600 });
+    assert.equal(failed.state, 'blocked');
+    assert.ok(failed.next_attempt_at);
+  });
+});
+
+test('stops retrying when maximum attempts is reached', () => {
+  withStore(store => {
+    const job = store.createJob({ kind: 'short', maxAttempts: 1 });
+    store.transition(job.id, 'researching');
+    const failed = store.failJob(job.id, new Error('still failing'));
+    assert.equal(failed.state, 'failed');
+    assert.equal(failed.next_attempt_at, null);
+  });
+});
+
 test('redacts configured and recognizable secrets', () => {
   const previous = process.env.GEMINI_API_KEY;
   process.env.GEMINI_API_KEY = 'example-secret-value';
@@ -113,6 +146,20 @@ test('redacts configured and recognizable secrets', () => {
   } finally {
     if (previous === undefined) delete process.env.GEMINI_API_KEY;
     else process.env.GEMINI_API_KEY = previous;
+  }
+});
+
+test('detects secret-shaped values in text artifacts without returning the value', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'deedlamp-secret-scan-'));
+  try {
+    const artifact = path.join(dir, 'metadata.json');
+    fs.writeFileSync(artifact, JSON.stringify({ token: `AIza${'B'.repeat(24)}` }), 'utf8');
+    const result = scanForSecretLeaks([dir]);
+    assert.equal(result.valid, false);
+    assert.equal(result.leaks[0].category, 'google_api_key');
+    assert.equal(Object.hasOwn(result.leaks[0], 'value'), false);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
   }
 });
 

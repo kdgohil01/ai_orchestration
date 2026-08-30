@@ -5,8 +5,9 @@
 
 import fs from 'fs';
 import path from 'path';
-import { execSync } from 'child_process';
+import { execFileSync } from 'child_process';
 import { config, validateConfig } from './config.js';
+import { resolveMediaTool } from './media-tools.js';
 
 /**
  * Runs preflight validation before any pipeline execution.
@@ -63,13 +64,23 @@ export function runPreflight({ checkYoutube = true } = {}) {
 
   // 4. Binary availability check (ffmpeg, python)
   try {
-    execSync('ffmpeg -version', { stdio: 'ignore' });
+    const ffmpegPath = resolveMediaTool('ffmpeg');
+    if (!ffmpegPath) throw new Error('not found');
+    execFileSync(ffmpegPath, ['-version'], { stdio: 'ignore' });
   } catch (err) {
-    errors.push('FFmpeg binary is not accessible in PATH or system command line.');
+    errors.push('FFmpeg binary is not accessible through FFMPEG_PATH, PATH, or tools/ffmpeg.');
   }
 
   try {
-    execSync('python --version', { stdio: 'ignore' });
+    const ffprobePath = resolveMediaTool('ffprobe');
+    if (!ffprobePath) throw new Error('not found');
+    execFileSync(ffprobePath, ['-version'], { stdio: 'ignore' });
+  } catch (err) {
+    errors.push('ffprobe binary is not accessible through FFPROBE_PATH, PATH, or tools/ffmpeg.');
+  }
+
+  try {
+    execFileSync('python', ['--version'], { stdio: 'ignore' });
   } catch (err) {
     errors.push('Python binary is not accessible in PATH or system command line.');
   }

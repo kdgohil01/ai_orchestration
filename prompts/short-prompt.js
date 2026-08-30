@@ -14,12 +14,15 @@ import {
  * @param {string[]} topicsUsed - Array of topic slugs already published
  * @returns {string}
  */
-export function buildShortPrompt(topicsUsed = []) {
+export function buildShortPrompt(topicsUsed = [], research = null) {
   // Cap at 40 slugs to keep prompt size reasonable
   const bannedList = topicsUsed.slice(-40).join(', ') || 'None yet';
 
   return `You are writing for "${CHANNEL_NAME}" — a YouTube channel narrated by ${PERSONA_NAME}.
 Tone: ${TONE_DESCRIPTOR}
+
+Use ONLY the approved, fetched source material below. Do not add facts from memory.
+${research?.sourceContext || 'NO APPROVED SOURCE CONTEXT PROVIDED — refuse to invent facts.'}
 
 Write a 25-second YouTube Short script following this EXACT 4-beat structure.
 Each beat must flow naturally into the next as continuous spoken narration.
@@ -50,6 +53,10 @@ CONTENT RULES:
   - Choose from: historical anomalies, biological extremes, psychological phenomena,
     physics edge cases, engineering disasters, lost civilizations.
   - DO NOT write about any of these topics: [${bannedList}]
+  - topic_slug and topic_category must match the approved topic above.
+  - Every factual statement containing a date, number, measurement, named event, or statistic must have a claim record.
+  - evidence_quote must be a 6-40 word verbatim excerpt from the approved source text.
+  - source_url must exactly match one of the approved source URLs.
 
 Return ONLY a raw JSON object. No markdown. No backticks. No explanation.
 {
@@ -60,6 +67,10 @@ Return ONLY a raw JSON object. No markdown. No backticks. No explanation.
   "seo_hook": "First line of description — a keyword-rich searchable statement about the topic (not a bonus fact)",
   "comment_cta": "A specific, debatable question for the comments — not generic, not 'drop it below'",
   "keywords": ["5 to 8 relevant search keywords as array strings"],
+  "source_urls": ["the 2 to 4 approved source URLs actually used"],
+  "claims": [
+    { "statement": "factual statement used in the script", "source_url": "exact approved URL", "evidence_quote": "6-40 verbatim words from that source" }
+  ],
   "visualSegments": [
     { "part": 1, "keyword": "specific portrait video search term for beat 1" },
     { "part": 2, "keyword": "specific portrait video search term for beat 2" },
@@ -85,6 +96,7 @@ export function buildShortDescription(data, longFormUrl = null) {
     desc += `\n\nFull story in The Archive:\n${longFormUrl}`;
   }
 
+  desc += `\n\nSources:\n${(data.source_urls || []).map(url => `- ${url}`).join('\n')}`;
   desc += `\n\n${hashtags}`;
   return desc;
 }

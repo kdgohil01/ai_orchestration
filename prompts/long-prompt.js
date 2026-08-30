@@ -14,11 +14,14 @@ import {
  * @param {string[]} topicsUsed - Array of topic slugs already published
  * @returns {string}
  */
-export function buildLongPrompt(topicsUsed = []) {
+export function buildLongPrompt(topicsUsed = [], research = null) {
   const bannedList = topicsUsed.slice(-40).join(', ') || 'None yet';
 
   return `You are the writer for "${CHANNEL_NAME}'s" "${SERIES_LONG}" — a long-form documentary series narrated by ${PERSONA_NAME}.
 Tone: ${TONE_DESCRIPTOR}
+
+Use ONLY the approved, fetched source material below. Do not add facts from memory.
+${research?.sourceContext || 'NO APPROVED SOURCE CONTEXT PROVIDED — refuse to invent facts.'}
 
 Produce a 4-minute documentary script (approximately 580 to 650 words) following this EXACT 4-act narrative structure.
 The script is continuous spoken narration — no scene headings, no stage directions, no labels.
@@ -56,6 +59,10 @@ CONTENT RULES:
   - At least one sensory detail in ACT 2
   - 8 visual segments (landscape orientation search terms)
   - DO NOT write about any of these topics: [${bannedList}]
+  - topic_slug and topic_category must match the approved topic above.
+  - Every date, number, measurement, named event, scientific result, and statistic must have a claim record.
+  - evidence_quote must be a 6-40 word verbatim excerpt from the approved source text.
+  - source_url must exactly match one of the approved source URLs.
 
 Return ONLY a raw JSON object. No markdown. No backticks. No explanation.
 {
@@ -66,6 +73,10 @@ Return ONLY a raw JSON object. No markdown. No backticks. No explanation.
   "comment_cta": "Specific, debatable question — not generic",
   "keywords": ["6 to 10 relevant keywords as array strings"],
   "fullScript": "The complete continuous narration — all 4 acts and outro combined",
+  "source_urls": ["the 2 to 4 approved source URLs actually used"],
+  "claims": [
+    { "statement": "factual statement used in the script", "source_url": "exact approved URL", "evidence_quote": "6-40 verbatim words from that source" }
+  ],
   "chapters": [
     { "label": "The Inciting Detail", "timestamp": "0:00" },
     { "label": "The Context",         "timestamp": "0:45" },
@@ -105,6 +116,9 @@ export function buildLongDescription(data) {
     data.comment_cta,
     '',
     chaptersText,
+    '',
+    'Sources:',
+    ...(data.source_urls || []).map(url => `- ${url}`),
     '',
     hashtags
   ].join('\n');

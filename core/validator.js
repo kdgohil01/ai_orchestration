@@ -5,6 +5,9 @@
 
 import fs from 'fs';
 import ffmpeg from 'fluent-ffmpeg';
+import { configureFluentFfmpeg } from './media-tools.js';
+
+configureFluentFfmpeg(ffmpeg);
 
 /**
  * Runs ffprobe on a media file to retrieve metadata.

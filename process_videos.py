@@ -22,6 +22,11 @@ def check_ffmpeg():
     for p in common_paths:
         if os.path.exists(p):
             return p
+    local_tools = Path(__file__).parent.resolve() / "tools" / "ffmpeg"
+    if local_tools.exists():
+        for candidate in local_tools.rglob("ffmpeg.exe" if os.name == "nt" else "ffmpeg"):
+            if candidate.is_file():
+                return str(candidate)
     return None
 
 from burn_captions import burn_captions

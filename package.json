@@ -8,10 +8,15 @@
     "check": "node --check short.js && node --check long.js && node --check orchestrator.js",
     "db:init": "node orchestrator.js init",
     "report": "node orchestrator.js report",
+    "report:daily": "node orchestrator.js report --period=daily --write",
+    "report:weekly": "node orchestrator.js report --period=weekly --write",
+    "retry:due": "node orchestrator.js run-due",
+    "upload:recover": "node orchestrator.js recover-upload",
     "short": "node short.js",
     "long": "node long.js",
     "short:dry": "node short.js --dry-run",
-    "long:dry": "node long.js --dry-run"
+    "long:dry": "node long.js --dry-run",
+    "verify:long-render": "node scripts/verify-long-render.js"
   },
   "keywords": [],
   "author": "",
