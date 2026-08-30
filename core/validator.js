@@ -73,11 +73,15 @@ export async function validateMediaIntegrity(filePath, format = 'short') {
   // 4. Resolution check
   if (format === 'short') {
     if (width !== 1080 || height !== 1920) {
-      console.warn(`⚠️ Resolution warning for Short: ${width}x${height} (target 1080x1920)`);
+      throw new Error(`Media validation failed: Short resolution is ${width}x${height}; required 1080x1920.`);
     }
+    if (duration > 60) throw new Error(`Media validation failed: Short duration is ${duration}s; configured maximum is 60s.`);
   } else if (format === 'long') {
     if (width !== 1920 || height !== 1080) {
-      console.warn(`⚠️ Resolution warning for Long-form: ${width}x${height} (target 1920x1080)`);
+      throw new Error(`Media validation failed: Long-form resolution is ${width}x${height}; required 1920x1080.`);
+    }
+    if (duration < 210 || duration > 270) {
+      throw new Error(`Media validation failed: Long-form duration is ${duration}s; required range is 210–270s.`);
     }
   }
 

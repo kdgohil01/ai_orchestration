@@ -55,7 +55,7 @@ console.log(`  Long-Form Pipeline  : ${passedLong  ? '✅ PASSED' : '❌ FAILED'
 console.log('===========================================================\n');
 
 if (passedShort && passedLong) {
-  console.log('🎉 ALL SMOKE TESTS PASSED! Pipeline is fully production-ready.');
+  console.log('🎉 ALL DRY-RUN SMOKE TESTS PASSED. This is not approval for live publishing.');
   process.exit(0);
 } else {
   console.error('❌ ONE OR MORE SMOKE TESTS FAILED. Check logs above.');

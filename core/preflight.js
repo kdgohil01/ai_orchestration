@@ -6,8 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
-import dotenv from 'dotenv';
-dotenv.config();
+import { config, validateConfig } from './config.js';
 
 /**
  * Runs preflight validation before any pipeline execution.
@@ -23,21 +22,13 @@ export function runPreflight({ checkYoutube = true } = {}) {
   const warnings = [];
 
   // 1. Environment variables check
-  const requiredEnvVars = ['GEMINI_API_KEY', 'PEXELS_API_KEY'];
-  if (checkYoutube) {
-    requiredEnvVars.push('CLIENT_ID', 'CLIENT_SECRET', 'REFRESH_TOKEN');
-  }
-
-  requiredEnvVars.forEach(key => {
-    if (!process.env[key] || process.env[key].trim() === '') {
-      errors.push(`Missing required .env variable: ${key}`);
-    }
-  });
+  const configStatus = validateConfig({ requireContentApis: true, requireYoutube: checkYoutube });
+  errors.push(...configStatus.errors);
+  warnings.push(...configStatus.warnings);
 
   // 2. Directory permissions check
-  const requiredDirs = ['temp', 'data', 'assets', 'logs'];
-  requiredDirs.forEach(dirName => {
-    const dirPath = path.resolve(dirName);
+  const requiredDirs = [config.tempDir, path.dirname(config.databasePath), config.outputDir, config.logDir];
+  requiredDirs.forEach(dirPath => {
     try {
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
@@ -47,7 +38,7 @@ export function runPreflight({ checkYoutube = true } = {}) {
       fs.writeFileSync(testFile, 'test');
       fs.unlinkSync(testFile);
     } catch (err) {
-      errors.push(`Directory write test failed for '${dirName}': ${err.message}`);
+      errors.push(`Directory write test failed for '${dirPath}': ${err.message}`);
     }
   });
 
@@ -55,8 +46,8 @@ export function runPreflight({ checkYoutube = true } = {}) {
   const requiredFiles = [
     { name: 'burn_captions.py', required: true },
     { name: 'data/memory.json', required: true },
-    { name: 'assets/logo.png', required: false, warning: 'Logo overlay will be skipped in long-form renders.' },
-    { name: 'assets/arial.ttf', required: false, warning: 'Subtitle font falls back to system Arial.' }
+    { name: 'logo.png', required: false, warning: 'Logo overlay will be skipped in long-form renders.' },
+    { name: 'arial.ttf', required: false, warning: 'Subtitle font falls back to system Arial.' }
   ];
 
   requiredFiles.forEach(file => {

@@ -5,8 +5,7 @@
 import { createClient } from 'pexels';
 import fs from 'fs';
 import https from 'https';
-import dotenv from 'dotenv';
-dotenv.config();
+import './config.js';
 
 const client = createClient(process.env.PEXELS_API_KEY);
 

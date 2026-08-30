@@ -4,8 +4,8 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import dotenv from 'dotenv';
-dotenv.config();
+import { config } from './config.js';
+import { redactSecrets } from './security.js';
 
 const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
@@ -18,8 +18,11 @@ const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
  * @param {number} retries
  * @returns {Promise<object>} Parsed JSON object
  */
-export async function generateJSON(prompt, retries = 5) {
-  const modelName = 'gemini-2.5-flash';
+export async function generateJSON(prompt, retries = 3) {
+  const modelName = config.geminiModel;
+  if (!config.approvedGeminiModels.includes(modelName)) {
+    throw new Error(`Gemini model '${modelName}' is not approved. Paid or automatic fallback models are disabled.`);
+  }
   const model = ai.getGenerativeModel({ model: modelName });
 
   for (let attempt = 1; attempt <= retries; attempt++) {
@@ -34,7 +37,17 @@ export async function generateJSON(prompt, retries = 5) {
 
       return JSON.parse(text);
     } catch (err) {
-      console.warn(`⚠️ Gemini (${modelName}) attempt ${attempt}/${retries} failed: ${err.message}`);
+      const message = redactSecrets(err.message);
+      if (/quota|resource[_ ]?exhausted|429/i.test(message)) {
+        err.code = 'FREE_TIER_QUOTA_EXHAUSTED';
+        err.isQuotaBlocked = true;
+        throw err;
+      }
+      if (/api key|permission|unauthorized|forbidden|401|403/i.test(message)) {
+        err.code = err.code || 'GEMINI_AUTH_FAILED';
+        throw err;
+      }
+      console.warn(`⚠️ Gemini (${modelName}) attempt ${attempt}/${retries} failed: ${message}`);
       if (attempt === retries) throw err;
       // Exponential backoff with jitter
       const delay = Math.min(10000, 2000 * Math.pow(2, attempt - 1));

@@ -4,10 +4,6 @@
 // Features: Preflight checks, Quality Gates, Render Validation, Near-Duplicate Check
 // ─────────────────────────────────────────────────────────────────────────────
 
-import dotenv from 'dotenv';
-dotenv.config();
-
-import fs from 'fs';
 import path from 'path';
 
 import { selectVoice }                      from './core/identity.js';
@@ -24,12 +20,18 @@ import { runPreflight }                      from './core/preflight.js';
 import { recordAnalyticsEntry }              from './core/analytics.js';
 import { startStage, endStage, logError }    from './core/logger.js';
 import { buildLongPrompt, buildLongDescription } from './prompts/long-prompt.js';
+import { PipelineRun, fingerprintFile, hashText } from './core/pipeline-run.js';
+import { validateTranscriptMatch } from './core/transcript-validator.js';
 
 // Parse CLI Flags
 const args = process.argv.slice(2);
 const IS_DRY_RUN = args.includes('--dry-run');
 const IS_REVIEW  = args.includes('--review');
-const SKIP_UPLOAD = args.includes('--skip-upload');
+const LIVE_PUBLISH = args.includes('--publish');
+const explicitModes = [IS_DRY_RUN, IS_REVIEW, LIVE_PUBLISH, args.includes('--skip-upload')].filter(Boolean).length;
+if (explicitModes > 1) throw new Error('Choose only one mode: --dry-run, --review, --publish, or --skip-upload.');
+const SKIP_UPLOAD = args.includes('--skip-upload') || (!IS_DRY_RUN && !IS_REVIEW && !LIVE_PUBLISH);
+const RUN_MODE = LIVE_PUBLISH ? 'publish' : IS_REVIEW ? 'review' : IS_DRY_RUN ? 'dry-run' : 'local-only';
 const SHOW_HELP  = args.includes('--help');
 
 if (SHOW_HELP) {
@@ -40,33 +42,34 @@ Usage: node long.js [options]
 Options:
   --dry-run      Run full pipeline without uploading to YouTube (simulation)
   --review       Upload video as a Private Draft for manual review
+  --publish      Explicitly allow a live scheduled YouTube upload
   --skip-upload  Generate and render video locally without uploading
+                 This is also the safe default when no mode is supplied
   --help         Show this help message
 `);
   process.exit(0);
 }
 
-const RUN_ID      = Date.now();
-const TEMP_DIR    = path.resolve(`temp/long_${RUN_ID}`);
-const AUDIO_PATH  = path.join(TEMP_DIR, 'voice.mp3');
-const UNCAP_PATH  = path.join(TEMP_DIR, 'uncaptioned.mp4');
-const FINAL_PATH  = path.resolve('output_long.mp4');
 const FALLBACK    = path.resolve('fallback_long.mp4');
 
 async function main() {
+  let run = null;
   const startTime = new Date().toISOString();
-  console.log(`\n🟢 [${startTime}] Long-Form Agent Started. Run ID: ${RUN_ID}`);
+  console.log(`\n🟢 [${startTime}] Long-Form Agent Started. Mode: ${RUN_MODE}`);
   if (IS_DRY_RUN) console.log('🧪 MODE: DRY-RUN SIMULATION (No live YouTube uploads)');
   if (IS_REVIEW)  console.log('📝 MODE: HUMAN REVIEW (Uploads as private draft)');
-
-  // ── Preflight Checks ───────────────────────────────────────────────────────
-  const tPreflight = startStage('Preflight System Checks');
-  runPreflight({ checkYoutube: !SKIP_UPLOAD && !IS_DRY_RUN });
-  endStage(tPreflight, true);
-
-  fs.mkdirSync(TEMP_DIR, { recursive: true });
+  if (SKIP_UPLOAD) console.log('🔒 MODE: LOCAL-ONLY (Live upload requires explicit --publish)');
 
   try {
+    run = new PipelineRun('long', RUN_MODE);
+    const { tempDir: TEMP_DIR, audioPath: AUDIO_PATH, uncaptionedPath: UNCAP_PATH, finalPath: FINAL_PATH } = run;
+    const TRANSCRIPT_PATH = path.join(TEMP_DIR, 'transcript.json');
+    console.log(`   Job ID: ${run.job.id}`);
+
+    const tPreflight = startStage('Preflight System Checks');
+    runPreflight({ checkYoutube: LIVE_PUBLISH || IS_REVIEW });
+    endStage(tPreflight, true, { jobId: run.job.id });
+
     // ── Stage 1: Documentary Script & Quality Gate ───────────────────────────
     const tScript = startStage('Stage 1: 4-ACT Script Generation & Quality Gate');
     let data = null;
@@ -99,6 +102,19 @@ async function main() {
     }
 
     if (!data) throw new Error('Failed to generate documentary script that meets Content Quality Gate.');
+    const scriptHash = hashText(data.fullScript);
+    const duplicateScript = run.store.findActiveByScriptHash(scriptHash, run.job.id);
+    if (duplicateScript) {
+      const error = new Error(`Duplicate script hash already belongs to active/published job ${duplicateScript.id}.`);
+      error.code = 'DUPLICATE_SCRIPT_HASH';
+      error.isBlocked = true;
+      throw error;
+    }
+    run.update({
+      scriptHash,
+      metadata: { mode: RUN_MODE, title: data.title, topicSlug: data.topic_slug, category: data.topic_category },
+    });
+    run.transition('scripted');
     endStage(tScript, true, { title: data.title, topicSlug: data.topic_slug });
 
     console.log(`✨ Documentary Script Verified: "${data.title}"`);
@@ -122,10 +138,13 @@ async function main() {
       const ok = await fetchAndDownload(seg.keyword, dest, 'landscape', FALLBACK);
       if (ok) videoPaths.push(dest);
     }
-    if (videoPaths.length === 0) throw new Error('All B-roll downloads failed.');
+    if (videoPaths.length !== data.visualSegments.length || videoPaths.length < 8) {
+      throw new Error(`B-roll validation failed: expected ${data.visualSegments.length} scenes and received ${videoPaths.length}.`);
+    }
     endStage(tPexels, true, { scenesCount: videoPaths.length });
 
     // ── Stage 4a: FFmpeg Compile ──────────────────────────────────────────────
+    run.transition('rendering', { scenesCount: videoPaths.length });
     const tCompile = startStage('Stage 4a: Multi-Scene Video Compilation');
     await compileLongVideo(videoPaths, AUDIO_PATH, UNCAP_PATH);
     endStage(tCompile, true);
@@ -137,13 +156,26 @@ async function main() {
       outputPath: FINAL_PATH,
       targetY:    900,
       canvasW:    1920,
-      canvasH:    1080
+      canvasH:    1080,
+      transcriptPath: TRANSCRIPT_PATH
     });
     endStage(tCaptions, true);
 
     // ── Stage 4c: Media Render Integrity Verification ───────────────────────
+    run.transition('validating');
     const tValidate = startStage('Stage 4c: Media Render Integrity Check');
+    const transcriptStatus = validateTranscriptMatch(data.fullScript, TRANSCRIPT_PATH);
     const mediaStatus = await validateMediaIntegrity(FINAL_PATH, 'long');
+    const videoFingerprint = fingerprintFile(FINAL_PATH);
+    const duplicate = run.store.findByVideoFingerprint(videoFingerprint);
+    if (duplicate && duplicate.id !== run.job.id) {
+      const error = new Error(`Duplicate rendered video fingerprint already belongs to job ${duplicate.id}.`);
+      error.code = 'DUPLICATE_VIDEO_FINGERPRINT';
+      error.isBlocked = true;
+      throw error;
+    }
+    run.update({ validationResult: { media: mediaStatus, transcript: transcriptStatus }, videoFingerprint });
+    run.transition('ready_to_publish');
     endStage(tValidate, true, mediaStatus.details);
 
     // ── Stage 5: Upload & Distribution ───────────────────────────────────────
@@ -156,6 +188,7 @@ async function main() {
     const description = buildLongDescription(data);
     const tags = ['documentary', 'education', 'archive', ...data.keywords].slice(0, 15);
 
+    if (!IS_DRY_RUN) run.transition('uploading');
     const uploadResult = await uploadToYouTube({
       videoPath:   FINAL_PATH,
       title:       data.title,
@@ -167,11 +200,19 @@ async function main() {
       dryRun:      IS_DRY_RUN,
       humanReview: IS_REVIEW
     });
+    if (IS_DRY_RUN) {
+      run.update({ metadata: { ...run.job.metadata, dryRunSimulation: uploadResult } });
+      endStage(tUpload, true, { simulated: true });
+      console.log(`\n🧪 Dry run complete. Job remains ready_to_publish: ${run.job.id}`);
+      return;
+    }
+    run.update({ youtubeVideoId: uploadResult.videoId, publishAt: uploadResult.publishAt });
+    run.transition(IS_REVIEW ? 'needs_review' : 'published');
     endStage(tUpload, true, { videoId: uploadResult.videoId, simulated: uploadResult.simulated });
 
     // ── Stage 6: Analytics & Memory Logging ──────────────────────────────────
     const tLogging = startStage('Stage 6: Memory & Analytics Logging');
-    if (!IS_DRY_RUN) {
+    if (LIVE_PUBLISH) {
       logPublished({
         title:      data.title,
         topicSlug:  data.topic_slug,
@@ -198,9 +239,13 @@ async function main() {
     console.log(`   Title      : ${data.title}`);
     console.log(`   Watch Link : ${uploadResult.link}`);
 
+  } catch (error) {
+    if (run) run.fail(error);
+    throw error;
   } finally {
-    if (fs.existsSync(TEMP_DIR)) {
-      fs.rmSync(TEMP_DIR, { recursive: true, force: true });
+    if (run) {
+      try { run.cleanupTemp(); } catch (cleanupError) { logError('Long temp cleanup', cleanupError); }
+      run.close();
     }
   }
 }

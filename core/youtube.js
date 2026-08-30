@@ -5,8 +5,7 @@
 import { google } from 'googleapis';
 import fs from 'fs';
 import nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
-dotenv.config();
+import { config } from './config.js';
 
 /**
  * Computes the next 18:00 local time as an ISO string.
@@ -16,7 +15,7 @@ dotenv.config();
 function getPublishAt() {
   const now = new Date();
   const target = new Date(now);
-  target.setHours(18, 0, 0, 0);
+  target.setHours(config.publishHourLocal, 0, 0, 0);
 
   // If we've passed 17:55 today, push to tomorrow
   if (now >= new Date(target.getTime() - 5 * 60 * 1000)) {
@@ -100,19 +99,29 @@ export async function uploadToYouTube({
     ? { privacyStatus: 'private', selfDeclaredMadeForKids: false }
     : { privacyStatus: 'private', publishAt, selfDeclaredMadeForKids: false };
 
-  const response = await youtube.videos.insert({
-    part: 'snippet,status',
-    requestBody: {
-      snippet: {
-        title,
-        description: fullDescription,
-        categoryId,
-        tags
+  let response;
+  try {
+    response = await youtube.videos.insert({
+      part: 'snippet,status',
+      requestBody: {
+        snippet: {
+          title,
+          description: fullDescription,
+          categoryId,
+          tags
+        },
+        status: statusConfig
       },
-      status: statusConfig
-    },
-    media: { body: fs.createReadStream(videoPath) }
-  });
+      media: { body: fs.createReadStream(videoPath) }
+    });
+  } catch (error) {
+    const message = error?.message || '';
+    if (/quota|dailyLimitExceeded|uploadLimitExceeded|rateLimitExceeded/i.test(message)) {
+      error.code = 'YOUTUBE_FREE_QUOTA_EXHAUSTED';
+      error.isQuotaBlocked = true;
+    }
+    throw error;
+  }
 
   const videoId = response.data.id;
   const link = `https://youtu.be/${videoId}`;
@@ -121,7 +130,7 @@ export async function uploadToYouTube({
     console.log(`🎉 Uploaded as PRIVATE DRAFT for Human Review!`);
     console.log(`   Video ID: ${videoId} | Link: ${link}`);
   } else {
-    const publishLocal = new Date(publishAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+    const publishLocal = new Date(publishAt).toLocaleString('en-IN', { timeZone: config.publishTimezone });
     console.log(`🎉 Uploaded! Scheduled → ${publishLocal}`);
     console.log(`   Link: ${link}`);
   }
@@ -142,7 +151,7 @@ async function sendEmail({ title, link, publishAt, type, humanReview }) {
     ? `📝 Draft Upload for Review`
     : (type === 'short' ? '📱 Short Scheduled' : '🎥 Mini-Doc Scheduled');
 
-  const publishLocal = new Date(publishAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+  const publishLocal = new Date(publishAt).toLocaleString('en-IN', { timeZone: config.publishTimezone });
 
   try {
     const transporter = nodemailer.createTransport({

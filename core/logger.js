@@ -5,6 +5,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import { redactSecrets, safeErrorDetails } from './security.js';
 
 const LOG_DIR = path.resolve('logs');
 const ERROR_LOG = path.resolve('error-log.txt');
@@ -49,7 +50,7 @@ export function endStage(timer, success = true, metadata = {}) {
     stage: timer.stageName,
     durationMs,
     status,
-    ...metadata
+    ...JSON.parse(redactSecrets(JSON.stringify(metadata)))
   };
 
   try {
@@ -67,7 +68,8 @@ export function endStage(timer, success = true, metadata = {}) {
  */
 export function logError(stage, error, retryCount = 0) {
   const timestamp = new Date().toISOString();
-  const entry = `\n[${timestamp}] ❌ FAILED AT: ${stage}\n  Message : ${error.message}\n  Code    : ${error.code || 'N/A'}\n  Retries : ${retryCount}\n  Stack   : ${(error.stack || '').split('\n').slice(0, 4).join(' | ')}\n${'─'.repeat(60)}`;
+  const safe = safeErrorDetails(error);
+  const entry = `\n[${timestamp}] ❌ FAILED AT: ${redactSecrets(stage)}\n  Message : ${safe.message}\n  Code    : ${safe.code}\n  Retries : ${retryCount}\n  Stack   : ${safe.stack}\n${'─'.repeat(60)}`;
   
   try {
     fs.appendFileSync(ERROR_LOG, entry, 'utf8');
