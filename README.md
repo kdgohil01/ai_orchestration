@@ -2,7 +2,7 @@
 
 An upgraded, modular end-to-end content engine built with Node.js ES Modules, Python, FFmpeg, and Faster-Whisper. It plans, scriptwrites, voice-synthesizes, gathers B-roll, edits, captions, validates, and—only with explicit authorization—publishes YouTube Shorts and 4-ACT mini-documentaries under **The Weird Archivist** persona.
 
-> **Local safety rule:** Live YouTube upload is disabled by default. A live scheduled upload happens only when `--publish` is supplied explicitly. The scheduler installer is preview-only unless `-Apply` is supplied, and publish scheduling additionally requires `-AllowPublish`.
+> **Local safety rule:** Live YouTube upload is disabled by default. A live scheduled upload requires both an explicit `--publish` argument and local `ALLOW_AUTO_PUBLISH=true`. The scheduler installer is preview-only unless `-Apply` is supplied, and publish scheduling additionally requires `-AllowPublish`.
 
 ## What changed and why
 
@@ -27,6 +27,8 @@ The local orchestration implementation addresses the duplicate/concurrent upload
 - Added preview-first Windows Task Scheduler installation/removal scripts and isolated the two legacy direct-publication entry points.
 - Added daily/weekly Markdown and JSON operations reports under ignored local storage.
 - Added a loopback-only browser dashboard with a hierarchical 3D agent map, live SQLite event streaming, job drill-downs, schedule visibility, validation health, upload history, and durable email notification auditing. It uses no CDN, hosted database, or paid monitoring service.
+- Reconciled PR #2 with the newer `main` safety work: project-root paths are now independent of the launch directory, Pexels downloads use bounded HTTPS streaming and atomic temporary files, Python caption execution avoids shell interpolation, assets live under `assets/`, and archived files were preserved.
+- Added an optional manual-only, self-hosted CI workflow. It never runs on push or pull request and therefore does not consume GitHub-hosted CI minutes automatically.
 
 ## ₹0-cost and local-only rules
 
@@ -95,6 +97,7 @@ Copy `.env.example` to `.env` and replace placeholders locally. Never commit `.e
 | `CLIENT_ID` | Publish/review | Google OAuth client ID for YouTube upload |
 | `CLIENT_SECRET` | Publish/review | Google OAuth client secret; never log or commit |
 | `REFRESH_TOKEN` | Publish/review | YouTube upload refresh token; never log or commit |
+| `ALLOW_AUTO_PUBLISH` | Publish | Must explicitly be `true` in addition to `--publish`; defaults to `false` |
 | `EMAIL_USER` | No | Gmail SMTP sender/recipient |
 | `EMAIL_PASS` | No | Gmail app password, not the normal account password |
 | `ORCHESTRATION_DB_PATH` | No | Local SQLite path; defaults to `data/orchestration.db` |
@@ -108,6 +111,11 @@ Copy `.env.example` to `.env` and replace placeholders locally. Never commit `.e
 | `FFPROBE_PATH` | No | Explicit local ffprobe executable; auto-detected when blank |
 | `PUBLISH_HOUR_LOCAL` | No | Scheduled publish hour; defaults to `18` |
 | `PUBLISH_TIMEZONE` | No | Reporting timezone; defaults to `Asia/Kolkata` |
+| `FACT_CHECK_MIN_CONFIDENCE` | No | Minimum fact-check confidence; defaults to `80` |
+| `TRUSTED_SOURCE_DOMAINS` | No | Optional comma-separated additions to the reviewed source allowlist |
+| `NETWORK_TIMEOUT_MS` | No | Bounded network-operation timeout; defaults to `30000` |
+| `PROCESS_TIMEOUT_MS` | No | Bounded local process timeout; defaults to `1800000` |
+| `PYTHON_COMMAND` | No | Local Python launcher; defaults to `python` |
 | `MAX_JOB_ATTEMPTS` | No | Maximum recorded attempts; defaults to `3` |
 | `RETRY_BASE_SECONDS` | No | First retry delay; defaults to `300` |
 | `RETRY_MAX_SECONDS` | No | Maximum retry delay/quota wait; defaults to `21600` |
@@ -166,7 +174,7 @@ node long.js --skip-upload
 node short.js --review
 node long.js --review
 
-# Live scheduled upload: explicit authorization every invocation
+# Live scheduled upload: also requires ALLOW_AUTO_PUBLISH=true in local .env
 node short.js --publish
 node long.js --publish
 
@@ -273,16 +281,16 @@ The installer sets `MultipleInstances=IgnoreNew`, an execution limit, the reposi
 - Faster-Whisper transcript comparison uses a simple normalized word-error-rate threshold of `0.25`; it may need calibration for names, dates, and accent-specific recognition.
 - YouTube verification stops after three checks. Processing that is still incomplete at five minutes becomes `needs_review`; there is no continuous polling.
 - Ambiguous upload recovery searches only the most recent 50 channel uploads for the durable job reference. If it cannot prove identity, it does not retry.
-- `index.js` and `long-form.js` are retained for history but now throw immediately; only `short.js`, `long.js`, and `orchestrator.js` are supported entry points.
+- `index.js` is a safe command router and `long-form.js` is a compatibility wrapper. The archived legacy implementations remain under `archive/`; neither wrapper enables live publishing by itself.
 - A real API-backed long dry run may be blocked until Gemini's free quota resets. `npm run verify:long-render` verifies Agent A's network-free FFmpeg path independently.
 - Candidate dashboard schedule times are configuration projections, not proof that a Windows task exists. Exact per-job times come only from SQLite, and scheduler installation status can be `unavailable` when Windows denies read access.
 - The dashboard reports YouTube IDs and bounded processing checks already stored locally; it does not poll channel analytics or YouTube continuously.
 - The live feed refreshes snapshots at a bounded local interval (two seconds by default), not on every SQLite write instruction.
-- GitHub Actions is not configured. Prefer local tests; any future CI must remain charge-free or use a self-hosted runner.
+- GitHub Actions is manual-only and targets a self-hosted runner. No push/PR trigger or GitHub-hosted runner is configured; prefer the local commands unless you intentionally register your laptop as a runner.
 
 ## Verification record
 
-- Local unit suite: 26 tests passed, covering SQLite lifecycle/migrations, cross-connection leases, retry timing/max attempts, quota blocking, secret redaction/artifact scanning, transcript WER, approved-source security, claim validation, Master report immutability, notification auditing, dashboard hierarchy/API/SSE behavior, and bounded YouTube verification.
+- Local unit suite after PR #2 conflict resolution: 31 tests passed, covering SQLite lifecycle/migrations, cross-connection leases, retry timing/max attempts, quota blocking, secret redaction/artifact scanning, transcript WER, approved-source security, claim validation, Master report immutability, notification auditing, dashboard hierarchy/API/SSE behavior, publish-time timezone handling, and bounded YouTube verification.
 - Short dry run: complete pipeline passed with job `41ef914d-622e-4167-8cf2-6df7dd9733f7`; output is 1080×1920, 22.3 seconds, includes audio/captions, and was not uploaded.
 - Long renderer fixture: passed at 1920×1080 and 212 seconds with H.264 video, AAC audio, eight scene inputs, and logo overlay; it never used a network API.
 - Real Chelyabinsk long dry run: authoritative sources were fetched, then Gemini returned `FREE_TIER_QUOTA_EXHAUSTED`; job `782d5abc-03a9-4c48-af53-4ce72fd366f6` is safely blocked with a later retry time.
@@ -352,14 +360,15 @@ k:\1.Projects\youtube\
 │   ├── quality-gate.js      # Script & content quality validator
 │   ├── validator.js         # Media render integrity checker (ffprobe, resolution, audio)
 │   ├── logger.js            # Structured execution & stage timing logger
-│   ├── analytics.js        # Performance metrics tracker for data/analytics.json
+│   ├── analytics.js        # Performance metrics tracker for ignored .runtime/analytics.json
 │   └── youtube.js           # YouTube upload module (dry-run, human review, category 27, publishAt 18:00)
 ├── prompts/
 │   ├── short-prompt.js      # Story-first 4-beat Short prompt & description builder
 │   └── long-prompt.js       # 4-ACT documentary prompt with outro CTA & chapter generator
 ├── data/
-│   ├── memory.json          # Structured database of published topics & slugs
-│   └── analytics.json       # Performance analytics tracking database
+│   ├── memory.example.json  # Non-secret initial-state example
+│   └── analytics.example.json # Non-secret analytics example
+├── .runtime/                # Ignored local topic memory and analytics state
 ├── logs/                    # Structured JSONL execution logs (execution.jsonl)
 ├── archive/                 # Rollback backup of original legacy scripts (.bak)
 ├── assets/

@@ -6,9 +6,10 @@
 import fs from 'fs';
 import path from 'path';
 import { redactSecrets, safeErrorDetails } from './security.js';
+import { config } from './config.js';
 
-const LOG_DIR = path.resolve('logs');
-const ERROR_LOG = path.resolve('error-log.txt');
+const LOG_DIR = config.logDir;
+const ERROR_LOG = path.join(LOG_DIR, 'errors.log');
 const EXECUTION_LOG = path.join(LOG_DIR, 'execution.jsonl');
 
 function ensureLogDir() {

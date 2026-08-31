@@ -10,6 +10,33 @@ import { sendUploadNotification } from './notifications.js';
 
 const JOB_REFERENCE_PREFIX = 'Automation reference:';
 
+function zonedParts(date, timeZone) {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hourCycle: 'h23',
+  }).formatToParts(date);
+  return Object.fromEntries(parts.filter(part => part.type !== 'literal').map(part => [part.type, Number(part.value)]));
+}
+
+function zoneOffsetMs(date, timeZone) {
+  const parts = zonedParts(date, timeZone);
+  const representedAsUtc = Date.UTC(parts.year, parts.month - 1, parts.day, parts.hour, parts.minute, parts.second);
+  return representedAsUtc - Math.floor(date.getTime() / 1000) * 1000;
+}
+
+function zonedDateTimeToUtc(parts, timeZone) {
+  const guess = Date.UTC(parts.year, parts.month - 1, parts.day, parts.hour, parts.minute || 0, 0);
+  let result = new Date(guess - zoneOffsetMs(new Date(guess), timeZone));
+  result = new Date(guess - zoneOffsetMs(result, timeZone));
+  return result;
+}
+
 function classifyYouTubeError(error, { uploadStarted = false } = {}) {
   const message = error?.message || '';
   if (/quota|dailyLimitExceeded|uploadLimitExceeded|rateLimitExceeded|429/i.test(message)) {
@@ -25,14 +52,18 @@ function classifyYouTubeError(error, { uploadStarted = false } = {}) {
   return error;
 }
 
-export function createYouTubeClient() {
+export function createYoutubeAuthClientForAnalytics() {
   const oauth2Client = new google.auth.OAuth2(
     process.env.CLIENT_ID,
     process.env.CLIENT_SECRET,
     'http://localhost:3000/oauth2callback'
   );
   oauth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
-  return google.youtube({ version: 'v3', auth: oauth2Client });
+  return oauth2Client;
+}
+
+export function createYouTubeClient() {
+  return google.youtube({ version: 'v3', auth: createYoutubeAuthClientForAnalytics() });
 }
 
 /**
@@ -40,14 +71,14 @@ export function createYouTubeClient() {
  * If the current time is already past 18:00 today, schedules for 18:00 tomorrow.
  * YouTube requires publishAt to be at least 5 minutes in the future.
  */
-function getPublishAt() {
-  const now = new Date();
-  const target = new Date(now);
-  target.setHours(config.publishHourLocal, 0, 0, 0);
-
-  // If we've passed 17:55 today, push to tomorrow
-  if (now >= new Date(target.getTime() - 5 * 60 * 1000)) {
-    target.setDate(target.getDate() + 1);
+export function getPublishAt(now = new Date(), timeZone = config.publishTimezone, hour = config.publishHourLocal) {
+  const local = zonedParts(now, timeZone);
+  let day = { year: local.year, month: local.month, day: local.day };
+  let target = zonedDateTimeToUtc({ ...day, hour, minute: 0 }, timeZone);
+  if (now.getTime() >= target.getTime() - 5 * 60_000) {
+    const next = new Date(Date.UTC(day.year, day.month - 1, day.day + 1));
+    day = { year: next.getUTCFullYear(), month: next.getUTCMonth() + 1, day: next.getUTCDate() };
+    target = zonedDateTimeToUtc({ ...day, hour, minute: 0 }, timeZone);
   }
   return target.toISOString();
 }

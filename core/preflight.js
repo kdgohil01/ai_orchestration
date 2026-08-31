@@ -6,7 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { execFileSync } from 'child_process';
-import { config, validateConfig } from './config.js';
+import { config, envBool, validateConfig } from './config.js';
 import { resolveMediaTool } from './media-tools.js';
 
 /**
@@ -17,7 +17,7 @@ import { resolveMediaTool } from './media-tools.js';
  * @param {boolean} [opts.checkYoutube=true] - Whether to validate YouTube API credentials
  * @returns {object} Preflight status summary
  */
-export function runPreflight({ checkYoutube = true } = {}) {
+export function runPreflight({ checkYoutube = true, publish = false } = {}) {
   console.log('\n🔍 Running DeedLamp Preflight System Checks...');
   const errors = [];
   const warnings = [];
@@ -26,6 +26,9 @@ export function runPreflight({ checkYoutube = true } = {}) {
   const configStatus = validateConfig({ requireContentApis: true, requireYoutube: checkYoutube });
   errors.push(...configStatus.errors);
   warnings.push(...configStatus.warnings);
+  if (publish && !envBool('ALLOW_AUTO_PUBLISH', false)) {
+    errors.push('Live publishing requires ALLOW_AUTO_PUBLISH=true in the local environment.');
+  }
 
   // 2. Directory permissions check
   const requiredDirs = [config.tempDir, path.dirname(config.databasePath), config.outputDir, config.logDir];
@@ -46,9 +49,9 @@ export function runPreflight({ checkYoutube = true } = {}) {
   // 3. Asset & Python script checks
   const requiredFiles = [
     { name: 'burn_captions.py', required: true },
-    { name: 'data/memory.json', required: true },
-    { name: 'logo.png', required: false, warning: 'Logo overlay will be skipped in long-form renders.' },
-    { name: 'arial.ttf', required: false, warning: 'Subtitle font falls back to system Arial.' }
+    { name: 'requirements.txt', required: true },
+    { name: 'assets/logo.png', required: false, warning: 'Logo overlay will be skipped in long-form renders.' },
+    { name: 'assets/arial.ttf', required: false, warning: 'Subtitle font falls back to system Arial.' }
   ];
 
   requiredFiles.forEach(file => {
@@ -80,7 +83,7 @@ export function runPreflight({ checkYoutube = true } = {}) {
   }
 
   try {
-    execFileSync('python', ['--version'], { stdio: 'ignore' });
+    execFileSync(process.env.PYTHON_COMMAND || 'python', ['--version'], { stdio: 'ignore' });
   } catch (err) {
     errors.push('Python binary is not accessible in PATH or system command line.');
   }

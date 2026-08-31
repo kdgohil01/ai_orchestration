@@ -24,6 +24,11 @@ TestResults.xml
 node_modules/
 .env
 .env.local
+.env.*
+!.env.example
+client_secret*.json
+credentials*.json
+token*.json
 dist/
 build/
 *.mp4
@@ -32,7 +37,9 @@ long_temp/
 short_temp/
 temp/
 .local/
+.runtime/
 output/
+input/
 __pycache__/
 *.py[cod]
 data/*.db
@@ -41,5 +48,11 @@ data/*.db-wal
 logs/*.jsonl
 reports/generated/
 error-log.txt
+*.log
+*.jsonl
+*.tmp
+*.part
+.venv/
+venv/
 tools/ffmpeg/
 tools/ffmpeg-release-essentials.zip

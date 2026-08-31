@@ -1,77 +1,56 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// DeedLamp — Analytics & Performance Tracker
-// Records publication records and performance metric stubs in data/analytics.json
-// ─────────────────────────────────────────────────────────────────────────────
+import { google } from 'googleapis';
+import { projectPath } from './config.js';
+import { loadJson, saveJsonAtomic } from './state.js';
+import { createYoutubeAuthClientForAnalytics } from './youtube.js';
 
-import fs from 'fs';
-import path from 'path';
+const ANALYTICS_PATH = projectPath('.runtime', 'analytics.json');
+const FALLBACKS = [projectPath('data', 'analytics.legacy.json'), projectPath('data', 'analytics.example.json')];
+const EMPTY = { videos: [] };
 
-const ANALYTICS_PATH = path.resolve('data/analytics.json');
+function loadAnalytics() { return loadJson(ANALYTICS_PATH, FALLBACKS, EMPTY); }
 
-function loadAnalytics() {
-  if (!fs.existsSync(ANALYTICS_PATH)) {
-    return { _note: 'Per-video performance metrics stub', videos: [] };
-  }
-  try {
-    return JSON.parse(fs.readFileSync(ANALYTICS_PATH, 'utf8'));
-  } catch {
-    return { _note: 'Per-video performance metrics stub', videos: [] };
-  }
-}
-
-function saveAnalytics(data) {
-  fs.mkdirSync(path.dirname(ANALYTICS_PATH), { recursive: true });
-  fs.writeFileSync(ANALYTICS_PATH, JSON.stringify(data, null, 2), 'utf8');
-}
-
-/**
- * Records a video publication record in analytics.json for future analytics ingestion.
- *
- * @param {object} record
- * @param {string} record.youtubeId
- * @param {string} record.title
- * @param {string} record.topicSlug
- * @param {string} record.format ('short'|'long')
- * @param {string} record.category
- * @param {string} record.publishAt
- * @param {number} record.wordCount
- * @param {number} record.durationSec
- * @param {number} record.sceneCount
- */
-export function recordAnalyticsEntry({
-  youtubeId,
-  title,
-  topicSlug,
-  format,
-  category,
-  publishAt,
-  wordCount,
-  durationSec,
-  sceneCount
-}) {
+export function recordAnalyticsEntry(record) {
+  if (!record.youtubeId || String(record.youtubeId).startsWith('simulated_')) return;
   const analytics = loadAnalytics();
-
-  const entry = {
-    id: youtubeId || `local_${Date.now()}`,
-    title,
-    topicSlug,
-    format,
-    category,
-    publishAt,
-    wordCount,
-    durationSec,
-    sceneCount,
+  analytics.videos ||= [];
+  if (analytics.videos.some(video => video.id === record.youtubeId)) return;
+  analytics.videos.push({
+    id: record.youtubeId, title: record.title, topicSlug: record.topicSlug,
+    format: record.format, category: record.category, publishAt: record.publishAt,
+    wordCount: record.wordCount, durationSec: record.durationSec, sceneCount: record.sceneCount,
     loggedAt: new Date().toISOString(),
-    metrics: {
-      ctr: null,             // Click-through rate (%)
-      avgViewDuration: null, // Average view duration (seconds)
-      retentionPct: null,    // Average retention percentage (%)
-      subscribersGained: null,
-      views: null
-    }
-  };
+    metrics: { views: null, estimatedMinutesWatched: null, avgViewDuration: null, retentionPct: null, subscribersGained: null },
+    metricsUpdatedAt: null
+  });
+  saveJsonAtomic(ANALYTICS_PATH, analytics);
+}
 
-  analytics.videos.push(entry);
-  saveAnalytics(analytics);
-  console.log(`📊 Recorded video entry in data/analytics.json (${format.toUpperCase()}: "${title}")`);
+export async function syncAnalyticsMetrics({ days = 90 } = {}) {
+  const analytics = loadAnalytics();
+  const tracked = new Map((analytics.videos || []).filter(v => v.id && !String(v.id).startsWith('simulated_')).map(v => [v.id, v]));
+  if (!tracked.size) return { updated: 0 };
+  const end = new Date(); end.setUTCDate(end.getUTCDate() - 1);
+  const start = new Date(end); start.setUTCDate(start.getUTCDate() - days);
+  const isoDate = date => date.toISOString().slice(0, 10);
+  const client = google.youtubeAnalytics({ version: 'v2', auth: createYoutubeAuthClientForAnalytics() });
+  const response = await client.reports.query({
+    ids: 'channel==MINE', startDate: isoDate(start), endDate: isoDate(end),
+    dimensions: 'video', metrics: 'views,estimatedMinutesWatched,averageViewDuration,subscribersGained',
+    sort: '-views', maxResults: 200
+  });
+  let updated = 0;
+  for (const row of response.data.rows || []) {
+    const [id, views, watched, average, subscribers] = row;
+    const video = tracked.get(id);
+    if (!video) continue;
+    video.metrics = {
+      views, estimatedMinutesWatched: watched, avgViewDuration: average,
+      retentionPct: video.durationSec ? Math.min(100, Math.round((average / video.durationSec) * 1000) / 10) : null,
+      subscribersGained: subscribers
+    };
+    video.metricsUpdatedAt = new Date().toISOString();
+    updated++;
+  }
+  saveJsonAtomic(ANALYTICS_PATH, analytics);
+  return { updated };
 }

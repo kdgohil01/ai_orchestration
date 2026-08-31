@@ -74,7 +74,7 @@ async function main() {
     console.log(`   Job ID: ${run.job.id}`);
 
     const tPreflight = startStage('Preflight System Checks');
-    runPreflight({ checkYoutube: LIVE_PUBLISH || IS_REVIEW });
+    runPreflight({ checkYoutube: LIVE_PUBLISH || IS_REVIEW, publish: LIVE_PUBLISH });
     endStage(tPreflight, true, { jobId: run.job.id });
 
     // ── Stage 1: Documentary Script & Quality Gate ───────────────────────────

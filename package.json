@@ -1,10 +1,11 @@
 {
-  "name": "youtube",
-  "version": "1.0.0",
-  "description": "",
+  "name": "deedlamp-ai-orchestration",
+  "version": "2.1.0",
+  "description": "Local-first, zero-paid-fallback YouTube production orchestration for DeedLamp.",
+  "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "node --test tests/*.test.js",
+    "test": "node --test tests/*.test.js test/core.test.js",
     "check": "node --check short.js && node --check long.js && node --check orchestrator.js && node --check dashboard/server.js && node --check dashboard/public/app.js",
     "db:init": "node orchestrator.js init",
     "report": "node orchestrator.js report",
@@ -18,12 +19,19 @@
     "long:dry": "node long.js --dry-run",
     "verify:long-render": "node scripts/verify-long-render.js",
     "dashboard": "node dashboard/server.js",
-    "dashboard:open": "node dashboard/server.js --open"
+    "dashboard:open": "node dashboard/server.js --open",
+    "test:syntax": "npm run check",
+    "smoke": "node smoke-test.js",
+    "auth": "node get-token.js",
+    "analytics:sync": "node scripts/sync-analytics.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "dotenv": "^17.4.2",
