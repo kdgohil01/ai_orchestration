@@ -41,7 +41,10 @@ export function safeErrorDetails(error) {
   };
 }
 
-const SCANNABLE_EXTENSIONS = new Set(['.json', '.jsonl', '.txt', '.log', '.md', '.srt', '.vtt', '.ass', '.csv']);
+const SCANNABLE_EXTENSIONS = new Set([
+  '.json', '.jsonl', '.txt', '.log', '.md', '.srt', '.vtt', '.ass', '.csv',
+  '.js', '.mjs', '.css', '.html', '.ps1', '.py', '.bat', '.vbs',
+]);
 const DETECTION_PATTERNS = [
   ['google_api_key', /AIza[0-9A-Za-z_-]{20,}/],
   ['github_token', /gh[pousr]_[0-9A-Za-z]{20,}/],

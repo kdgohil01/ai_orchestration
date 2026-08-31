@@ -22,6 +22,8 @@ export const config = Object.freeze({
   outputDir: path.resolve(process.env.OUTPUT_DIR || 'output/jobs'),
   logDir: path.resolve(process.env.LOG_DIR || 'logs'),
   reportDir: path.resolve(process.env.REPORT_DIR || 'reports/generated'),
+  dashboardPort: intFromEnv('DASHBOARD_PORT', 4317, { min: 1024, max: 65_535 }),
+  dashboardRefreshMs: intFromEnv('DASHBOARD_REFRESH_MS', 2_000, { min: 1_000, max: 60_000 }),
   publishHourLocal: intFromEnv('PUBLISH_HOUR_LOCAL', 18, { min: 0, max: 23 }),
   publishTimezone: process.env.PUBLISH_TIMEZONE || 'Asia/Kolkata',
   maxJobAttempts: intFromEnv('MAX_JOB_ATTEMPTS', 3, { min: 1, max: 10 }),

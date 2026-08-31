@@ -18,6 +18,7 @@ import { uploadToYouTube, verifyYouTubeUpload } from './core/youtube.js';
 import { validateLongQuality }               from './core/quality-gate.js';
 import { validateMediaIntegrity }            from './core/validator.js';
 import { assertNoSecretLeaks }               from './core/security.js';
+import { sendFailureNotification }           from './core/notifications.js';
 import { runPreflight }                      from './core/preflight.js';
 import { recordAnalyticsEntry }              from './core/analytics.js';
 import { startStage, endStage, logError }    from './core/logger.js';
@@ -239,6 +240,7 @@ async function main() {
       humanReview: IS_REVIEW,
       jobId: run.job.id
     });
+    run.store.recordEvent(run.job.id, 'email_notification', uploadResult.notification);
     if (IS_DRY_RUN) {
       run.update({ metadata: { ...run.job.metadata, dryRunSimulation: uploadResult } });
       endStage(tUpload, true, { simulated: true });
@@ -292,7 +294,11 @@ async function main() {
     console.log(`   Watch Link : ${uploadResult.link}`);
 
   } catch (error) {
-    if (run) run.fail(error);
+    if (run) {
+      const failedJob = run.fail(error);
+      const notification = await sendFailureNotification({ job: failedJob, error });
+      run.store.recordEvent(run.job.id, 'failure_notification', notification);
+    }
     throw error;
   } finally {
     if (run) {

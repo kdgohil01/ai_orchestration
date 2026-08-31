@@ -198,6 +198,27 @@ export class JobStore {
     }));
   }
 
+  getRecentEvents(limit = 100) {
+    return this.db.prepare(`
+      SELECT e.*, j.kind, j.youtube_video_id
+      FROM job_events e
+      JOIN jobs j ON j.id = e.job_id
+      ORDER BY e.id DESC LIMIT ?
+    `).all(Math.max(1, Math.min(Number(limit) || 100, 500))).map(row => ({
+      ...row,
+      details: fromJson(row.details, {}),
+    }));
+  }
+
+  listActiveLocks(nowMs = Date.now()) {
+    return this.db.prepare(`
+      SELECT resource, owner_id, acquired_at, expires_at
+      FROM resource_locks
+      WHERE expires_at > ?
+      ORDER BY acquired_at DESC
+    `).all(nowMs);
+  }
+
   transition(id, nextState, details = {}) {
     if (!JOB_STATES.includes(nextState)) throw new Error(`Unknown job state: ${nextState}`);
     const current = this.getJob(id);

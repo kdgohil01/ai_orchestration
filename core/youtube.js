@@ -4,9 +4,9 @@
 
 import { google } from 'googleapis';
 import fs from 'fs';
-import nodemailer from 'nodemailer';
 import { config } from './config.js';
 import { verifyUploadAtIntervals } from './youtube-verification.js';
+import { sendUploadNotification } from './notifications.js';
 
 const JOB_REFERENCE_PREFIX = 'Automation reference:';
 
@@ -113,7 +113,12 @@ export async function uploadToYouTube({
       videoId: simId,
       link: simLink,
       publishAt,
-      simulated: true
+      simulated: true,
+      notification: {
+        status: 'not_applicable',
+        attemptedAt: new Date().toISOString(),
+        reason: 'dry_run',
+      },
     };
   }
 
@@ -156,8 +161,10 @@ export async function uploadToYouTube({
     console.log(`   Link: ${link}`);
   }
 
-  await sendEmail({ title, link, publishAt, type, humanReview });
-  return { videoId, link, publishAt };
+  const notification = await sendUploadNotification({ title, link, publishAt, type, humanReview });
+  if (notification.status === 'sent') console.log('✅ Upload notification email sent.');
+  else console.warn(`⚠️ Upload notification email ${notification.status}: ${notification.reason || 'unknown reason'}`);
+  return { videoId, link, publishAt, notification };
 }
 
 export async function verifyYouTubeUpload(videoId, { onCheck = async () => {}, offsetsMs, sleepFn } = {}) {
@@ -200,50 +207,5 @@ export async function findUploadByJobReference(jobId) {
     return (videosResponse.data.items || []).find(video => video.snippet?.description?.includes(marker)) || null;
   } catch (error) {
     throw classifyYouTubeError(error);
-  }
-}
-
-async function sendEmail({ title, link, publishAt, type, humanReview }) {
-  const emailUser = process.env.EMAIL_USER?.trim();
-  const emailPass = process.env.EMAIL_PASS?.replace(/\s+/g, '');
-  if (!emailUser || !emailPass) {
-    console.warn('⚠️ Email skipped: EMAIL_USER or EMAIL_PASS missing.');
-    return;
-  }
-
-  const label = humanReview
-    ? `📝 Draft Upload for Review`
-    : (type === 'short' ? '📱 Short Scheduled' : '🎥 Mini-Doc Scheduled');
-
-  const publishLocal = new Date(publishAt).toLocaleString('en-IN', { timeZone: config.publishTimezone });
-
-  try {
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: { user: emailUser, pass: emailPass }
-    });
-
-    await transporter.sendMail({
-      from: `"DeedLamp Automation" <${emailUser}>`,
-      to: emailUser,
-      subject: `📅 ${label}: ${title}`,
-      html: `
-        <div style="font-family: sans-serif; padding: 24px; border: 1px solid #e0e0e0; border-radius: 10px; max-width: 520px;">
-          <h2 style="color: #1565c0; margin-top: 0;">${label}</h2>
-          <p><strong>Title:</strong> ${title}</p>
-          <p><strong>Status:</strong> ${humanReview ? 'Private Draft (Pending Human Review)' : `Scheduled for ${publishLocal} (IST)`}</p>
-          <p><strong>Watch link:</strong><br>
-             <a href="${link}" style="color: #1e88e5; font-weight: bold;">${link}</a>
-          </p>
-          <hr style="border: none; border-top: 1px solid #eee; margin: 16px 0;">
-          <p style="font-size: 12px; color: #999; font-style: italic;">
-            Processed by DeedLamp Automation — The Weird Archivist
-          </p>
-        </div>
-      `
-    });
-    console.log('✅ Telemetry notification email sent.');
-  } catch (err) {
-    console.warn('⚠️ Email delivery failed (upload still succeeded):', err.message);
   }
 }

@@ -26,6 +26,7 @@ The local orchestration implementation addresses the duplicate/concurrent upload
 - Added YouTube checks only at 30 seconds, 2 minutes, and 5 minutes. Ambiguous upload responses go to `needs_review`; recovery searches for a durable job marker instead of blindly re-uploading.
 - Added preview-first Windows Task Scheduler installation/removal scripts and isolated the two legacy direct-publication entry points.
 - Added daily/weekly Markdown and JSON operations reports under ignored local storage.
+- Added a loopback-only browser dashboard with a hierarchical 3D agent map, live SQLite event streaming, job drill-downs, schedule visibility, validation health, upload history, and durable email notification auditing. It uses no CDN, hosted database, or paid monitoring service.
 
 ## ₹0-cost and local-only rules
 
@@ -48,12 +49,15 @@ flowchart LR
     V -->|explicit --publish only| Y[YouTube upload + 3 bounded checks]
     Y --> C
     C --> M[Read-only Master reports]
+    C --> D[Local 3D dashboard + SSE]
+    A & B -->|SQLite jobs and events| D
 ```
 
 - **Agent A:** `long.js`; creates 3.5–4.5 minute landscape jobs and artifacts.
 - **Agent B:** `short.js`; creates vertical Short jobs and artifacts.
 - **Agent C:** `core/job-store.js`, `core/pipeline-run.js`, and `orchestrator.js`; owns lifecycle transitions, one-job locking, retries, paths, hashes, upload identifiers, recovery, and scheduling commands. It does not invent content.
 - **Master/reporting module:** `core/reporting.js` plus `orchestrator.js report`; reads SQLite and reports states, recent jobs, repeated failures, next retry, configured schedules, and disk usage. It does not alter production jobs.
+- **Browser dashboard:** `dashboard/server.js` and `dashboard/public/`; reads the same SQLite jobs/events through a loopback-only local API and pushes refreshed snapshots to the browser. It has no production mutation endpoints.
 
 ## Required local software
 
@@ -98,6 +102,8 @@ Copy `.env.example` to `.env` and replace placeholders locally. Never commit `.e
 | `OUTPUT_DIR` | No | Durable per-job output; defaults to `output/jobs` |
 | `LOG_DIR` | No | Local log directory; defaults to `logs` |
 | `REPORT_DIR` | No | Generated local reports; defaults to `reports/generated` |
+| `DASHBOARD_PORT` | No | Loopback dashboard port; defaults to `4317` |
+| `DASHBOARD_REFRESH_MS` | No | SQLite-to-browser update interval; defaults to `2000`, minimum `1000` |
 | `FFMPEG_PATH` | No | Explicit local FFmpeg executable; auto-detected when blank |
 | `FFPROBE_PATH` | No | Explicit local ffprobe executable; auto-detected when blank |
 | `PUBLISH_HOUR_LOCAL` | No | Scheduled publish hour; defaults to `18` |
@@ -132,6 +138,11 @@ npm run report -- --json
 npm run report:daily
 npm run report:weekly
 
+# Read-only local browser dashboard
+npm run dashboard
+# Or start it and open the local page automatically
+npm run dashboard:open
+
 # Inspect a job and run deterministic due retries
 node orchestrator.js job <job-id>
 npm run retry:due
@@ -164,6 +175,35 @@ npm run verify:long-render
 ```
 
 Do not combine `--dry-run`, `--skip-upload`, `--review`, or `--publish`. Add `--topic=<approved-topic-id>` to select an entry from the curated catalog.
+
+## Local 3D browser dashboard
+
+Start the dashboard and open `http://127.0.0.1:4317`:
+
+```powershell
+npm run dashboard
+```
+
+The dashboard is deliberately local and read-only:
+
+- It binds only to the loopback interface (`127.0.0.1`) and refuses non-loopback hosts.
+- It uses native Node HTTP, local HTML/CSS/JavaScript, a strict Content Security Policy, and no CDN or cloud dashboard.
+- `/api/dashboard` returns the current hierarchy snapshot, `/api/jobs/<job-id>` returns a job timeline, and `/api/events` provides server-sent live updates. There are no create, retry, upload, publish, or delete endpoints.
+- Master appears at the top of the hierarchy, Agent C is the operational parent, and Agents A/B are the production children. Selecting a node changes the detail view.
+- Agent A/B panels show the latest job, last recorded YouTube upload, state counts, validation results, and most recent email outcome.
+- Agent C shows SQLite lifecycle decisions, retries, resource locks, upload checks, and notification events. The job drawer exposes the complete recorded timeline.
+- Email states are `sent`, `failed`, `skipped`, `not_required`, `not_applicable`, or `not_recorded`. Future upload and meaningful-failure emails are recorded as SQLite job events; existing historical jobs correctly remain `not_recorded`.
+- An exact upcoming time is shown only when a future `publish_at` or `scheduled_for` exists in SQLite. Otherwise the UI labels 18:00 daily Shorts and Sunday 18:00 long-form values as candidate schedules and separately reports whether each Windows task is installed.
+
+Health meanings:
+
+| Health | Meaning |
+|---|---|
+| `working` | An agent has an active research/script/render/validation/upload job or Agent C owns a live resource lock |
+| `healthy` | Recent jobs are ready/published and no attention state is present |
+| `warning` | At least one job is blocked, retryable, or needs human review |
+| `critical` | The latest relevant job failed permanently |
+| `idle` | No job has been recorded for that production agent |
 
 ## SQLite job lifecycle
 
@@ -219,6 +259,10 @@ The installer sets `MultipleInstances=IgnoreNew`, an execution limit, the reposi
 | Wrong dimensions/duration | Validation fails before upload. Correct the render settings; never bypass the gate. |
 | Gemini fetch failure | Treat as retryable only when it is not a quota/authentication error. Check local connectivity later. |
 | Task Scheduler access denied | Inspect or update the task manually from an elevated Windows Task Scheduler session. |
+| Dashboard port already in use | Set an unused local port such as `DASHBOARD_PORT=4318` in `.env`, then restart `npm run dashboard`. |
+| Dashboard says `not_installed` | This is informational. Preview or explicitly apply the Task Scheduler installer; the dashboard never installs tasks itself. |
+| Dashboard says email `not_recorded` | Historical job has no durable notification event. New upload/meaningful-failure attempts record `sent`, `failed`, or `skipped`. |
+| Dashboard says `Reconnecting` | Confirm the local dashboard process is still running. The browser falls back to periodic local API reads while SSE reconnects. |
 
 ## Known limitations
 
@@ -231,15 +275,19 @@ The installer sets `MultipleInstances=IgnoreNew`, an execution limit, the reposi
 - Ambiguous upload recovery searches only the most recent 50 channel uploads for the durable job reference. If it cannot prove identity, it does not retry.
 - `index.js` and `long-form.js` are retained for history but now throw immediately; only `short.js`, `long.js`, and `orchestrator.js` are supported entry points.
 - A real API-backed long dry run may be blocked until Gemini's free quota resets. `npm run verify:long-render` verifies Agent A's network-free FFmpeg path independently.
+- Candidate dashboard schedule times are configuration projections, not proof that a Windows task exists. Exact per-job times come only from SQLite, and scheduler installation status can be `unavailable` when Windows denies read access.
+- The dashboard reports YouTube IDs and bounded processing checks already stored locally; it does not poll channel analytics or YouTube continuously.
+- The live feed refreshes snapshots at a bounded local interval (two seconds by default), not on every SQLite write instruction.
 - GitHub Actions is not configured. Prefer local tests; any future CI must remain charge-free or use a self-hosted runner.
 
 ## Verification record
 
-- Local unit suite: 23 tests passed, covering SQLite lifecycle/migrations, cross-connection leases, retry timing/max attempts, quota blocking, secret redaction/artifact scanning, transcript WER, approved-source security, claim validation, Master report immutability, and bounded YouTube verification.
+- Local unit suite: 26 tests passed, covering SQLite lifecycle/migrations, cross-connection leases, retry timing/max attempts, quota blocking, secret redaction/artifact scanning, transcript WER, approved-source security, claim validation, Master report immutability, notification auditing, dashboard hierarchy/API/SSE behavior, and bounded YouTube verification.
 - Short dry run: complete pipeline passed with job `41ef914d-622e-4167-8cf2-6df7dd9733f7`; output is 1080×1920, 22.3 seconds, includes audio/captions, and was not uploaded.
 - Long renderer fixture: passed at 1920×1080 and 212 seconds with H.264 video, AAC audio, eight scene inputs, and logo overlay; it never used a network API.
 - Real Chelyabinsk long dry run: authoritative sources were fetched, then Gemini returned `FREE_TIER_QUOTA_EXHAUSTED`; job `782d5abc-03a9-4c48-af53-4ce72fd366f6` is safely blocked with a later retry time.
 - No real/private YouTube upload was run because this repository has no explicit authorization flag for a test upload. The upload verifier is covered with mocked YouTube responses.
+- Browser verification: the real local dashboard loaded without console errors, displayed the four-node hierarchy, updated over SSE without reload, opened job/Agent C drill-downs, filtered attention jobs, and passed a 390×844 mobile overflow check.
 
 ---
 
