@@ -1,35 +1,57 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// DeedLamp — Gemini API Wrapper
+// Handles model init, retry with exponential backoff, and JSON extraction.
+// ─────────────────────────────────────────────────────────────────────────────
+
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import dotenv from 'dotenv';
-import { NETWORK_TIMEOUT_MS } from './config.js';
-import { withTimeout } from './process.js';
-dotenv.config();
+import { config } from './config.js';
+import { redactSecrets } from './security.js';
 
-function extractJson(text) {
-  let clean = String(text).trim();
-  if (clean.startsWith('\u0060\u0060\u0060json')) clean = clean.slice(7);
-  else if (clean.startsWith('\u0060\u0060\u0060')) clean = clean.slice(3);
-  if (clean.trimEnd().endsWith('\u0060\u0060\u0060')) clean = clean.trimEnd().slice(0, -3);
-  return JSON.parse(clean.trim());
-}
+const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-export async function generateJSON(prompt, retries = 5) {
-  if (!process.env.GEMINI_API_KEY) throw new Error('GEMINI_API_KEY is missing.');
-  const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-  const modelName = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
-  const model = ai.getGenerativeModel({
-    model: modelName,
-    generationConfig: { responseMimeType: 'application/json', temperature: 0.7 }
-  });
-  let lastError;
+/**
+ * Generates content from Gemini and parses the response as JSON.
+ * Strips markdown code fences if present.
+ * Retries up to `retries` times with exponential backoff.
+ *
+ * @param {string} prompt
+ * @param {number} retries
+ * @returns {Promise<object>} Parsed JSON object
+ */
+export async function generateJSON(prompt, retries = 3) {
+  const modelName = config.geminiModel;
+  if (!config.approvedGeminiModels.includes(modelName)) {
+    throw new Error(`Gemini model '${modelName}' is not approved. Paid or automatic fallback models are disabled.`);
+  }
+  const model = ai.getGenerativeModel({ model: modelName });
+
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
-      const result = await withTimeout(model.generateContent(prompt), NETWORK_TIMEOUT_MS * 2, 'Gemini request');
-      return extractJson(result.response.text());
+      const result = await model.generateContent(prompt);
+      let text = result.response.text().trim();
+
+      // Strip markdown fences if Gemini wraps the JSON
+      if (text.startsWith('```json')) text = text.slice(7).trim();
+      else if (text.startsWith('```')) text = text.slice(3).trim();
+      if (text.endsWith('```')) text = text.slice(0, -3).trim();
+
+      return JSON.parse(text);
     } catch (err) {
-      lastError = err;
-      console.warn(`Gemini attempt ${attempt}/${retries} failed: ${err.message}`);
-      if (attempt < retries) await new Promise(resolve => setTimeout(resolve, Math.min(15_000, 1000 * 2 ** (attempt - 1) + Math.random() * 500)));
+      const message = redactSecrets(err.message);
+      if (/quota|resource[_ ]?exhausted|429/i.test(message)) {
+        err.code = 'FREE_TIER_QUOTA_EXHAUSTED';
+        err.isQuotaBlocked = true;
+        throw err;
+      }
+      if (/api key|permission|unauthorized|forbidden|401|403/i.test(message)) {
+        err.code = err.code || 'GEMINI_AUTH_FAILED';
+        throw err;
+      }
+      console.warn(`⚠️ Gemini (${modelName}) attempt ${attempt}/${retries} failed: ${message}`);
+      if (attempt === retries) throw err;
+      // Exponential backoff with jitter
+      const delay = Math.min(10000, 2000 * Math.pow(2, attempt - 1));
+      await new Promise(r => setTimeout(r, delay));
     }
   }
-  throw lastError;
 }

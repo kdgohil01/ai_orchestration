@@ -1,5 +1,3 @@
 @echo off
-setlocal
-set "PROJECT_DIR=%~dp0"
-cd /d "%PROJECT_DIR%"
-node long.js %*
+cd /d "%~dp0"
+node long.js --dry-run %*

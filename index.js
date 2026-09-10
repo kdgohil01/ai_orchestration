@@ -3,13 +3,13 @@ const usage = `
 DeedLamp AI Orchestration
 
 Safe commands:
-  node . short [--review|--publish] [--dry-run|--skip-upload]
-  node . long  [--review|--publish] [--dry-run|--skip-upload]
+  node . short [--dry-run|--skip-upload|--review|--publish]
+  node . long  [--dry-run|--skip-upload|--review|--publish]
   node . analytics
 
 Running "node ." without a command never creates or uploads media.
-Private review is the default. Live scheduling additionally requires
---publish and ALLOW_AUTO_PUBLISH=true.
+Local-only is the default. Live scheduling requires both --publish and
+ALLOW_AUTO_PUBLISH=true; private review requires --review.
 `;
 
 if (!command || command === '--help' || command === '-h') {

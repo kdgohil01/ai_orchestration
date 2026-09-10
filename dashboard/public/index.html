@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>DeedLamp Agent Observatory</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <canvas id="depth-field" aria-hidden="true"></canvas>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true"><span>DL</span></div>
+        <div>
+          <p class="eyebrow">THE WEIRD ARCHIVIST · LOCAL CONTROL PLANE</p>
+          <h1>Agent Observatory</h1>
+        </div>
+      </div>
+      <div class="live-cluster">
+        <span class="live-dot" id="live-dot"></span>
+        <div>
+          <strong id="connection-label">Connecting</strong>
+          <span id="last-updated">Waiting for SQLite</span>
+        </div>
+        <span class="local-badge">127.0.0.1 · ₹0</span>
+      </div>
+    </header>
+
+    <section class="metric-grid" aria-label="System overview">
+      <article class="metric-card">
+        <span>System health</span>
+        <strong id="metric-health" data-testid="system-health">—</strong>
+        <small id="metric-database">SQLite connecting</small>
+      </article>
+      <article class="metric-card">
+        <span>Jobs in archive</span>
+        <strong id="metric-jobs" data-testid="total-jobs">0</strong>
+        <small id="metric-active">0 active now</small>
+      </article>
+      <article class="metric-card">
+        <span>Needs attention</span>
+        <strong id="metric-attention">0</strong>
+        <small>No paid fallback</small>
+      </article>
+      <article class="metric-card">
+        <span>Published</span>
+        <strong id="metric-published">0</strong>
+        <small id="metric-storage">Output —</small>
+      </article>
+    </section>
+
+    <section class="panel hierarchy-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">LIVE HIERARCHICAL MAP</p>
+          <h2>Production intelligence topology</h2>
+        </div>
+        <p class="section-note">Select a node to inspect its latest work and health.</p>
+      </div>
+
+      <div class="hierarchy-stage" id="hierarchy-stage">
+        <div class="hierarchy-world">
+          <svg class="connectors" viewBox="0 0 1000 620" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="flowGradient" x1="0" x2="1">
+                <stop offset="0" stop-color="#24d6b4"></stop>
+                <stop offset="1" stop-color="#9f7aea"></stop>
+              </linearGradient>
+            </defs>
+            <path class="connector main-flow" d="M500 165 L500 260"></path>
+            <path class="connector branch-flow" d="M500 375 C500 440 260 420 250 505"></path>
+            <path class="connector branch-flow delay-one" d="M500 375 C500 440 740 420 750 505"></path>
+          </svg>
+
+          <button class="agent-node master-node" data-agent="master" type="button">
+            <span class="node-orbit"></span>
+            <span class="node-kicker">READ-ONLY INTELLIGENCE</span>
+            <span class="node-title">Master</span>
+            <span class="node-purpose">Reports & root causes</span>
+            <span class="health-chip" id="master-health">—</span>
+          </button>
+
+          <button class="agent-node manager-node" data-agent="agentC" type="button">
+            <span class="node-orbit"></span>
+            <span class="node-kicker">OPERATIONS CORE</span>
+            <span class="node-title">Agent C</span>
+            <span class="node-purpose">State · retries · upload</span>
+            <span class="health-chip" id="agentC-health">—</span>
+          </button>
+
+          <button class="agent-node producer-node agent-a" data-agent="agentA" type="button">
+            <span class="node-index">A</span>
+            <span class="node-kicker">LONG-FORM</span>
+            <span class="node-title">Agent A</span>
+            <span class="node-purpose">3.5–4.5 min archives</span>
+            <span class="health-chip" id="agentA-health">—</span>
+          </button>
+
+          <button class="agent-node producer-node agent-b" data-agent="agentB" type="button">
+            <span class="node-index">B</span>
+            <span class="node-kicker">SHORTS</span>
+            <span class="node-title">Agent B</span>
+            <span class="node-purpose">Daily vertical stories</span>
+            <span class="health-chip" id="agentB-health">—</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="lower-grid">
+      <article class="panel detail-panel">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">SELECTED NODE</p>
+            <h2 id="detail-title">Master overview</h2>
+          </div>
+          <span class="health-chip" id="detail-health">—</span>
+        </div>
+        <div id="agent-detail" class="agent-detail" data-testid="agent-detail"></div>
+      </article>
+
+      <article class="panel schedules-panel">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">NEXT WINDOWS</p>
+            <h2>Production & publication</h2>
+          </div>
+        </div>
+        <div id="schedule-list" class="schedule-list"></div>
+      </article>
+    </section>
+
+    <section class="panel analysis-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">AGENT C DECISION TRACE</p>
+          <h2>Latest deterministic analyses</h2>
+        </div>
+        <span class="section-note">SQLite events · newest first</span>
+      </div>
+      <div id="analysis-stream" class="analysis-stream" data-testid="analysis-stream"></div>
+    </section>
+
+    <section class="panel jobs-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PRODUCTION LEDGER</p>
+          <h2>Latest jobs across Agents A & B</h2>
+        </div>
+        <div class="filter-group" role="group" aria-label="Filter jobs">
+          <button class="filter-button is-active" data-filter="all" type="button">All</button>
+          <button class="filter-button" data-filter="long" type="button">Agent A</button>
+          <button class="filter-button" data-filter="short" type="button">Agent B</button>
+          <button class="filter-button" data-filter="attention" type="button">Attention</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Agent / topic</th><th>State</th><th>Validation</th><th>Email</th><th>Updated</th></tr>
+          </thead>
+          <tbody id="jobs-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel notification-panel">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">NOTIFICATION AUDIT</p>
+          <h2>Email verification trail</h2>
+        </div>
+      </div>
+      <div id="notification-list" class="notification-list"></div>
+    </section>
+
+    <footer>
+      <span>DeedLamp local observability</span>
+      <span>SQLite is the source of truth · no production mutation controls</span>
+    </footer>
+  </main>
+
+  <aside class="drawer" id="job-drawer" aria-hidden="true" aria-labelledby="drawer-title">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true">
+      <button class="drawer-close" type="button" data-close-drawer aria-label="Close job details">×</button>
+      <p class="eyebrow">JOB FORENSICS</p>
+      <h2 id="drawer-title">Job detail</h2>
+      <div id="drawer-content"></div>
+    </div>
+  </aside>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

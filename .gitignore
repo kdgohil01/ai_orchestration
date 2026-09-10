@@ -1,41 +1,58 @@
-# Secrets and local configuration
+### AL ###
+#Template for AL projects for Dynamics 365 Business Central
+#launch.json folder
+.vscode/
+#Cache folder
+.alcache/
+#Symbols folder
+.alpackages/
+#Snapshots folder
+.snapshots/
+#Testing Output folder
+.output/
+#Extension App-file
+*.app
+#Rapid Application Development File
+rad.json
+#Translation Base-file
+*.g.xlf
+#License-files
+*.bclicense
+*.flf
+#Test results file
+TestResults.xml
+node_modules/
 .env
+.env.local
 .env.*
 !.env.example
-
-# Node
-node_modules/
-npm-debug.log*
-
-# Python
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-
-# Runtime state, logs, and temporary media
-.runtime/
+client_secret*.json
+credentials*.json
+token*.json
+dist/
+build/
+*.mp4
+*.mp3
+long_temp/
+short_temp/
 temp/
+.local/
+.runtime/
 output/
 input/
-logs/
+__pycache__/
+*.py[cod]
+data/*.db
+data/*.db-shm
+data/*.db-wal
+logs/*.jsonl
+reports/generated/
 error-log.txt
-history-log.txt
 *.log
 *.jsonl
 *.tmp
 *.part
-
-# Generated media and local fallbacks
-*.mp3
-*.mp4
-*.mov
-*.mkv
-
-# Build/editor/OS
-dist/
-build/
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
+.venv/
+venv/
+tools/ffmpeg/
+tools/ffmpeg-release-essentials.zip

@@ -1,52 +1,81 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// DeedLamp — Enhanced Structured Logger
+// Logs timing, duration, stages, errors, and writes JSONL execution logs.
+// ─────────────────────────────────────────────────────────────────────────────
+
 import fs from 'fs';
 import path from 'path';
-import { projectPath } from './config.js';
+import { redactSecrets, safeErrorDetails } from './security.js';
+import { config } from './config.js';
 
-const LOG_DIR = projectPath('.runtime', 'logs');
+const LOG_DIR = config.logDir;
 const ERROR_LOG = path.join(LOG_DIR, 'errors.log');
 const EXECUTION_LOG = path.join(LOG_DIR, 'execution.jsonl');
-const activeStages = new Map();
 
-function ensureLogDir() { fs.mkdirSync(LOG_DIR, { recursive: true }); }
-function appendStructured(entry) {
-  ensureLogDir();
-  fs.appendFileSync(EXECUTION_LOG, `${JSON.stringify(entry)}\n`, 'utf8');
-}
-
-export function startStage(stageName) {
-  const timer = { id: Symbol(stageName), stageName, startTime: Date.now(), isoStart: new Date().toISOString() };
-  activeStages.set(timer.id, timer);
-  console.log(`\n[STAGE START] ${stageName}`);
-  return timer;
-}
-
-export function endStage(timer, success = true, metadata = {}) {
-  activeStages.delete(timer.id);
-  const entry = {
-    timestamp: new Date().toISOString(),
-    stage: timer.stageName,
-    durationMs: Date.now() - timer.startTime,
-    status: success ? 'SUCCESS' : 'FAILED',
-    ...metadata
-  };
-  appendStructured(entry);
-  console.log(`[STAGE END] ${timer.stageName} - ${entry.status} (${entry.durationMs}ms)`);
-  return entry;
-}
-
-export function failOpenStages(error) {
-  for (const timer of [...activeStages.values()]) {
-    endStage(timer, false, { error: error.message, code: error.code || null });
+function ensureLogDir() {
+  if (!fs.existsSync(LOG_DIR)) {
+    fs.mkdirSync(LOG_DIR, { recursive: true });
   }
 }
 
-export function logError(stage, error, retryCount = 0) {
+/**
+ * Starts a stage timer.
+ * @param {string} stageName
+ * @returns {object} Timer object to pass to endStage
+ */
+export function startStage(stageName) {
   ensureLogDir();
-  const payload = {
-    timestamp: new Date().toISOString(), stage, message: error.message,
-    code: error.code || null, retries: retryCount,
-    stack: (error.stack || '').split('\n').slice(0, 6)
+  console.log(`\n⏳ [STAGE START] ${stageName}`);
+  return {
+    stageName,
+    startTime: Date.now(),
+    isoStart: new Date().toISOString()
   };
-  fs.appendFileSync(ERROR_LOG, `${JSON.stringify(payload)}\n`, 'utf8');
-  console.error(`[${payload.timestamp}] ${stage}: ${error.message}`);
+}
+
+/**
+ * Ends a stage timer and logs structured output.
+ * @param {object} timer - Timer object returned by startStage
+ * @param {boolean} success - Whether the stage completed successfully
+ * @param {object} [metadata] - Optional key-value metadata to record
+ */
+export function endStage(timer, success = true, metadata = {}) {
+  const durationMs = Date.now() - timer.startTime;
+  const status = success ? 'SUCCESS' : 'FAILED';
+  const icon = success ? '✅' : '❌';
+
+  console.log(`${icon} [STAGE END] ${timer.stageName} — ${status} (${durationMs}ms)`);
+
+  const logEntry = {
+    timestamp: new Date().toISOString(),
+    stage: timer.stageName,
+    durationMs,
+    status,
+    ...JSON.parse(redactSecrets(JSON.stringify(metadata)))
+  };
+
+  try {
+    fs.appendFileSync(EXECUTION_LOG, JSON.stringify(logEntry) + '\n', 'utf8');
+  } catch (e) {
+    console.warn('⚠️ Could not write execution log entry:', e.message);
+  }
+}
+
+/**
+ * Logs a detailed error entry to console and error-log.txt.
+ * @param {string} stage
+ * @param {Error} error
+ * @param {number} [retryCount=0]
+ */
+export function logError(stage, error, retryCount = 0) {
+  const timestamp = new Date().toISOString();
+  const safe = safeErrorDetails(error);
+  const entry = `\n[${timestamp}] ❌ FAILED AT: ${redactSecrets(stage)}\n  Message : ${safe.message}\n  Code    : ${safe.code}\n  Retries : ${retryCount}\n  Stack   : ${safe.stack}\n${'─'.repeat(60)}`;
+  
+  try {
+    fs.appendFileSync(ERROR_LOG, entry, 'utf8');
+  } catch (e) {
+    // Ignore error write failure
+  }
+  console.error(entry);
 }

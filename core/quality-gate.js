@@ -11,7 +11,6 @@ function validateLanguage(script, errors) {
   const banned = BANNED_VOCAB.filter(word => new RegExp(`\\b${word}\\b`, 'i').test(script));
   if (banned.length) errors.push(`Banned vocabulary: ${banned.join(', ')}.`);
 }
-
 function hasConcreteOpener(script) {
   const first = script.split(/[.!?]/)[0] || '';
   if (/\b\d{2,}\b/.test(first)) return true;
@@ -42,10 +41,9 @@ export function validateLongQuality(data) {
   try { validateLongSchema(data); } catch (err) { errors.push(err.message); }
   const script = String(data?.fullScript || '').trim();
   const count = wordCount(script);
-  if (count < 780 || count > 880) errors.push(`Documentary has ${count} words; expected 780-880.`);
+  if (count < 500 || count > 720) errors.push(`Documentary has ${count} words; expected 500-720 for the configured 3.5-4.5 minute target.`);
   validateLanguage(script, errors);
   if (!hasConcreteOpener(script)) errors.push('Opening sentence needs a concrete date, measurement, or non-generic proper noun.');
   if (!script.toLowerCase().includes('if you want more from the archive, subscribe')) errors.push('Required spoken subscribe CTA is missing.');
   return throwQuality('Long-form', errors);
 }
-

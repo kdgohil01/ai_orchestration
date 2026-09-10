@@ -8,7 +8,6 @@ function requireString(value, field, { min = 1, max = Infinity } = {}) {
     throw new Error(`${field} must be a string between ${min} and ${max} characters.`);
   }
 }
-
 function requireStringArray(value, field, min, max) {
   if (!Array.isArray(value) || value.length < min || value.length > max) {
     throw new Error(`${field} must contain ${min}-${max} items.`);
@@ -26,9 +25,12 @@ function validateSegments(segments, expected) {
   });
 }
 
-function validateSources(sources) {
+function validateSources(data) {
+  const sources = Array.isArray(data.source_urls)
+    ? data.source_urls.map(url => ({ title: new URL(url).hostname, url }))
+    : data.sources;
   if (!Array.isArray(sources) || sources.length < 2 || sources.length > 4) {
-    throw new Error('sources must contain 2-4 authoritative references.');
+    throw new Error('source_urls must contain 2-4 authoritative HTTPS references.');
   }
   const unique = new Set();
   sources.forEach((source, i) => {
@@ -51,7 +53,7 @@ function validateCommon(data, { segments, keywordMin, keywordMax, titleMax }) {
   requireString(data.comment_cta, 'comment_cta', { min: 8, max: 250 });
   requireStringArray(data.keywords, 'keywords', keywordMin, keywordMax);
   validateSegments(data.visualSegments, segments);
-  validateSources(data.sources);
+  validateSources(data);
 }
 
 export function validateShortSchema(data) {
@@ -67,4 +69,3 @@ export function validateLongSchema(data) {
   data.chapters.forEach((chapter, i) => requireString(chapter?.label, `chapters[${i}].label`, { min: 3, max: 80 }));
   return true;
 }
-

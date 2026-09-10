@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "id": "tunguska-1908",
+      "approved": true,
+      "formats": ["short", "long"],
+      "topic_slug": "tunguska airburst 1908",
+      "topic_category": "physics edge case",
+      "research_question": "What physically happened over Tunguska in 1908, and why was there no impact crater?",
+      "source_urls": [
+        "https://www.nasa.gov/history/115-years-ago-the-tunguska-asteroid-impact-event/",
+        "https://science.nasa.gov/solar-system/meteors-meteorites/facts/"
+      ]
+    },
+    {
+      "id": "chelyabinsk-2013",
+      "approved": true,
+      "formats": ["short", "long"],
+      "topic_slug": "chelyabinsk meteor 2013",
+      "topic_category": "physics edge case",
+      "research_question": "How did the 2013 Chelyabinsk meteor injure people after it exploded high above the ground?",
+      "source_urls": [
+        "https://science.nasa.gov/solar-system/meteors-meteorites/facts/",
+        "https://svs.gsfc.nasa.gov/11325"
+      ]
+    },
+    {
+      "id": "rogue-waves",
+      "approved": true,
+      "formats": ["short", "long"],
+      "topic_slug": "rogue waves ocean",
+      "topic_category": "physics edge case",
+      "research_question": "What makes a rogue wave different from surrounding waves and from a tsunami?",
+      "source_urls": [
+        "https://oceanservice.noaa.gov/facts/roguewaves.html",
+        "https://oceanservice.noaa.gov/facts/tsunami.html"
+      ]
+    },
+    {
+      "id": "parkfield-earthquakes",
+      "approved": true,
+      "formats": ["short", "long"],
+      "topic_slug": "parkfield repeating earthquakes",
+      "topic_category": "historical anomaly",
+      "research_question": "Why did Parkfield appear to offer a repeating earthquake pattern, and what happened to the prediction?",
+      "source_urls": [
+        "https://earthquake.usgs.gov/learn/parkfield/eq_predict.php",
+        "https://pubs.usgs.gov/gip/earthq1/history.html"
+      ]
+    }
+  ]
+}

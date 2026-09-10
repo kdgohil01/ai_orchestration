@@ -1,61 +1,125 @@
-import { CHANNEL_NAME, PERSONA_NAME, SERIES_LONG, TONE_DESCRIPTOR, BANNED_VOCAB, BANNED_OPENERS } from '../core/identity.js';
+// ─────────────────────────────────────────────────────────────────────────────
+// DeedLamp — Long-Form Documentary Prompt
+// 4-ACT narrative structure with verbal subscribe CTA. The Archive series.
+// ─────────────────────────────────────────────────────────────────────────────
 
-export function buildLongPrompt(topicsUsed = []) {
-  const banned = topicsUsed.slice(-50).join(', ') || 'None yet';
-  return `You write evidence-led mini-documentaries for "${CHANNEL_NAME}'s" "${SERIES_LONG}", narrated by ${PERSONA_NAME}.
+import {
+  CHANNEL_NAME, PERSONA_NAME, SERIES_LONG, TONE_DESCRIPTOR,
+  BANNED_VOCAB, BANNED_OPENERS
+} from '../core/identity.js';
+
+/**
+ * Builds the Gemini prompt for a 4-minute story-driven mini-documentary.
+ *
+ * @param {string[]} topicsUsed - Array of topic slugs already published
+ * @returns {string}
+ */
+export function buildLongPrompt(topicsUsed = [], research = null) {
+  const bannedList = topicsUsed.slice(-40).join(', ') || 'None yet';
+
+  return `You are the writer for "${CHANNEL_NAME}'s" "${SERIES_LONG}" — a long-form documentary series narrated by ${PERSONA_NAME}.
 Tone: ${TONE_DESCRIPTOR}
 
-Write continuous narration using four acts:
-1. Inciting detail (~150 words): enter a real event already in progress.
-2. Context (~210 words): human context and at least one sensory detail.
-3. Escalation (~300 words): the precisely identified turning point and evidence.
-4. Echo plus outro (~180 words): present significance without a false neat conclusion.
+Use ONLY the approved, fetched source material below. Do not add facts from memory.
+${research?.sourceContext || 'NO APPROVED SOURCE CONTEXT PROVIDED — refuse to invent facts.'}
 
-The complete narration must be 780-880 words so normal TTS produces approximately 3.5-4.5 minutes. End naturally with: "If you want more from The Archive, subscribe. The next one is stranger than this."
+Produce a 4-minute documentary script (approximately 580 to 650 words) following this EXACT 4-act narrative structure.
+The script is continuous spoken narration — no scene headings, no stage directions, no labels.
 
-Rules:
-- Forbidden openers: ${BANNED_OPENERS.join(' / ')}
-- Banned vocabulary: ${BANNED_VOCAB.join(', ')}
-- No emoji, invented quotations, invented certainty, or unsupported causal claims.
-- Mark disputed explanations as disputed.
-- Exactly eight numbered landscape visual segments.
-- Exactly four chapter labels; timestamps are calculated later from the rendered duration.
-- Include 2-4 authoritative HTTPS sources. Prefer primary institutions, government, universities, museums, archives, scientific journals, NASA, NOAA, NIH, WHO, UNESCO, Britannica, or Smithsonian. No blogs, forums, social media, Wikipedia, or invented URLs.
-- Do not repeat: [${banned}]
+ACT 1 — THE INCITING DETAIL (0:00–0:45, ~90 words):
+  One fact that should not exist. Open mid-event, not with background.
+  Name a real person, place, date, or specific measurement in the first sentence.
+  This should feel like the viewer arrived late to something already happening.
 
-Return only JSON:
+ACT 2 — THE CONTEXT (0:45–1:45, ~150 words):
+  What made this moment possible? Humanise the actors involved.
+  Include at least one sensory detail — what it smelled like, sounded like, or felt like physically.
+  Avoid being encyclopedic. Stay close to the human story.
+
+ACT 3 — THE ESCALATION (1:45–3:00, ~195 words):
+  What happened next that made it worse, stranger, or more significant?
+  Include the specific moment everything changed — name it precisely.
+  The viewer should feel a shift in tone here.
+
+ACT 4 — THE ECHO (3:00–3:45, ~90 words):
+  What does this event reveal about human nature or the world today?
+  One closing observation that lingers. Do not resolve neatly.
+  Leave the viewer with a question they will carry with them.
+
+OUTRO (3:45–4:00, ~30 words):
+  End with exactly this sentence, spoken naturally:
+  "If you want more from The Archive, subscribe. The next one is stranger than this."
+
+CONTENT RULES:
+  - Total script: 580 to 650 words including outro
+  - BANNED vocabulary: ${BANNED_VOCAB.join(', ')}
+  - FORBIDDEN openers: ${BANNED_OPENERS.join(' / ')}
+  - No emojis anywhere
+  - At least two specific real names, dates, or measurements across the full script
+  - At least one sensory detail in ACT 2
+  - 8 visual segments (landscape orientation search terms)
+  - DO NOT write about any of these topics: [${bannedList}]
+  - topic_slug and topic_category must match the approved topic above.
+  - Every date, number, measurement, named event, scientific result, and statistic must have a claim record.
+  - evidence_quote must be a 6-40 word verbatim excerpt from the approved source text.
+  - source_url must exactly match one of the approved source URLs.
+
+Return ONLY a raw JSON object. No markdown. No backticks. No explanation.
 {
-  "topic_slug": "3-5 identifying words",
-  "topic_category": "historical anomaly | biological extreme | psychological phenomenon | physics edge case | engineering disaster | lost civilization",
-  "title": "specific title under 65 characters",
-  "seo_hook": "searchable factual opening line",
-  "comment_cta": "specific debatable question",
-  "keywords": ["6-10 search keywords"],
-  "fullScript": "780-880 word continuous narration",
+  "topic_slug": "3-5 word slug (e.g. 'london beer flood 1814')",
+  "topic_category": "one of: historical anomaly | biological extreme | psychological phenomenon | physics edge case | engineering disaster | lost civilization",
+  "title": "Clickable landscape title under 65 characters — specific and intriguing, no generic clickbait",
+  "seo_hook": "First line of description — keyword-rich searchable statement about the topic",
+  "comment_cta": "Specific, debatable question — not generic",
+  "keywords": ["6 to 10 relevant keywords as array strings"],
+  "fullScript": "The complete continuous narration — all 4 acts and outro combined",
+  "source_urls": ["the 2 to 4 approved source URLs actually used"],
+  "claims": [
+    { "statement": "factual statement used in the script", "source_url": "exact approved URL", "evidence_quote": "6-40 verbatim words from that source" }
+  ],
   "chapters": [
-    {"label":"The Inciting Detail"},{"label":"The Context"},{"label":"The Escalation"},{"label":"The Echo"}
+    { "label": "The Inciting Detail", "timestamp": "0:00" },
+    { "label": "The Context",         "timestamp": "0:45" },
+    { "label": "The Escalation",      "timestamp": "1:45" },
+    { "label": "The Echo",            "timestamp": "3:00" }
   ],
   "visualSegments": [
-    {"part":1,"keyword":"specific landscape search phrase"},
-    {"part":2,"keyword":"specific landscape search phrase"},
-    {"part":3,"keyword":"specific landscape search phrase"},
-    {"part":4,"keyword":"specific landscape search phrase"},
-    {"part":5,"keyword":"specific landscape search phrase"},
-    {"part":6,"keyword":"specific landscape search phrase"},
-    {"part":7,"keyword":"specific landscape search phrase"},
-    {"part":8,"keyword":"specific landscape search phrase"}
-  ],
-  "sources": [
-    {"title":"authoritative source title","url":"https://authoritative.example/page"},
-    {"title":"second independent source","url":"https://authoritative.example/page"}
+    { "part": 1, "keyword": "landscape search term — act 1 opening image" },
+    { "part": 2, "keyword": "landscape search term — act 1 second beat" },
+    { "part": 3, "keyword": "landscape search term — act 2 context scene 1" },
+    { "part": 4, "keyword": "landscape search term — act 2 context scene 2" },
+    { "part": 5, "keyword": "landscape search term — act 3 escalation scene 1" },
+    { "part": 6, "keyword": "landscape search term — act 3 escalation scene 2" },
+    { "part": 7, "keyword": "landscape search term — act 4 echo scene" },
+    { "part": 8, "keyword": "landscape search term — act 4 closing image" }
   ]
 }`;
 }
 
+/**
+ * Builds the final YouTube description for a long-form video.
+ * First line is the SEO hook. Chapters are appended as a block.
+ *
+ * @param {object} data - Parsed Gemini response
+ * @returns {string}
+ */
 export function buildLongDescription(data) {
-  const sources = data.sources.map(source => `- ${source.title}: ${source.url}`).join('\n');
+  const hashtags = '#documentary #history #education #archive #facts #mystery #psychology';
+
+  const chaptersText = data.chapters
+    .map(c => `${c.timestamp} ${c.label}`)
+    .join('\n');
+
   return [
-    data.seo_hook, '', data.comment_cta, '', 'Sources:', sources, '',
-    '#documentary #history #education #archive #facts #mystery #psychology'
+    data.seo_hook,
+    '',
+    data.comment_cta,
+    '',
+    chaptersText,
+    '',
+    'Sources:',
+    ...(data.source_urls || []).map(url => `- ${url}`),
+    '',
+    hashtags
   ].join('\n');
 }

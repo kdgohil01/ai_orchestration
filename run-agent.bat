@@ -1,2 +1,3 @@
 @echo off
-call "%~dp0run-short.bat" %*
+cd /d "%~dp0"
+node short.js --dry-run %*

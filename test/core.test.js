@@ -11,9 +11,9 @@ const common = {
   seo_hook: 'A documented London event from 1918 remains frequently misunderstood.',
   comment_cta: 'Which interpretation is better supported by the surviving evidence?',
   keywords: ['London', '1918', 'archive', 'history', 'evidence', 'records'],
-  sources: [
-    { title: 'National archive record', url: 'https://nationalarchives.gov.uk/example' },
-    { title: 'Museum research page', url: 'https://si.edu/example' }
+  source_urls: [
+    'https://nationalarchives.gov.uk/example',
+    'https://si.edu/example'
   ]
 };
 
@@ -47,7 +47,7 @@ test('short quality gate accepts a structurally valid script', () => {
 test('long quality gate enforces factual structure and duration-oriented word count', () => {
   const ending = 'If you want more from The Archive, subscribe. The next one is stranger than this.'.split(/\s+/);
   const opening = 'In 1918, London archivist Ada Morris opened a documented municipal ledger.'.split(/\s+/);
-  const middle = Array(800 - opening.length - ending.length).fill('evidence');
+  const middle = Array(600 - opening.length - ending.length).fill('evidence');
   const fullScript = [...opening, ...middle, ...ending].join(' ');
   const data = {
     ...common, fullScript, title: 'The London Ledger Evidence',

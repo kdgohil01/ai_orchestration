@@ -29,7 +29,6 @@ export function runCommand(command, args, { cwd, timeoutMs = 30 * 60_000, inheri
     });
   });
 }
-
 export async function probeMedia(filePath) {
   const { stdout } = await runCommand('ffprobe', [
     '-v', 'error', '-print_format', 'json', '-show_format', '-show_streams', filePath
@@ -55,4 +54,3 @@ export function withTimeout(promise, timeoutMs, label) {
   });
   return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
 }
-

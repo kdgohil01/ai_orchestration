@@ -14,7 +14,6 @@ export function loadJson(primaryPath, fallbackPaths, defaultValue) {
   }
   return structuredClone(defaultValue);
 }
-
 export function saveJsonAtomic(filePath, value) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   const tempPath = `${filePath}.${process.pid}.${Date.now()}.tmp`;
@@ -45,4 +44,3 @@ export function acquirePipelineLock({ staleAfterMs = 8 * 60 * 60_000 } = {}) {
     try { fs.unlinkSync(lockPath); } catch {}
   };
 }
-

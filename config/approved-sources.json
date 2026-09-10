@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "minimumSources": 2,
+  "maximumSources": 4,
+  "authorities": [
+    { "name": "NASA", "hosts": ["nasa.gov", "www.nasa.gov", "science.nasa.gov", "svs.gsfc.nasa.gov"] },
+    { "name": "NOAA", "hosts": ["noaa.gov", "www.noaa.gov", "oceanservice.noaa.gov"] },
+    { "name": "USGS", "hosts": ["usgs.gov", "www.usgs.gov", "pubs.usgs.gov", "earthquake.usgs.gov"] },
+    { "name": "NIST", "hosts": ["nist.gov", "www.nist.gov"] },
+    { "name": "NIH", "hosts": ["nih.gov", "www.nih.gov", "ncbi.nlm.nih.gov"] },
+    { "name": "CDC", "hosts": ["cdc.gov", "www.cdc.gov"] },
+    { "name": "Library of Congress", "hosts": ["loc.gov", "www.loc.gov"] },
+    { "name": "US National Archives", "hosts": ["archives.gov", "www.archives.gov"] },
+    { "name": "Smithsonian", "hosts": ["si.edu", "www.si.edu", "naturalhistory.si.edu", "americanhistory.si.edu"] },
+    { "name": "British Museum", "hosts": ["britishmuseum.org", "www.britishmuseum.org"] },
+    { "name": "Natural History Museum", "hosts": ["nhm.ac.uk", "www.nhm.ac.uk"] },
+    { "name": "Imperial War Museums", "hosts": ["iwm.org.uk", "www.iwm.org.uk"] },
+    { "name": "The National Archives UK", "hosts": ["nationalarchives.gov.uk", "www.nationalarchives.gov.uk"] },
+    { "name": "Australian Museum", "hosts": ["australian.museum", "www.australian.museum"] }
+  ]
+}

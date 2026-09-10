@@ -1,2 +1,3 @@
 @echo off
-call "%~dp0run-long.bat" %*
+cd /d "%~dp0"
+node long.js --dry-run %*

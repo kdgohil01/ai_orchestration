@@ -5,6 +5,7 @@ import subprocess
 import shutil
 import tempfile
 import re
+import json
 from pathlib import Path
 from faster_whisper import WhisperModel
 
@@ -30,6 +31,11 @@ def check_ffmpeg():
     for p in common_paths:
         if os.path.exists(p):
             return p
+    local_tools = Path(__file__).parent.resolve() / "tools" / "ffmpeg"
+    if local_tools.exists():
+        for candidate in local_tools.rglob("ffmpeg.exe" if os.name == "nt" else "ffmpeg"):
+            if candidate.is_file():
+                return str(candidate)
     return None
 
 def format_timestamp_ass(seconds: float) -> str:
@@ -149,7 +155,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     with open(ass_path, "w", encoding="utf-8") as f:
         f.writelines(lines)
 
-def burn_captions(input_video: str, output_video: str, model_size: str = "base", font_name: str = "Arial", primary_color: str = "white", target_y: int = 1450, canvas_w: int = 1080, canvas_h: int = 1920) -> bool:
+def burn_captions(input_video: str, output_video: str, model_size: str = "base", font_name: str = "Arial", primary_color: str = "white", target_y: int = 1450, canvas_w: int = 1080, canvas_h: int = 1920, transcript_output: str = None) -> bool:
     """
     Extracts speech timestamps using faster-whisper, formats ASS subtitles,
     and hardburns 2-4 word captions into output_video using FFmpeg.
@@ -176,6 +182,20 @@ def burn_captions(input_video: str, output_video: str, model_size: str = "base",
         for segment in segments:
             for w in segment.words:
                 words.append((w.start, w.end, w.word))
+        if transcript_output:
+            transcript_path = Path(transcript_output).resolve()
+            transcript_path.parent.mkdir(parents=True, exist_ok=True)
+            transcript_payload = {
+                "text": " ".join(word[2].strip() for word in words if word[2].strip()),
+                "language": getattr(info, "language", None),
+                "languageProbability": getattr(info, "language_probability", None),
+                "words": [
+                    {"start": start, "end": end, "word": word.strip()}
+                    for start, end, word in words if word.strip()
+                ]
+            }
+            with open(transcript_path, "w", encoding="utf-8") as transcript_file:
+                json.dump(transcript_payload, transcript_file, ensure_ascii=False, indent=2)
     except Exception as e:
         print(f"❌ Whisper transcription failed: {e}")
         return False
@@ -234,9 +254,10 @@ def main():
     parser.add_argument("--target-y", type=int, default=1450, help="Y position on canvas")
     parser.add_argument("--canvas-w", type=int, default=1080, help="Canvas width (default: 1080)")
     parser.add_argument("--canvas-h", type=int, default=1920, help="Canvas height (default: 1920)")
+    parser.add_argument("--transcript-output", help="Write Faster-Whisper transcript metadata as JSON")
 
     args = parser.parse_args()
-    success = burn_captions(args.input, args.output, model_size=args.model, font_name=args.font, primary_color=args.color, target_y=args.target_y, canvas_w=args.canvas_w, canvas_h=args.canvas_h)
+    success = burn_captions(args.input, args.output, model_size=args.model, font_name=args.font, primary_color=args.color, target_y=args.target_y, canvas_w=args.canvas_w, canvas_h=args.canvas_h, transcript_output=args.transcript_output)
     if not success:
         sys.exit(1)
 
